@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" thread-count="12" verbose="1" annotations="JDK" parallel="tests" data-provider-thread-count="10" junit="false" configfailurepolicy="skip" skipfailedinvocationcounts="false">
+  <test name="Test(failed)" junit="false" parallel="tests" annotations="JDK">
+    <classes>
+      <class name="TestNG.MFAC_TestNG">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="IssuePinExpirationValidate" invocation-numbers="0 1"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

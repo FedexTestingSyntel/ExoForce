@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test" failures="0" tests="35" time="1882.784" errors="0">
+  <properties/>
+  <testcase name="AdditionalEnrollmentExpiration" time="1.6" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AdditionalEnrollmentExpiration" time="2.017" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AdditionalEnrollmentExpiration" time="2.081" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AdditionalEnrollmentExpiration" time="2.179" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinExpiration" time="0.272" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinExpiration" time="0.504" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinExpiration" time="0.747" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinExpiration" time="0.947" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AddressVelocity" time="4.109" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AddressVelocity" time="4.208" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AddressVelocity" time="4.423" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AddressVelocity" time="4.558" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePin" time="0.286" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePin" time="0.505" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePin" time="0.682" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePin" time="0.841" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinVelocity" time="1.761" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinVelocity" time="1.969" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinVelocity" time="2.065" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinVelocity" time="2.181" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinNoLongerValid" time="2.035" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinNoLongerValid" time="2.122" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinNoLongerValid" time="2.204" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinNoLongerValid" time="2.304" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinValid" time="0.759" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinValid" time="0.829" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinValid" time="0.906" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinValid" time="0.982" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinVelocity" time="2.955" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinVelocity" time="3.145" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinVelocity" time="3.229" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="VerifyPinVelocity" time="3.426" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="AdditionalEnrollmentExpirationValidate" time="660.199" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinExpirationValidate" time="60.109" classname="TestNG.MFAC_TestNG"/>
+  <testcase name="IssuePinExpirationValidate" time="1200.231" classname="TestNG.MFAC_TestNG"/>
+</testsuite>
