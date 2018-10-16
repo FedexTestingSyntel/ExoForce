@@ -549,9 +549,7 @@ public class Helper_Functions extends WebDriver_Functions{
 		}
 
 		if (CreditCardList.isEmpty() && Level.contentEquals("7")) {
-			CreditCardList.add(new String[] {"MasterCard", "5472332002526148", "459", "03", "19"});
-			CreditCardList.add(new String[] {"MasterCard", "5472332002526189", "968", "12", "19"});
-			CreditCardList.add(new String[] {"MasterCard", "5472332002526049", "248", "08", "19"});
+			//prod credit cards here
 			//CreditCardList.add(new String[] );
 		}else if (CreditCardList.isEmpty()) {
 			CreditCardList.add(new String[] {"MasterCard", "5204730000001003", "003", "12", "20"});
