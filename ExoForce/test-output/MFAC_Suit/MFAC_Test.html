@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>MFAC_Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>24/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>20/5/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 24 23:48:47 CDT 2018</td>
+<td>Started on:</td><td>Thu Oct 25 13:13:36 CDT 2018</td>
 </tr>
-<tr><td>Total time:</td><td>29 seconds (29252 ms)</td>
+<tr><td>Total time:</td><td>37 seconds (37164 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,219 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/addressVelocityCheck, 10</td>
+<td><div><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;070c4202-8db3-454d-b076-9185be72fe7c&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace239767355", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace239767355'><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;070c4202-8db3-454d-b076-9185be72fe7c&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>26</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/addresses/velocitycheck, 10</td>
+<td><div><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;7a776ee8-3c85-4194-9ffe-10231455880d&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace3384222", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace3384222'><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;7a776ee8-3c85-4194-9ffe-10231455880d&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>28</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/addressVelocityCheck, 10</td>
+<td><div><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;4e087e65-77b9-4575-9965-afaaf214e968&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace684680515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace684680515'><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;4e087e65-77b9-4575-9965-afaaf214e968&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>34</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/addresses/velocitycheck, 10</td>
+<td><div><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;6ddf313c-0071-4ea3-bcc6-4904618b0adb&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1819635086", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1819635086'><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;DENY&quot; and a string containing &quot;Unfortunately, too many failed attempts for registration have occurred. Please try again later.&quot;)
+     but: a string containing &quot;DENY&quot; was &quot;{&quot;transactionId&quot;:&quot;6ddf313c-0071-4ea3-bcc6-4904618b0adb&quot;,&quot;output&quot;:{&quot;advice&quot;:&quot;ALLOW&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.AddressVelocity(MFAC.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>35</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, 3</td>
+<td><div><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;5700&quot; and a string containing &quot;Unfortunately, you have exceeded your attempts for verification. Please try again later.&quot;)
+     but: a string containing &quot;5700&quot; was &quot;{&quot;transactionId&quot;:&quot;65ffa943-381b-4631-baea-175439a11704&quot;,&quot;output&quot;:{&quot;pinOTP&quot;:&quot;055645&quot;,&quot;pinExpirationDate&quot;:&quot;10/25/2018 06:43 PM GMT&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.IssuePinVelocity(MFAC.java:224)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace192723399", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace192723399'><pre>java.lang.AssertionError: 
+Expected: (a string containing &quot;5700&quot; and a string containing &quot;Unfortunately, you have exceeded your attempts for verification. Please try again later.&quot;)
+     but: a string containing &quot;5700&quot; was &quot;{&quot;transactionId&quot;:&quot;65ffa943-381b-4631-baea-175439a11704&quot;,&quot;output&quot;:{&quot;pinOTP&quot;:&quot;055645&quot;,&quot;pinExpirationDate&quot;:&quot;10/25/2018 06:43 PM GMT&quot;}}&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at TestNG.MFAC.IssuePinVelocity(MFAC.java:224)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>12</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,125 +288,105 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/addresses/velocitycheck, 10</td>
-<td></td>
-<td>26</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/addressVelocityCheck, 10</td>
-<td></td>
-<td>27</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/addressVelocityCheck, 10</td>
-<td></td>
-<td>27</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.AddressVelocity()'><b>AddressVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/addresses/velocitycheck, 10</td>
-<td></td>
-<td>27</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
 <td title='TestNG.MFAC.IssuePin()'><b>IssuePin</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin</td>
 <td></td>
-<td>0</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.IssuePin()'><b>IssuePin</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN</td>
-<td></td>
-<td>3</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>1</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.IssuePin()'><b>IssuePin</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN</td>
 <td></td>
-<td>6</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>2</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.IssuePin()'><b>IssuePin</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin</td>
 <td></td>
-<td>7</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>2</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
-<td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, 3</td>
+<td title='TestNG.MFAC.IssuePin()'><b>IssuePin</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN</td>
 <td></td>
-<td>17</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, 3</td>
-<td></td>
-<td>18</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, 3</td>
-<td></td>
-<td>19</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>4</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, 3</td>
 <td></td>
-<td>20</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>9</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, 3</td>
+<td></td>
+<td>13</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.IssuePinVelocity()'><b>IssuePinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, 3</td>
+<td></td>
+<td>14</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinNoLongerValid()'><b>VerifyPinNoLongerValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify</td>
 <td></td>
-<td>16</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>10</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinNoLongerValid()'><b>VerifyPinNoLongerValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN</td>
 <td></td>
-<td>17</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>13</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinNoLongerValid()'><b>VerifyPinNoLongerValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN</td>
 <td></td>
-<td>17</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>13</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinNoLongerValid()'><b>VerifyPinNoLongerValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify</td>
 <td></td>
-<td>17</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.VerifyPinValid()'><b>VerifyPinValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify</td>
-<td></td>
-<td>8</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.VerifyPinValid()'><b>VerifyPinValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN</td>
-<td></td>
-<td>8</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>13</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinValid()'><b>VerifyPinValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN</td>
 <td></td>
-<td>9</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>6</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinValid()'><b>VerifyPinValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify</td>
 <td></td>
-<td>11</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>6</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
-<td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN, 3</td>
+<td title='TestNG.MFAC.VerifyPinValid()'><b>VerifyPinValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify</td>
 <td></td>
-<td>20</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>7</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
-<td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify, 3</td>
+<td title='TestNG.MFAC.VerifyPinValid()'><b>VerifyPinValid</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN</td>
 <td></td>
-<td>21</td>
-<td>TestNG.MFAC@530612ba</td></tr>
-<tr>
-<td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN, 3</td>
-<td></td>
-<td>23</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>7</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 <tr>
 <td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify, 3</td>
 <td></td>
-<td>24</td>
-<td>TestNG.MFAC@530612ba</td></tr>
+<td>18</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-PHONE-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN, 3</td>
+<td></td>
+<td>19</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN, http://mfacdev-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN, 3</td>
+<td></td>
+<td>21</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.VerifyPinVelocity()'><b>VerifyPinVelocity</b><br>Test class: TestNG.MFAC<br>Parameters: FDM-POSTCARD-PIN, l7xx1892f99a6f88470ba29abc141cd7bd8d, https://apidev.idev.fedex.com:8443/security/v1/pin, https://apidev.idev.fedex.com:8443/security/v1/pin/verify, 3</td>
+<td></td>
+<td>22</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
+<tr>
+<td title='TestNG.MFAC.testMethod()'><b>testMethod</b><br>Test class: TestNG.MFAC<br>Parameters: 2</td>
+<td></td>
+<td>0</td>
+<td>TestNG.MFAC@1cab0bfb</td></tr>
 </table><p>
 </body>
 </html>

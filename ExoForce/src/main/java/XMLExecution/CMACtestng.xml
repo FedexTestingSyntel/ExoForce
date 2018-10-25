@@ -6,7 +6,9 @@
   </listeners>
   
   <test thread-count="8" name="CMAC_Test" parallel="methods">
+  <parameter name="Level" value="2" />
     <classes>
+      <class name="SupportClasses.Set_Environment"/>
       <class name="TestNG.CMAC"/>
     </classes>
   </test> <!-- CMAC_Test -->

@@ -5,6 +5,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ import API_Calls.*;
 import Data_Structures.*;
 import TestingFunctions.Helper_Functions;
 import SupportClasses.ThreadLogger;
+import SupportClasses.Set_Environment;
 
 @Listeners(SupportClasses.TestNG_TestListener.class)
 //@Listeners(SupportClasses.TestNG_ReportListener.class)
@@ -34,10 +38,10 @@ public class MFAC{
 	
 	@BeforeClass
 	public static void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
-		ThreadLogger.LevelsToTest = LevelsToTest;
+		Set_Environment.SetLevelsToTest(LevelsToTest);
 		ArrayList<String[]> Excel_Data = Helper_Functions.getExcelData(".\\Data\\MFAC_Properties.xls",  "MFAC");//load the relevant information from excel file.
-		for (int i=0; i<LevelsToTest.length(); i++) {
-			int ExcelRow = Integer.parseInt(LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
+		for (int i=0; i< ThreadLogger.LevelsToTest.length(); i++) {
+			int ExcelRow = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
 			//below is each column that is expected in the excel and will be loaded.    08/24/18
 			//OAuthToken (Will be populated within the class)	Level	OAuthToken_URL	Client_ID	Client_Secret	IssuePin_APIGURL	VerifyPin_APIGURL	Velocity_APIGURL	IssuePin_DirectURL	VerifyPin_DirectURL	Velocity_DirectURL	Pin_Velocity_PostCard	Pin_Velocity_Phone	Address_Velocity
 			String EnvironmentInformation[] = Excel_Data.get(ExcelRow);
@@ -425,7 +429,6 @@ public class MFAC{
 			Assert.fail(e.getMessage());
 		}
 	}
-
 
 	///////////////////////Helper Tests/////////////////////////
 	/*

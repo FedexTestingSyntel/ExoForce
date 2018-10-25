@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="8" guice-stage="DEVELOPMENT" name="Failed suite [MFAC_Suit]" parallel="methods">
+  <listeners>
+    <listener class-name="SupportClasses.TestNG_ReportListener"/>
+  </listeners>
+  <test thread-count="8" name="MFAC_Test(failed)" parallel="methods">
+    <parameter name="Level" value="2"/>
     <classes>
-      <class name="TestNG.CMAC">
+      <class name="TestNG.MFAC">
         <methods>
-          <include name="DeleteProjectMauually"/>
           <include name="beforeClass"/>
+          <include name="AddressVelocity" invocation-numbers="3 1 2 0"/>
+          <include name="IssuePinVelocity" invocation-numbers="2"/>
         </methods>
-      </class> <!-- TestNG.CMAC -->
+      </class> <!-- TestNG.MFAC -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- MFAC_Test(failed) -->
+</suite> <!-- Failed suite [MFAC_Suit] -->

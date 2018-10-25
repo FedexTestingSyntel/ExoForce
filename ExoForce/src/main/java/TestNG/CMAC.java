@@ -16,6 +16,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import TestingFunctions.Helper_Functions;
 import API_Calls.*;
 import Data_Structures.*;
+import SupportClasses.Set_Environment;
 import SupportClasses.ThreadLogger;
 
 @Listeners(SupportClasses.TestNG_TestListener.class)
@@ -28,11 +29,11 @@ public class CMAC{
 	
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
-		ThreadLogger.LevelsToTest = LevelsToTest;
+		Set_Environment.SetLevelsToTest(LevelsToTest);
 		ArrayList<String[]> Excel_Data = Helper_Functions.getExcelData(".\\Data\\CMAC_Properties.xls",  "CMAC");//load the relevant information from excel file.
 		String Headers[] = Excel_Data.get(0);
-		for (int i = 0; i < LevelsToTest.length(); i++) {
-			int Level = Integer.parseInt(LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
+		for (int i = 0; i < ThreadLogger.LevelsToTest.length(); i++) {
+			int Level = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
 			//below is each column that is expected in the excel and will be loaded.    08/24/18
 			String EnvironmentInformation[] = Excel_Data.get(Level);
 			DC[Level] = new CMAC_Data();

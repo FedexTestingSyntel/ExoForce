@@ -5,8 +5,11 @@
     <listener class-name="SupportClasses.TestNG_ReportListener"/>
   </listeners>
   
+  
   <test thread-count="8" name="MFAC_Test" parallel="methods">
+  <parameter name="Level" value="2" />
     <classes>
+      <class name="SupportClasses.Set_Environment"/>
       <class name="TestNG.MFAC"/>
     </classes>
   </test> <!-- MFAC_Test -->
