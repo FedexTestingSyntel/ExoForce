@@ -7,6 +7,7 @@ public class ThreadLogger{
 	private static ThreadLogger instance = new ThreadLogger();
 	public static ArrayList<String[]> ResultsList = new ArrayList<String[]>();//the results of a single test case
 	public static ArrayList<String> ThreadLog = new ArrayList<String>();//The overall status and all text printed out
+	public static String LevelsToTest;
 	
 	private ThreadLogger(){
 		//Do-nothing..Do not allow to initialize this class from outside

@@ -55,7 +55,7 @@ public class TestNG_ReportListener implements IReporter {
 	int totalTestFailed = 0;
 	int totalTestSkipped = 0;
 	
-	//This is the customize emailabel report template file path.
+	//This is the customize email able report template file path.
 	private static final String emailableReportTemplateFile = System.getProperty("user.dir") + "/src/main/java/XMLExecution/customize-emailable-report-template.html";
 	
 	@Override
@@ -87,8 +87,8 @@ public class TestNG_ReportListener implements IReporter {
 			customReportTemplateStr = customReportTemplateStr.replaceAll("\\$Test_Case_Detail\\$", Matcher.quoteReplacement(customTestMethodSummary));
 			
 			// Write replaced test report content to custom-emailable-report.html.
-			String ReportName = Helper_Functions.CurrentDateTime() + " L" + DriverFactory.LevelsToTest + " " + Application + " Report";
-			String ReportTitle = "L" + DriverFactory.LevelsToTest + " " + Application;
+			String ReportName = Helper_Functions.CurrentDateTime() + " L" + ThreadLogger.LevelsToTest + " " + Application + " Report";
+			String ReportTitle = "L" + ThreadLogger.LevelsToTest + " " + Application;
 			outputDirectory = System.getProperty("user.dir") + "\\EclipseScreenshots\\" + Application + "\\" + ReportName;
 			outputDirectory += String.format(" T%sP%sF%s", totalTestCount, totalTestPassed, totalTestFailed);
 			File targetFile = new File(outputDirectory + ".html");

@@ -19,22 +19,22 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 import API_Calls.*;
 import Data_Structures.*;
-import SupportClasses.DriverFactory;
 import TestingFunctions.Helper_Functions;
+import SupportClasses.ThreadLogger;
 
 @Listeners(SupportClasses.TestNG_TestListener.class)
 //@Listeners(SupportClasses.TestNG_ReportListener.class)
 
 public class MFAC{
 	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
-	final boolean TestExpiration = true;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
+	final boolean TestExpiration = false;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
 	
 	static MFAC_Data DataClass[] = new MFAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
 	static ArrayList<String[]> ExpirationData = new ArrayList<String[]>();
 	
 	@BeforeClass
 	public static void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
-		DriverFactory.LevelsToTest = LevelsToTest;
+		ThreadLogger.LevelsToTest = LevelsToTest;
 		ArrayList<String[]> Excel_Data = Helper_Functions.getExcelData(".\\Data\\MFAC_Properties.xls",  "MFAC");//load the relevant information from excel file.
 		for (int i=0; i<LevelsToTest.length(); i++) {
 			int ExcelRow = Integer.parseInt(LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
@@ -539,22 +539,4 @@ public class MFAC{
 	public static String UserName() {
 		return Helper_Functions.getRandomString(10) + "-" + Helper_Functions.getRandomString(24);
 	}
-	
-	public static int IssuePinExternal(String Level, String UserName, String OrgName){
-		LevelsToTest = DriverFactory.LevelsToTest;
-		beforeClass();
-		if (OrgName.contentEquals("SMS")) {
-			OrgName = "FDM-PHONE-PIN";
-		}else if (OrgName.contentEquals("POSTAL")) {
-			OrgName = "FDM-POSTCARD-PIN";
-		}
-		String IssueURL = DataClass[Integer.valueOf(Level)].AIssueURL;
-		String OAuth_Token = DataClass[Integer.valueOf(Level)].OAuth_Token;
-		String Response = MFAC_API_Endpoints.IssuePinAPI(UserName, OrgName, IssueURL, OAuth_Token);
-		assertThat(Response, CoreMatchers.allOf(containsString("pinOTP"), containsString("pinExpirationDate")));//pin should be generated//pin expiration time should be present.
-		String Pin = ParsePIN(Response);
-		
-		return Integer.parseInt(Pin);
-	}
-	
 }

@@ -13,10 +13,10 @@ import java.util.StringTokenizer;
 import org.hamcrest.CoreMatchers;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
-import SupportClasses.DriverFactory;
 import TestingFunctions.Helper_Functions;
 import API_Calls.*;
 import Data_Structures.*;
+import SupportClasses.ThreadLogger;
 
 @Listeners(SupportClasses.TestNG_TestListener.class)
 
@@ -28,7 +28,7 @@ public class CMAC{
 	
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
-		DriverFactory.LevelsToTest = LevelsToTest;
+		ThreadLogger.LevelsToTest = LevelsToTest;
 		ArrayList<String[]> Excel_Data = Helper_Functions.getExcelData(".\\Data\\CMAC_Properties.xls",  "CMAC");//load the relevant information from excel file.
 		String Headers[] = Excel_Data.get(0);
 		for (int i = 0; i < LevelsToTest.length(); i++) {

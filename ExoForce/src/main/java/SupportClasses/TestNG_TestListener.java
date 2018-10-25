@@ -11,14 +11,6 @@ public class TestNG_TestListener implements ITestListener{
 	
 	@Override
     public void onStart(ITestContext arg0) {
-		ArrayList<String[]> PersonalData = new ArrayList<String[]>();
-		PersonalData = Helper_Functions.getExcelData(".\\Data\\Load_Your_UserIds.xls",  "Data");//create your own file with the specific data
-		for(String s[]: PersonalData) {
-			if(s[0].contentEquals("MYEMAIL")){
-				Helper_Functions.MyEmail = s[1];
-			}
-		}
-		
 		try {
 			Runtime.getRuntime().exec("taskkill /F /IM ChromeDriver.exe");//close out the old processes if still present.
 		} catch (Exception e) {}
@@ -35,11 +27,6 @@ public class TestNG_TestListener implements ITestListener{
 
     @Override
     public void onTestFailure(ITestResult arg0) {
-    	try {
-			Helper_Functions.takeSnapShot("Failure " + arg0.getName() + " " + arg0.getEndMillis() + ".png");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
     	TestResults(arg0);
     }
 
@@ -57,7 +44,6 @@ public class TestNG_TestListener implements ITestListener{
 		}
 		
 		try {
-			Helper_Functions.MoveOldScreenshots();//cleans up the screenshots.
 			Runtime.getRuntime().exec("taskkill /F /IM ChromeDriver.exe");//close out the old processes if still present.
 			Helper_Functions.PrintOut("ChromeDriver.exe Cleanup Executed", true);
 			Helper_Functions.MoveOldLogs();
@@ -71,8 +57,6 @@ public class TestNG_TestListener implements ITestListener{
     }
     
     private void TestResults(ITestResult arg0) {
-    	DriverFactory.getInstance().removeDriver();
-    	
     	String AttemptLogs = ThreadLogger.getInstance().ReturnLogString();
     	arg0.setAttribute("ExecutionLog", AttemptLogs);// this will save the trace in a collapsable format
     	//arg0.setAttribute("ExecutionLog", ThreadLogger.getInstance().ReturnLogString());
