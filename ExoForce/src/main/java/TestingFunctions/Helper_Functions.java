@@ -54,7 +54,7 @@ public class Helper_Functions{
 	}
 	
     public static void MoveOldLogs(){
-    	String main_Source = "." + File.separator + "EclipseScreenshots";
+    	String main_Source = "." + File.separator + "SavedLogs";
     	File main_dir = new File(main_Source);
     	if(main_dir.isDirectory()) {
     	    File[] content_main = main_dir.listFiles();

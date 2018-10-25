@@ -2,12 +2,10 @@ package SupportClasses;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -26,27 +24,7 @@ import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.html.simpleparser.HTMLWorker;
-import com.itextpdf.text.pdf.PdfWriter;
 import TestingFunctions.Helper_Functions;
-/*
- * For when sending emails
-import java.util.Properties;
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
- */
 
 public class TestNG_ReportListener implements IReporter {
 	
@@ -89,25 +67,22 @@ public class TestNG_ReportListener implements IReporter {
 			// Write replaced test report content to custom-emailable-report.html.
 			String ReportName = Helper_Functions.CurrentDateTime() + " L" + ThreadLogger.LevelsToTest + " " + Application + " Report";
 			String ReportTitle = "L" + ThreadLogger.LevelsToTest + " " + Application;
-			outputDirectory = System.getProperty("user.dir") + "\\EclipseScreenshots\\" + Application + "\\" + ReportName;
-			outputDirectory += String.format(" T%sP%sF%s", totalTestCount, totalTestPassed, totalTestFailed);
-			File targetFile = new File(outputDirectory + ".html");
-			System.out.println("Report Saved: " + outputDirectory + ".html");
+			outputDirectory = System.getProperty("user.dir") + "\\SavedLogs\\" + Application;
+			outputDirectory += String.format("\\" + ReportName + " T%sP%sF%s.html", totalTestCount, totalTestPassed, totalTestFailed);
 			
+			File targetFile = new File(outputDirectory);
 			customReportTemplateStr = "<!DOCTYPE html><html><head><title>" + ReportTitle + "</title><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" /></head>" + customReportTemplateStr + "</html>";
 			
 			//Create folder directory for writing the report.
-			String Folder = outputDirectory;
 			FileWriter fw = null;
 			try {
-				Folder = outputDirectory.substring(0, outputDirectory.lastIndexOf("\\"));
-				if (!(new File(Folder)).exists()) {
-					new File(Folder).mkdir();
-				}
+				targetFile.createNewFile();
 				fw = new FileWriter(targetFile);
 				fw.write(customReportTemplateStr);
-			} catch (Exception e) {  
-				System.out.println("Warning, Unable to create directory for: " + Folder);
+				System.out.println("Report Saved: " + outputDirectory + ".html");
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("Warning, Unable to create directory for: " + targetFile);
 			}finally {
 				fw.flush();
 				fw.close();
@@ -300,7 +275,7 @@ public class TestNG_ReportListener implements IReporter {
 	private String getTestMethodReport(String testName, IResultMap testResultMap, boolean passedReault, boolean skippedResult){
 		ArrayList<String[]> ResultList = new ArrayList<String[]>();
 		StringBuffer retStrBuf = new StringBuffer();
-		StringBuffer sortingStrBuf = new StringBuffer();
+		
 		
 		String resultTitle = testName;
 		
@@ -322,6 +297,7 @@ public class TestNG_ReportListener implements IReporter {
 		Set<ITestResult> testResultSet = testResultMap.getAllResults();
 			
 		for(ITestResult testResult : testResultSet){
+			StringBuffer sortingStrBuf = new StringBuffer();
 			String Application = "", testMethodName = "", startDateStr = "", executeTimeStr = "", paramStr = "", reporterMessage = "", exceptionMessage = "";
 			
 			//Get Application name, should be the same as the tesitng class name
@@ -382,19 +358,20 @@ public class TestNG_ReportListener implements IReporter {
 			sortingStrBuf.append("<td>" + exceptionMessage + "</td>");;
 			
 			sortingStrBuf.append("</tr>");
+
 			ResultList.add(new String[] {Application, sortingStrBuf.toString()});
 		}
-		
+
 		Collections.sort(ResultList,new Comparator<String[]>() {
 			public int compare(String[] strings, String[] otherStrings) {
 				return strings[0].compareTo(otherStrings[0]);
 			}
 		});
-		
+
 		for (String[] sa : ResultList) {
 			retStrBuf.append(sa[1]);
 		}
-		
+
 		return retStrBuf.toString();
 	}
 	
@@ -408,113 +385,4 @@ public class TestNG_ReportListener implements IReporter {
 		}
 		return retStrBuf.toString();
 	}
-	
-	public void CreatePDFReport(String outputDirectory, String ReportName) {
-		try {
-			String path = outputDirectory + ".pdf";
-			PdfWriter pdfWriter = null;
-
-			// create a new document
-			Document document = new Document();
-			pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(path));
-			document.open();
-			
-            // get Instance of the PDFWriter
-            pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(path));
-            //pdfWriter.setPdfVersion(PdfWriter.PDF_VERSION_1_4);
-            pdfWriter.setLinearPageMode();
-            pdfWriter.setFullCompression();
-
-
-            // document header attributes
-            document.addAuthor("GTM");
-            document.addCreationDate();
-            document.addProducer();
-            document.addCreator("Sean Kauffman");
-            document.addTitle(ReportName);
-            document.setPageSize(PageSize.A4);
-
-            // open document
-            document.open();
-
-            HTMLWorker htmlWorker = new HTMLWorker(document);
-
-            String str = "";
-            StringBuilder contentBuilder = new StringBuilder();
-            BufferedReader in = null;
-
-            //System.out.println("Html Content :");
-            try {
-                in = new BufferedReader(new FileReader(outputDirectory + ".html"));
-
-                while ((str = in.readLine()) != null) {
-
-                    contentBuilder.append(str);
-                    //System.out.println(str);
-                }
-            } catch (Exception e) {
-                System.out.print("HTML file close problem:" + e.getMessage());
-            } finally {
-                in.close();
-                System.gc();
-            }
-            String content = contentBuilder.toString();
-
-            htmlWorker.parse(new StringReader(content));
-            document.close();
-            pdfWriter.close();
-            System.out.println("Report Saved as PDF: " + outputDirectory + ".pdf");
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-	}
-	
-	/*
-	private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body, String FileName) {
-    	Properties props = System.getProperties();
-    	String host = "smtp.gmail.com";
-    	props.put("mail.smtp.starttls.enable", "true");
-    	props.put("mail.smtp.host", host);
-    	props.put("mail.smtp.user", from);
-    	props.put("mail.smtp.password", pass);
-    	props.put("mail.smtp.port", "587");
-    	props.put("mail.smtp.auth", "true");
-    	Session session = Session.getDefaultInstance(props);
-
-    	MimeMessage message = new MimeMessage(session);
- 
-    	try {
-    	    //Set from address
-    		message.setFrom(new InternetAddress(from));
-    		message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-    		//Set subject
-    		message.setSubject(subject);
-    		message.setText(body);
-    		BodyPart objMessageBodyPart = new MimeBodyPart();
-    		objMessageBodyPart.setText("Please Find The Attached Report File!");
-    		Multipart multipart = new MimeMultipart();
-    		multipart.addBodyPart(objMessageBodyPart);
-    		objMessageBodyPart = new MimeBodyPart();
-
-    		//Set path to the pdf report file
-    		String filename = System.getProperty("user.dir")+"\\test-output\\custom-emailable-report.html";
-
-    		//Create data source to attach the file in mail
-    		DataSource source = new FileDataSource(filename);
-    		objMessageBodyPart.setDataHandler(new DataHandler(source));
-    		objMessageBodyPart.setFileName(filename);
-    		multipart.addBodyPart(objMessageBodyPart);
-    		message.setContent(multipart);
-    		Transport transport = session.getTransport("smtp");
-    		transport.connect(host, from, pass);
-    		transport.sendMessage(message, message.getAllRecipients());
-    		transport.close();
-    		Helper_Functions.PrintOut("Emial has been sent to " + pass, true);
-    	}catch (Exception ae) {
-    		ae.printStackTrace();
-    	}
-    }
-    */
-
 }
