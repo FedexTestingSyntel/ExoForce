@@ -6,7 +6,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -30,43 +29,11 @@ public class CMAC{
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
 		Set_Environment.SetLevelsToTest(LevelsToTest);
-		ArrayList<String[]> Excel_Data = Helper_Functions.getExcelData(".\\Data\\CMAC_Properties.xls",  "CMAC");//load the relevant information from excel file.
-		String Headers[] = Excel_Data.get(0);
 		for (int i = 0; i < ThreadLogger.LevelsToTest.length(); i++) {
-			int Level = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
-			//below is each column that is expected in the excel and will be loaded.    08/24/18
-			String EnvironmentInformation[] = Excel_Data.get(Level);
-			DC[Level] = new CMAC_Data();
-			for (int j = 0; j < EnvironmentInformation.length; j++) {//added as a precaution to remove spaces from the excel sheet
-				EnvironmentInformation[j] = EnvironmentInformation[j].trim();
-			}
-			//EnvironmentInformation[0] = getAuthToken(EnvironmentInformation[2], EnvironmentInformation[3], EnvironmentInformation[4]);//add token to front of new array after it is generated
-			Helper_Functions.PrintOut("Headers: " + Arrays.toString(Headers), true);
-			Helper_Functions.PrintOut(Arrays.toString(EnvironmentInformation), true);//print out all of the urls and date for the level, this is just a reference point to executer
-			for (int j = 0; j < Headers.length; j++) {
-				switch (Headers[j]) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
-					case "OAuthToken":
-						DC[Level].OAuth_Token = EnvironmentInformation[j];break;
-					case "Level":
-						DC[Level].Level = EnvironmentInformation[j];break;
-					case "OAuthToken_URL":
-						DC[Level].OAuthToken_URL = EnvironmentInformation[j];break;
-					case "Client_ID":
-						DC[Level].Client_ID = EnvironmentInformation[j];break;
-					case "Client_Secret":
-						DC[Level].Client_Secret = EnvironmentInformation[j];break;
-					case "Create_Project_URL":
-						DC[Level].Create_Project_URL = EnvironmentInformation[j];break;
-					case "Retrieve_Project_URL":
-						DC[Level].Retrieve_Project_URL = EnvironmentInformation[j];break;
-					case "Update_Project_URL":
-						DC[Level].Update_Project_URL = EnvironmentInformation[j];break;
-					case "Delete_Project_URL":
-						DC[Level].Delete_Project_URL = EnvironmentInformation[j];break;
-				}//end switch Headers[j]
-			}
+			String strLevel = "" + ThreadLogger.LevelsToTest.charAt(i);
+			int intLevel = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level.
+			DC[intLevel] = CMAC_Data.LoadVariables(strLevel);
 		}
-		Helper_Functions.PrintOut("\n\nThread -- Time (MMDDYY'T'HHMMSS): -- Current progress", false);
 	}
 	
 	@DataProvider (parallel = true)
