@@ -5,13 +5,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -30,41 +26,19 @@ import SupportClasses.Set_Environment;
 //@Listeners(SupportClasses.TestNG_ReportListener.class)
 
 public class MFAC{
-	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
+	static String LevelsToTest = "123"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
 	final boolean TestExpiration = false;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
 	
-	static MFAC_Data DataClass[] = new MFAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
+	static MFAC_Data DC[] = new MFAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
 	static ArrayList<String[]> ExpirationData = new ArrayList<String[]>();
 	
 	@BeforeClass
 	public static void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
 		Set_Environment.SetLevelsToTest(LevelsToTest);
-		ArrayList<String[]> Excel_Data = Helper_Functions.getExcelData(".\\Data\\MFAC_Properties.xls",  "MFAC");//load the relevant information from excel file.
 		for (int i=0; i< ThreadLogger.LevelsToTest.length(); i++) {
-			int ExcelRow = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level. With the row 0 being the column titles.
-			//below is each column that is expected in the excel and will be loaded.    08/24/18
-			//OAuthToken (Will be populated within the class)	Level	OAuthToken_URL	Client_ID	Client_Secret	IssuePin_APIGURL	VerifyPin_APIGURL	Velocity_APIGURL	IssuePin_DirectURL	VerifyPin_DirectURL	Velocity_DirectURL	Pin_Velocity_PostCard	Pin_Velocity_Phone	Address_Velocity
-			String EnvironmentInformation[] = Excel_Data.get(ExcelRow);
-			
-			for (int j = 0; j < EnvironmentInformation.length; j++) {//added as a precaution to remove spaces from the excel sheet
-				EnvironmentInformation[j] = EnvironmentInformation[j].trim();
-			}
-			
-			EnvironmentInformation[0] = General_API_Calls.getAuthToken(EnvironmentInformation[2], EnvironmentInformation[3], EnvironmentInformation[4]);//add token to front of new array after it is generated
-			Helper_Functions.PrintOut(Arrays.toString(EnvironmentInformation), false);//print out all of the urls and date for the level, this is just a reference point to executer
-		    
-		    DataClass[ExcelRow] = new MFAC_Data();
-		    DataClass[ExcelRow].OAuth_Token = EnvironmentInformation[0];
-		    DataClass[ExcelRow].Level = EnvironmentInformation[1];
-		    DataClass[ExcelRow].AIssueURL = EnvironmentInformation[5];
-		    DataClass[ExcelRow].AVerifyURL = EnvironmentInformation[6];
-		    DataClass[ExcelRow].AVelocityURL = EnvironmentInformation[7];
-		    DataClass[ExcelRow].DIssueURL = EnvironmentInformation[8];
-		    DataClass[ExcelRow].DVerifyURL = EnvironmentInformation[9];
-		    DataClass[ExcelRow].DVelocityURL = EnvironmentInformation[10];
-		    DataClass[ExcelRow].PinVelocityThresholdPostcard = Integer.valueOf(EnvironmentInformation[11]);
-		    DataClass[ExcelRow].PinVelocityThresholdPhone = Integer.valueOf(EnvironmentInformation[12]);
-		    DataClass[ExcelRow].AddressVelocityThreshold = Integer.valueOf(EnvironmentInformation[13]);
+			String strLevel = "" + ThreadLogger.LevelsToTest.charAt(i);
+			int intLevel = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level.
+			DC[intLevel] = MFAC_Data.LoadVariables(strLevel);
 		}
 	}
 	
@@ -73,8 +47,8 @@ public class MFAC{
 	    List<Object[]> data = new ArrayList<>();
 		
 		for (int i = 1; i < 8; i++) {
-			if (DataClass[i] != null) {
-				MFAC_Data c = DataClass[i];
+			if (DC[i] != null) {
+				MFAC_Data c = DC[i];
 				switch (m.getName()) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 				case "AddressVelocity":
 					if (!c.Level.contentEquals("1")){

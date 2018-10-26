@@ -1,19 +1,15 @@
 package TestingFunctions;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 import SupportClasses.ThreadLogger;
-import jxl.Sheet;
-import jxl.Workbook;
 
 public class Helper_Functions{
 	public static String Passed = "Passed", Failed = "Fail", Skipped = "Skipped";
@@ -131,72 +127,4 @@ public class Helper_Functions{
 		}
 		return null;
 	}
-
-	public static ArrayList<String[]> getExcelData(String fileName, String sheetName) {
-		//Note, may face issues if the file is an .xlsx, save it as a xls and works
-
-		ArrayList<String[]> data = new ArrayList<>();
-		try {
-			
-			
-			/*
-			FileInputStream fsIP= new FileInputStream(new File(fileName));                 
-			HSSFWorkbook wb = new HSSFWorkbook(fsIP);
-			HSSFSheet worksheet = wb.getSheetAt(0);
-			for(int i = 1; i< wb.getNumberOfSheets() + 1;i++) {
-				//PrintOut("CurrentSheet: " + worksheet.getSheetName(), false);  //for debugging if getting errors with sheet not found
-				if (worksheet.getSheetName().contentEquals(sheetName)) {
-					break;
-				}
-				worksheet = wb.getSheetAt(i);
-			}
-			DataFormatter dataFormatter = new DataFormatter();
-			
-			worksheet.forEach(row -> {
-				ArrayList<String> buffer = new ArrayList<>();
-	            row.forEach(cell -> {
-	                String cellValue = dataFormatter.formatCellValue(cell);
-	                buffer.add(cellValue);
-	            });
-	            String[] stringArray = buffer.toArray(new String[0]);
-	            data.add(stringArray);
-	        });
-			//Close the InputStream  
-			fsIP.close(); 
-			//Open FileOutputStream to write updates
-			FileOutputStream output_file =new FileOutputStream(new File(fileName));  
-			//write changes
-			wb.write(output_file);
-			//close the stream
-			output_file.close();
-			wb.close();
-			*/
-			
-			FileInputStream fs = new FileInputStream(fileName);
-			Workbook wb = Workbook.getWorkbook(fs);
-			Sheet sh = wb.getSheet(sheetName);
-			
-			int totalNoOfCols = sh.getColumns();
-			int totalNoOfRows = sh.getRows();
-			
-			for (int i= 0 ; i < totalNoOfRows; i++) { //change to start at 1 if want to ignore the first row.
-				String buffer[] = new String[totalNoOfCols];
-				for (int j=0; j < totalNoOfCols; j++) {
-					String CellContents = sh.getCell(j, i).getContents();
-					if (CellContents == null) {
-						CellContents = "";
-					}
-					buffer[j] = CellContents;
-				}
-				data.add(buffer);
-			}
-			wb.close();
-			fs.close();
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return data;
-	}
-	
 }//End Class

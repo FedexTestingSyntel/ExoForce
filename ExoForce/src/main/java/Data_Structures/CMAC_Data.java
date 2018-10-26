@@ -14,18 +14,7 @@ public class CMAC_Data {
 	public String Delete_Credential_URL;
 	public String DeleteResource_URL;
 	public String Create_Resource_Project_URL;
-	
-	/*  before hybrid redesign
-	public String P_UserID[] = new String[1];
-	public String P_User_Password[] = new String[1];
-	public String P_Cookie[] = new String[1];
-	public String P_UUID[] = new String[1];
-	public String NonP_UserID[] = new String[1];
-	public String NonP_User_Password[] = new String[1];
-	public String NonP_Cookie[] = new String[1];
-	public String NonP_UUID[] = new String[1];
-	*/
-	
+
 	public static CMAC_Data LoadVariables(String Level){
 		CMAC_Data DC = new CMAC_Data();
 		switch (Level) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
@@ -55,5 +44,27 @@ public class CMAC_Data {
 		
 		return DC;
 	}
+	
+	//implement this later if want to make dynamic
+  	public static String LevelUrlReturn(int Level) {
+  		String LevelURL = null;
+  		switch (Level) {
+      		case 1:
+      			LevelURL = "https://wwwbase.idev.fedex.com"; break;
+      		case 2:
+      			LevelURL = "https://wwwdev.idev.fedex.com";  break;
+      		case 3:
+      			LevelURL = "https://wwwdrt.idev.fedex.com"; break;
+      		case 4:
+      			LevelURL = "https://wwwstress.dmz.idev.fedex.com"; break;
+      		case 5:
+      			LevelURL = "https://wwwbit.idev.fedex.com"; break;
+      		case 6:
+      			LevelURL = "https://wwwtest.fedex.com"; break;
+      		case 7:
+      			LevelURL = "https://www.fedex.com"; break;
+  		}
+  		return LevelURL;
+  	}
 	
 }
