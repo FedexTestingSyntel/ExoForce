@@ -27,7 +27,7 @@ public class MFAC_Data {
 		String LevelIdentifier[] = null;
   		switch (Level) {
   		case "1":
-  			LevelIdentifier = new String[] {"https://apibase.idev.fedex.com:8443", "http://mfacbase-cos-vip.test.cloud.fedex.com:9090"}; break;
+  			LevelIdentifier = new String[] {"", "http://mfacbase-cos-vip.test.cloud.fedex.com:9090"}; break;
   		case "2":
   			LevelIdentifier = new String[] {"https://apidev.idev.fedex.com:8443", "http://mfacdev-cos-vip.test.cloud.fedex.com:9090"}; break;
   		case "3":
@@ -37,18 +37,28 @@ public class MFAC_Data {
   		case "5":
   			LevelIdentifier = new String[] {"https://apibit.idev.fedex.com:8443", "http://mfacbit-cos-vip.test.cloud.fedex.com:9090"}; break;
   		case "6":
-  			LevelIdentifier = new String[] {"", ""}; break;
+  			//L6 is not valid for direct URL
+  			LevelIdentifier = new String[] {"https://apitest.fedex.com", ""}; break;
   		case "7":
-  			LevelIdentifier = new String[] {"", ""}; break;
+  			//L7 is not valid for direct URL
+  			LevelIdentifier = new String[] {"https://api.fedex.com", ""}; break;
 		}
   		
   		DC.OAuth_Token_URL = LevelIdentifier[0] + "/auth/oauth/v2/token";
-		DC.AIssueURL = LevelIdentifier[0] + "/security/v1/pin";
-		DC.AVerifyURL = LevelIdentifier[0] + "/security/v1/pin/verify";
-		DC.AVelocityURL = LevelIdentifier[0] + "/security/v1/addresses/velocitycheck";
-		DC.DIssueURL = LevelIdentifier[1] + "/mfac/v3/issuePIN";
-		DC.DVerifyURL = LevelIdentifier[1] + "/mfac/v3/verifyPIN";
-		DC.DVelocityURL = LevelIdentifier[1] + "/mfac/v3/addressVelocityCheck";
+  		
+  		//Load the API URLs
+  		if (Level != "1") {//API not applicable to L1
+  			DC.AIssueURL = LevelIdentifier[0] + "/security/v1/pin";
+  			DC.AVerifyURL = LevelIdentifier[0] + "/security/v1/pin/verify";
+			DC.AVelocityURL = LevelIdentifier[0] + "/security/v1/addresses/velocitycheck";
+  		}
+		
+  		//Load the Direct URLs
+		if (Level != "6" && Level != "7") {//direct not applicable for L6 and Prod
+			DC.DIssueURL = LevelIdentifier[1] + "/mfac/v3/issuePIN";
+			DC.DVerifyURL = LevelIdentifier[1] + "/mfac/v3/verifyPIN";
+			DC.DVelocityURL = LevelIdentifier[1] + "/mfac/v3/addressVelocityCheck";
+		}
 		
 		switch (Level) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 		case "1":

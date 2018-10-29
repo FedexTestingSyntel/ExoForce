@@ -18,14 +18,14 @@ public class CMAC_API_Endpoints{
 			
 			httppost.addHeader("Content-Type", "application/json");
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
-			
+
 			JSONObject MainBody = new JSONObject()
 					.put("orgUUID", organizationUUID)
 					.put("applicationUUID", applicationUUID)
-					.put("latimeStamp", projectName) 
+					.put("latimeStamp", latimeStamp) 
 					.put("latype", latype) 
 					.put("laversion", laversion) 
-					.put("projectName", latimeStamp) ;
+					.put("projectName", projectName) ;
 						
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);
@@ -133,6 +133,7 @@ public class CMAC_API_Endpoints{
 			httppost.addHeader("Content-Type", "application/json");
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
 			
+			
 			JSONObject MainBody = new JSONObject()
 					.put("applicationUUID", applicationUUID)
 					.put("endpointUUIDs", endpointUUIDs) 
@@ -154,7 +155,7 @@ public class CMAC_API_Endpoints{
 		//Sample response:
 
 	}
-	
+
 	//not yet updated
 	public static String DeleteResource_API(String URL, String OAuth_Token, String applicationUUID){
 		String Request = "";
@@ -177,13 +178,13 @@ public class CMAC_API_Endpoints{
 		//Sample response:
 
 	}
-		
+
 	//not yet updated
-	public static String RetrieveResource_API(String URL, String OAuth_Token, String organizationUUID){
+	public static String RetrieveResource_API(String URL, String OAuth_Token, String UUID){
 		String Request = "";
 		
 		try{
-			URL = URL.replace("{organizationUUID}", organizationUUID);
+			URL = URL.replace("{UUID}", UUID);
 			HttpGet httpget = new HttpGet(URL);
 			httpget.addHeader("Content-Type", "application/json");
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
@@ -200,9 +201,9 @@ public class CMAC_API_Endpoints{
 		//Sample response:
 
 	}
-	
+
 	//not yet updated
-	public static String UpdateResource_API(String URL, String OAuth_Token, String applicationUUID, String latimeStamp, String latype, String laversion, String projectName){
+	public static String UpdateResource_API(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs, String isCertified){
 		String Request = "";
 		
 		try{
@@ -210,13 +211,11 @@ public class CMAC_API_Endpoints{
 			
 			httpput.addHeader("Content-Type", "application/json");
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
-			
+		
 			JSONObject MainBody = new JSONObject()
 					.put("applicationUUID", applicationUUID)
-					.put("latimeStamp", latimeStamp)
-					.put("latype", latype)
-					.put("laversion", laversion)
-					.put("projectName", projectName);
+					.put("endpointUUIDs", endpointUUIDs)
+					.put("isCertified", isCertified);
 			
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);

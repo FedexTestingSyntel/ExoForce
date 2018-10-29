@@ -5,11 +5,15 @@
     <listener class-name="SupportClasses.TestNG_ReportListener"/>
   </listeners>
   <test thread-count="8" name="CMAC_Test(failed)" parallel="methods">
+    <parameter name="Level" value="2"/>
     <classes>
       <class name="TestNG.CMAC">
         <methods>
-          <include name="CreateProject" invocation-numbers="2 0 3 1"/>
+          <include name="CreateProject"/>
+          <include name="UpdateProject" invocation-numbers="0"/>
+          <include name="DeleteProject" invocation-numbers="0"/>
           <include name="beforeClass"/>
+          <include name="RetrieveProjectDetails" invocation-numbers="0"/>
         </methods>
       </class> <!-- TestNG.CMAC -->
     </classes>

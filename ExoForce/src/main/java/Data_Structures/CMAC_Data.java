@@ -1,70 +1,94 @@
 package Data_Structures;
 
+import API_Calls.General_API_Calls;
+
 public class CMAC_Data {
-	public String OAuth_Token;
-	public String Level;
-	public String OAuthToken_URL;
-	public String Client_ID;
-	public String Client_Secret;
-	public String Create_Project_URL;
-	public String Retrieve_Project_URL;
-	public String Update_Project_URL;
-	public String Delete_Project_URL;
-	public String Create_Credentials_Project_URL;
-	public String Delete_Credential_URL;
-	public String DeleteResource_URL;
-	public String Create_Resource_Project_URL;
+	
+	public String Level = "";
+	public String OAuth_Token_URL = "";
+	public String OAuth_Token_Client_ID = "";
+	public String OAuth_Token_Client_Secret = "";
+	public String OAuth_Token = "";
+	//Project CRUD
+	public String Create_Project_URL = "";
+	public String Retrieve_Project_URL = "";
+	public String Update_Project_URL = "";
+	public String Delete_Project_URL = "";
+	//Resource CRUD
+	public String Create_Resource_URL = "";
+	public String Retrieve_Resource_URL = "";
+	public String Update_Resource_URL = "";
+	public String Delete_Resource_URL = "";
 
 	public static CMAC_Data LoadVariables(String Level){
 		CMAC_Data DC = new CMAC_Data();
+		DC.Level = Level;
+		
+		String LevelIdentifier[] = null;
+  		switch (Level) {
+  		case "1":
+  			LevelIdentifier = new String[] {"", ""}; break;
+  		case "2":
+  			LevelIdentifier = new String[] {"https://cmac-dev.app.wtcdev2.paas.fedex.com", ""}; break;
+  		case "3":
+  			LevelIdentifier = new String[] {"", ""}; break;
+  		case "4":
+  			LevelIdentifier = new String[] {"", ""}; break;
+  		case "5":
+  			LevelIdentifier = new String[] {"", ""}; break;
+  		case "6":
+  			//L6 is not valid for direct URL
+  			LevelIdentifier = new String[] {"", ""}; break;
+  		case "7":
+  			//L7 is not valid for direct URL
+  			LevelIdentifier = new String[] {"", ""}; break;
+		}
+  		
+  		//Load the PCF calls
+  		//Project
+		DC.Create_Project_URL = LevelIdentifier[0] + "/cmac/v3/projects";
+		DC.Retrieve_Project_URL = LevelIdentifier[0] + "/cmac/v3/projects/{UUID}";
+		DC.Update_Project_URL = LevelIdentifier[0] + "/cmac/v3/updateProject";
+		DC.Delete_Project_URL = LevelIdentifier[0] + "/cmac/v3/projects/{applicationUUID}";
+		//Resources
+		DC.Create_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources";
+		DC.Retrieve_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources/{UUID}";
+		DC.Update_Resource_URL = LevelIdentifier[0] + "";
+		DC.Delete_Resource_URL = LevelIdentifier[0] + "";
+		
 		switch (Level) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 		case "1":
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
 		case "2":
-			DC.Level = Level;
-			DC.OAuthToken_URL = "OAuthToken_URL";
-			DC.Client_ID = "Client_ID";
-			DC.Client_Secret = "Client_Secret";
-			DC.Create_Project_URL = "https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects";
-			DC.Retrieve_Project_URL = "https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}";
-			DC.Update_Project_URL = "https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject";
-			DC.Delete_Project_URL = "https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}";
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
 		case "3":
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
 		case "4":
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
 		case "5":
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
-		case "6":
+		case "6"://need to update these values manually, do not share
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
-		case "7":
+		case "7"://need to update these values manually, do not share
+			DC.OAuth_Token_Client_ID = "";
+			DC.OAuth_Token_Client_Secret ="";
 			break;
 		}
 		
+		//DC.OAuth_Token = General_API_Calls.getAuthToken(DC.OAuth_Token_URL, DC.OAuth_Token_Client_ID , DC.OAuth_Token_Client_Secret);
+		
 		return DC;
 	}
-	
-	//implement this later if want to make dynamic
-  	public static String LevelUrlReturn(int Level) {
-  		String LevelURL = null;
-  		switch (Level) {
-      		case 1:
-      			LevelURL = "https://wwwbase.idev.fedex.com"; break;
-      		case 2:
-      			LevelURL = "https://wwwdev.idev.fedex.com";  break;
-      		case 3:
-      			LevelURL = "https://wwwdrt.idev.fedex.com"; break;
-      		case 4:
-      			LevelURL = "https://wwwstress.dmz.idev.fedex.com"; break;
-      		case 5:
-      			LevelURL = "https://wwwbit.idev.fedex.com"; break;
-      		case 6:
-      			LevelURL = "https://wwwtest.fedex.com"; break;
-      		case 7:
-      			LevelURL = "https://www.fedex.com"; break;
-  		}
-  		return LevelURL;
-  	}
-	
 }

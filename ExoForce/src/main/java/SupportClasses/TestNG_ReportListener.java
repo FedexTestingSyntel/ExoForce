@@ -79,7 +79,7 @@ public class TestNG_ReportListener implements IReporter {
 				targetFile.createNewFile();
 				fw = new FileWriter(targetFile);
 				fw.write(customReportTemplateStr);
-				System.out.println("Report Saved: " + outputDirectory + ".html");
+				System.out.println("Report Saved: " + outputDirectory);
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("Warning, Unable to create directory for: " + targetFile);
@@ -87,28 +87,6 @@ public class TestNG_ReportListener implements IReporter {
 				fw.flush();
 				fw.close();
 			}
-			
-			//CreatePDFReport(outputDirectory, customReportTemplateStr);
-			//Need to work on this, something is most likely wrong with HTML format.    //java.lang.IllegalArgumentException: The number of columns in PdfPTable constructor must be greater than zero.
-		
-	    	//Need to work on this to send out the email report.
-	    	//java.net.URL classUrl = this.getClass().getResource("com.sun.mail.util.TraceInputStream");
-	    	//System.out.println(classUrl.getFile());
-			/*
-			String SenderEamil, SenderPassword, RecipientEmail;
-			ArrayList<String[]> PersonalData = new ArrayList<String[]>();
-			PersonalData = Helper_Functions.getExcelData(".\\Data\\Load_Your_UserIds.xls",  "Data");//create your own file with the specific data
-			for(String s[]: PersonalData) {
-				if (s[0].contentEquals("GMAIL")) {
-					SenderEamil = s[1];
-					SenderPassword = s[2];
-				}else if(s[0].contentEquals("MYEMAIL")){
-					RecipientEmail = s[1];
-				}
-			}
-	    	sendPDFReportByGMail(SenderAddress, SenderPassword, RecipientEmail, ReportTitle, customReportTemplateStr, outputDirectory);
-	    	*/
-			
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}

@@ -81,7 +81,7 @@ public class CMAC{
 			
 		return data.iterator();
 	}
-		
+	
 	@Test(dataProvider = "dp", priority = 1, description = "380527")
 	public void CreateProject(String URL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String latype, String laversion, String latimeStamp) {
 		String Response = "";
@@ -164,6 +164,42 @@ public class CMAC{
 			
 	}
 
+	@DataProvider (parallel = true)
+	public Iterator<Object[]> dp_resources(Method m) {
+	    List<Object[]> data = new ArrayList<>();
+
+		for (int i = 1; i < 8; i++) {
+			if (DC[i] != null) {
+				CMAC_Data c = DC[i];
+				
+				switch (m.getName()) { //Based on the method that is being called the array list will be populated.
+					case "CreateResource":
+						for(int j = 0; j < applicationUUIDToDelete.size(); j++) {
+							data.add(new Object[] {c.Create_Resource_URL, c.OAuth_Token, applicationUUIDToDelete.get(j), });
+						}
+						break;
+				}//end switch MethodName
+			}	
+		}
+			
+		return data.iterator();
+	}
+	
+	//Resources
+	@Test(dataProvider = "dp_resources", priority = 2, dependsOnMethods = "CreateProject", description = "380557")
+	public void CreateResource(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs, String isCertified) {
+		String Response = "";
+		
+		Response = CMAC_API_Endpoints.CreateResource_API(URL, OAuth_Token, applicationUUID, endpointUUIDs, isCertified);
+		
+		String[] Response_Variables = {"transactionId", "status", "Success"};
+		for(int i = 0; i < Response_Variables.length; i++) {
+			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
+		}
+
+		//need to add a check here to see if there are any errors.
+		//applicationUUIDToDelete.add(applicationUUID);//update this to store the applicationUUID of the created project. Will be deleted later as part of the delete tests.
+	}
 
 	///////Helper Functions///////////////Condensed into single class
 	public static String[] ParseStringToArray(String s, String Token) {
@@ -205,8 +241,6 @@ public class CMAC{
 		
 		Helper_Functions.PrintOut("\nAll projects deleted form " + organizationUUID, true);
 		CMAC_API_Endpoints.RetrieveProject_API(RetrieveURL, OAuth_Token, organizationUUID);
-		
-			
 	}
 	
 }
