@@ -212,7 +212,7 @@ public class CMAC{
 		return data.iterator();
 	}
 	
-	@Test(dataProvider = "dp_resources", priority = 2, description = "380557")
+	@Test(dataProvider = "dp_resources", priority = 2, description = "380557 - Create Resource")
 	public void CreateResource(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified) {
 		String Response = "";
 		
@@ -227,7 +227,7 @@ public class CMAC{
 		//applicationUUIDToDelete.add(applicationUUID);//update this to store the applicationUUID of the created project. Will be deleted later as part of the delete tests.
 	}
 	
-	@Test(dataProvider = "dp_resources", priority = 2, description = "380583")
+	@Test(dataProvider = "dp_resources", priority = 2, description = "380583 - Retrieve Resources")
 	public void RetrieveResource(String URL, String OAuth_Token, String applicationUUID) {
 		String Response;
 		
@@ -244,7 +244,7 @@ public class CMAC{
 		//add something here to test multiple resources, or no resources
 	}
 
-	@Test(dataProvider = "dp_resources", priority = 3, description = "380687")   ///, dependsOnMethods = "CreateResource"
+	@Test(dataProvider = "dp_resources", priority = 3, description = "380692 - Delete Resource")   ///, dependsOnMethods = "CreateResource"
 	public void DeleteResource(String URL, String OAuth_Token, String applicationUUID) {
 		String Response;
 		applicationUUID = "1030181522222";
@@ -265,6 +265,27 @@ public class CMAC{
 			
 	}
 
+	//need to create UpdateResource   current ICD is not correct, must update the below 
+	@Test(dataProvider = "dp_resources", priority = 2, description = "380672 - Update Resource")
+	public void UpdateResource(String RetrieveURL, String OAuth_Token, String applicationUUID, String endpointUUIDs, String isCertified) {
+		String Response;
+		Response = CMAC_API_Endpoints.UpdateResource_API(RetrieveURL, OAuth_Token, applicationUUID, endpointUUIDs, isCertified);
+
+		String[] Response_Variables = {"transactionId", "output", "status", "SUCCESS"};
+		for(int i = 0; i < Response_Variables.length; i++) {
+			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
+		}
+		//now check that the project has been updated
+		Response = CMAC_API_Endpoints.RetrieveResource_API(RetrieveURL, OAuth_Token, applicationUUID);
+		
+		/*
+		assertThat(Response, containsString("\"applicationUUID\":\"" + applicationUUID));
+		assertThat(Response, containsString("\"projectName\":\"" + projectName));
+		assertThat(Response, containsString("\"latype\":\"" + latype));
+		assertThat(Response, containsString("\"laversion\":\"" + laversion));
+		assertThat(Response, containsString("\"latimeStamp\":\"" + latimeStamp));
+		*/
+	}
 	
 	
 	///////Helper Functions///////////////Condensed into single class
