@@ -17,7 +17,7 @@ public class Set_Environment {
 	   
 		@Test (priority = 0)//will run on data sent in XML to configure levels
 		@Parameters("Level")
-		public void testMethod(@Optional String Levels) {
+		public void SetEvironmentLevel(@Optional String Levels) {
 			if (Levels != null) {
 				ThreadLogger.LevelsToTest = Levels;
 			}

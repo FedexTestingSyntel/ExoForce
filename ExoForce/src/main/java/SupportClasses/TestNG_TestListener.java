@@ -1,8 +1,11 @@
 package SupportClasses;
 
 import java.util.ArrayList;    //The below needed for tracking the status of the tests.
+import java.util.Iterator;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import SupportClasses.ThreadLogger;
 import TestingFunctions.Helper_Functions;
@@ -37,6 +40,19 @@ public class TestNG_TestListener implements ITestListener{
 
     @Override
     public void onFinish(ITestContext arg0) {
+    	//This will remove the "NameOfSetEnvTest" method from the test results.
+    	//This is the method that sets the environment variable from XML and does not need to be reported.
+    	 Iterator<ITestResult> PassedTestCase = arg0.getPassedTests().getAllResults().iterator();
+    	 String NameOfSetEnvTest = "SetEvironmentLevel";
+         while (PassedTestCase.hasNext()) {
+             ITestResult EnvironmentTestCheck = PassedTestCase.next();
+             ITestNGMethod method = EnvironmentTestCheck.getMethod();
+             if (method.getMethodName().contentEquals(NameOfSetEnvTest)) {
+                 System.out.println("Removing:" + EnvironmentTestCheck.getTestClass().toString());
+                 PassedTestCase.remove();
+             }
+         }
+    	
     	Helper_Functions.PrintOut("\n\n", false);
 		
 		for (int i = 0 ; i < ThreadLogger.ThreadLog.size(); i++) {

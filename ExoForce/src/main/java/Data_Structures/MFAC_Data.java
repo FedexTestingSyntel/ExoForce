@@ -111,7 +111,11 @@ public class MFAC_Data {
 			DC.AddressVelocityThreshold = 10;
 			break;
 		}
-		DC.OAuth_Token = General_API_Calls.getAuthToken(DC.OAuth_Token_URL, DC.OAuth_Token_Client_ID , DC.OAuth_Token_Client_Secret);
+		//generate the OAuthToken, please note that this is not valid on L1 as API calls cannot be used on that level
+		if (!Level.contentEquals("1")) {
+			DC.OAuth_Token = General_API_Calls.getAuthToken(DC.OAuth_Token_URL, DC.OAuth_Token_Client_ID , DC.OAuth_Token_Client_Secret);
+		}
+		
 		
 		return DC;
 	}

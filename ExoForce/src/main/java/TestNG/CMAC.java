@@ -186,7 +186,7 @@ public class CMAC{
 	}
 	
 	//Resources
-	@Test(dataProvider = "dp_resources", priority = 2, dependsOnMethods = "CreateProject", description = "380557")
+	//@Test(dataProvider = "dp_resources", priority = 2, dependsOnMethods = "CreateProject", description = "380557")
 	public void CreateResource(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs, String isCertified) {
 		String Response = "";
 		
