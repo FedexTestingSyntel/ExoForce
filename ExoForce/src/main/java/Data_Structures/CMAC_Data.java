@@ -1,9 +1,8 @@
 package Data_Structures;
 
-import API_Calls.General_API_Calls;
-
 public class CMAC_Data {
 	
+	//general variables for validation
 	public String Level = "";
 	public String OAuth_Token_URL = "";
 	public String OAuth_Token_Client_ID = "";
@@ -24,6 +23,7 @@ public class CMAC_Data {
 		CMAC_Data DC = new CMAC_Data();
 		DC.Level = Level;
 		
+		//get the domain section of the different end points.
 		String LevelIdentifier[] = null;
   		switch (Level) {
   		case "1":
@@ -37,14 +37,11 @@ public class CMAC_Data {
   		case "5":
   			LevelIdentifier = new String[] {"", ""}; break;
   		case "6":
-  			//L6 is not valid for direct URL
   			LevelIdentifier = new String[] {"", ""}; break;
   		case "7":
-  			//L7 is not valid for direct URL
   			LevelIdentifier = new String[] {"", ""}; break;
 		}
   		
-  		//Load the PCF calls
   		//Project
 		DC.Create_Project_URL = LevelIdentifier[0] + "/cmac/v3/projects";
 		DC.Retrieve_Project_URL = LevelIdentifier[0] + "/cmac/v3/projects/{UUID}";
@@ -56,7 +53,8 @@ public class CMAC_Data {
 		DC.Update_Resource_URL = LevelIdentifier[0] + "/cmac/v3/updateResource";
 		DC.Delete_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources/{applicationUUID}";
 		
-		switch (Level) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
+		//Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
+		switch (Level) {
 		case "1":
 			DC.OAuth_Token_Client_ID = "";
 			DC.OAuth_Token_Client_Secret ="";
