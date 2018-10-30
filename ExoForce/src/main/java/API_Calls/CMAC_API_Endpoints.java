@@ -20,7 +20,7 @@ public class CMAC_API_Endpoints{
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
 
 			JSONObject MainBody = new JSONObject()
-					.put("orgUUID", organizationUUID)
+					.put("organizationUUID", organizationUUID)// updated from orgUUID to OrganizationUUID on 10-30-18
 					.put("applicationUUID", applicationUUID)
 					.put("latimeStamp", latimeStamp) 
 					.put("latype", latype) 
@@ -99,7 +99,7 @@ public class CMAC_API_Endpoints{
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
 			
 			JSONObject MainBody = new JSONObject()
-					.put("orgUUID", organizationUUID)
+					.put("organizationUUID", organizationUUID)
 					.put("applicationUUID", applicationUUID)
 					.put("projectName", projectName)
 					.put("latimeStamp", latimeStamp)
@@ -124,7 +124,7 @@ public class CMAC_API_Endpoints{
 	}
 
 	//not yet validated
-	public static String CreateResource_API(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs, String isCertified){
+	public static String CreateResource_API(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified){
 		String Request = "";
 		
 		try{
@@ -156,7 +156,6 @@ public class CMAC_API_Endpoints{
 
 	}
 
-	//not yet updated
 	public static String DeleteResource_API(String URL, String OAuth_Token, String applicationUUID){
 		String Request = "";
 		try{
@@ -179,7 +178,6 @@ public class CMAC_API_Endpoints{
 
 	}
 
-	//not yet updated
 	public static String RetrieveResource_API(String URL, String OAuth_Token, String UUID){
 		String Request = "";
 		
@@ -190,16 +188,15 @@ public class CMAC_API_Endpoints{
 			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
 
 			String Response = General_API_Calls.HTTPCall(httpget, Request);
-			Helper_Functions.PrintOut("RetrieveProjectSummary Response : " + Response, true);
 			return Response;
 		}catch (Exception e){
 			e.printStackTrace();
 			return e.toString();
 		}
 		//Sample request:
-		
+		//<<Blank>>
 		//Sample response:
-
+		//{"transactionId":"a1d11c06-6f3e-4394-9873-f86f6bec46a3","output":{"resources":[{"endpointUUID":"Ship0Cre","applicationUUID":"1030181522224","isCertified":"true"}]}}
 	}
 
 	//not yet updated

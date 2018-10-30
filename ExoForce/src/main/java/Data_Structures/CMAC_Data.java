@@ -53,8 +53,8 @@ public class CMAC_Data {
 		//Resources
 		DC.Create_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources";
 		DC.Retrieve_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources/{UUID}";
-		DC.Update_Resource_URL = LevelIdentifier[0] + "";
-		DC.Delete_Resource_URL = LevelIdentifier[0] + "";
+		DC.Update_Resource_URL = LevelIdentifier[0] + "/cmac/v3/updateResource";
+		DC.Delete_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources/{applicationUUID}";
 		
 		switch (Level) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 		case "1":

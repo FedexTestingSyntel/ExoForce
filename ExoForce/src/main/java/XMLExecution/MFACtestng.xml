@@ -7,7 +7,7 @@
   
   
   <test thread-count="8" name="MFAC_Test" parallel="methods">
-  <parameter name="Level" value="123" />
+  <parameter name="Level" value="1" />
     <classes>
       <class name="SupportClasses.Set_Environment"/>
       <class name="TestNG.MFAC"/>
