@@ -80,10 +80,14 @@ public class General_API_Calls {
 			Response = e.getMessage() + e.getCause();
 			return e.getMessage() + e.getCause();
 		}finally {
-			Helper_Functions.PrintOut(MethodName + " URL: " + Request.toString(), true); //print out the URL that was used
-			Helper_Functions.PrintOut(MethodName + " Headers: " + RequestHeaders, true); //print out all of the headers
-			Helper_Functions.PrintOut(MethodName + " Request: " + Request_Body, true);//print out the request body
+			//print out the URL that was used
+			Helper_Functions.PrintOut(MethodName + " URL: " + Request.toString(), true); 
+			//print out all of the headers
+			Helper_Functions.PrintOut(MethodName + " Headers: " + RequestHeaders, true); 
+			//print out the request body
+			Helper_Functions.PrintOut(MethodName + " Request: " + Request_Body, true);
 			Helper_Functions.PrintOut(MethodName + " Response: " + Response, true);
+			//spaces, just added for format of the console.
 			System.out.println("");
 			lock.unlock();
 		} 
