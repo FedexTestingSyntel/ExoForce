@@ -25,7 +25,7 @@ public class CMAC{
 	static CMAC_Data DC[] = new CMAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
 	static ArrayList<String[]> ResourceList = new ArrayList<String[]>();//this is a list of when multiple resources are added. Will be initialized in before class.
 	static ArrayList<String> applicationUUIDToDelete = new ArrayList<String>();
-	static String organizationUUID = "10002";
+	static String organizationUUID = "10003";
 	
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
@@ -114,7 +114,7 @@ public class CMAC{
 		//add something here to test multiple projects
 	}
 	
-	@Test(dataProvider = "dp", priority = 2, dependsOnMethods = "CreateProject", description = "380579 - Details")   
+	@Test(dataProvider = "dp", priority = 2, description = "380579 - Details")   
 	public void RetrieveProjectDetails(String URL, String OAuth_Token, String applicationUUID) {
 		String Response = "";
 		

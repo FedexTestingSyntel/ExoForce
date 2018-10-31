@@ -136,9 +136,8 @@ public class CMAC_API_Endpoints{
 			JSONObject MainBody = new JSONObject()
 					.put("applicationUUID", applicationUUID)
 					.put("endpointUUIDs", endpointUUIDs) 
-					.put("isCertified", isCertified)    //not sure on this as the ICD lists as string but example shows boolean.
-					;
-						
+					.put("isCertified", isCertified);    //not sure on this as the ICD lists as string but example shows boolean.
+		
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);
 			httppost.setEntity(params);

@@ -137,6 +137,7 @@ public class MFAC{
 	    				if (ExpirationData.get(j)[0].contains("AdditionalEnrollmentExpiration")) {
 	    					data.add(ExpirationData.get(j));
 	    					ExpirationData.remove(j);
+	    					j--;
 	    				}
 	    			}
 	    			break;	
