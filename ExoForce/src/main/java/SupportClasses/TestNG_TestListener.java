@@ -56,7 +56,7 @@ public class TestNG_TestListener implements ITestListener{
     	Helper_Functions.PrintOut("\n\n", false);
 		
 		for (int i = 0 ; i < ThreadLogger.ThreadLog.size(); i++) {
-			Helper_Functions.PrintOut(i + ") " + ThreadLogger.ThreadLog.get(i), false);
+			Helper_Functions.PrintOut(i + 1 + ") " + ThreadLogger.ThreadLog.get(i), false);
 		}
 		
 		try {

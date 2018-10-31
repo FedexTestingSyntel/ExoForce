@@ -25,7 +25,7 @@ public class CMAC_Projects{
 	static CMAC_Data DC[] = new CMAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
 	static ArrayList<String[]> ResourceList = new ArrayList<String[]>();//this is a list of when multiple resources are added. Will be initialized in before class.
 	static ArrayList<String> applicationUUIDToDelete = new ArrayList<String>();
-	static String organizationUUID = "10003";
+	static String organizationUUID = "10004";
 	
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.

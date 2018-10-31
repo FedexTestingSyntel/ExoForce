@@ -84,6 +84,7 @@ public class General_API_Calls {
 			Helper_Functions.PrintOut(MethodName + " Headers: " + RequestHeaders, true); //print out all of the headers
 			Helper_Functions.PrintOut(MethodName + " Request: " + Request_Body, true);//print out the request body
 			Helper_Functions.PrintOut(MethodName + " Response: " + Response, true);
+			System.out.println("");
 			lock.unlock();
 		} 
 	}
