@@ -83,10 +83,10 @@ public class General_API_Calls {
 			//print out the URL that was used
 			Helper_Functions.PrintOut(MethodName + " URL: " + Request.toString(), true); 
 			//print out all of the headers
-			Helper_Functions.PrintOut(MethodName + " Headers: " + RequestHeaders, true); 
+			Helper_Functions.PrintOut(MethodName + " Headers: " + RequestHeaders, false); 
 			//print out the request body
-			Helper_Functions.PrintOut(MethodName + " Request: " + Request_Body, true);
-			Helper_Functions.PrintOut(MethodName + " Response: " + Response, true);
+			Helper_Functions.PrintOut(MethodName + " Request: " + Request_Body, false);
+			Helper_Functions.PrintOut(MethodName + " Response: " + Response, false);
 			//spaces, just added for format of the console.
 			System.out.println("");
 			lock.unlock();

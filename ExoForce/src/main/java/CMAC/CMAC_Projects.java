@@ -38,7 +38,7 @@ public class CMAC_Projects{
 	    	CMAC_Data CMAC_D = CMAC_Data.LoadVariables(strLevel);
 	    	
 			ArrayList<String> applicationUUIDs = GetAll_ApplicationUUID(CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID);
-			String applicationUUID, ProjectName, laType = "propreitary", laVersion = "2", laTimeStamp;
+			String applicationUUID, ProjectName, laType= "propreitary", laVersion= "2", laTimeStamp;
 			switch (m.getName()) { //Based on the method that is being called the array list will be populated.
 			case "CreateProject":
 				for(int j = 1; j < 5; j++) {
@@ -103,7 +103,7 @@ public class CMAC_Projects{
 		
 		//if the organization contains projects check the variables returned.
 		if (!Response.contains("\"output\":{}")) {
-			String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "laType ", "laVersion ", "laTimeStamp"};
+			String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "laType", "laVersion", "laTimeStamp"};
 			for(int i = 0; i < Response_Variables.length; i++) {
 				assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 			}
@@ -117,7 +117,7 @@ public class CMAC_Projects{
 		String Response = "";
 		Response = CMAC_API_Endpoints.RetrieveProject_API(URL, OAuth_Token, applicationUUID);
 
-		String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "laType ", "laVersion ", "laTimeStamp"};
+		String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "laType", "laVersion", "laTimeStamp"};
 		for(int i = 0; i < Response_Variables.length; i++) {
 			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 		}

@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 public class CMAC_API_Endpoints{
 	
-	public static String CreateProject_API(String URL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String latype, String laversion, String latimeStamp){
+	public static String CreateProject_API(String URL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String laType, String laVersion, String laTimeStamp){
 		String Request = "";
 		
 		try{
@@ -21,9 +21,9 @@ public class CMAC_API_Endpoints{
 			JSONObject MainBody = new JSONObject()
 					.put("organizationUUID", organizationUUID)// updated from orgUUID to OrganizationUUID on 10-30-18
 					.put("applicationUUID", applicationUUID)
-					.put("latimeStamp", latimeStamp) 
-					.put("latype", latype) 
-					.put("laversion", laversion) 
+					.put("laTimeStamp", laTimeStamp) 
+					.put("laType", laType) 
+					.put("laVersion", laVersion) 
 					.put("projectName", projectName) ;
 						
 			Request = MainBody.toString();
@@ -88,7 +88,7 @@ public class CMAC_API_Endpoints{
 
 	}
 	
-	public static String UpdateProject_API(String URL, String OAuth_Token, String organizationUUID, String applicationUUID, String latimeStamp, String latype, String laversion, String projectName){
+	public static String UpdateProject_API(String URL, String OAuth_Token, String organizationUUID, String applicationUUID, String laTimeStamp, String laType, String laVersion, String projectName){
 		String Request = "";
 		
 		try{
@@ -101,9 +101,9 @@ public class CMAC_API_Endpoints{
 					.put("organizationUUID", organizationUUID)
 					.put("applicationUUID", applicationUUID)
 					.put("projectName", projectName)
-					.put("latimeStamp", latimeStamp)
-					.put("latype", latype)
-					.put("laversion", laversion);
+					.put("laTimeStamp", laTimeStamp)
+					.put("laType", laType)
+					.put("laVersion", laVersion);
 			
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);
@@ -254,7 +254,4 @@ public class CMAC_API_Endpoints{
 		//Sample response:
 
 	}
-
-
-
 }

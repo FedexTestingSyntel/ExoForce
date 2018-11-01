@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>CMAC_Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/13/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>17/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 31 22:05:17 CDT 2018</td>
+<td>Started on:</td><td>Thu Nov 01 10:21:57 CDT 2018</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3609 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2423 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,547 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205191, Proj_Creation1 103118T220519, propreitary, 2, 10-31-18 22:05:19:108</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;e6e050da-2524-4b5d-9d67-af5de1f3a1c0&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Creation1 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace322073075", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace322073075'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;e6e050da-2524-4b5d-9d67-af5de1f3a1c0&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Creation1 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205193, Proj_Creation3 103118T220519, propreitary, 2, 10-31-18 22:05:19:109</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;017c69bb-b952-4a8e-875c-b702c753a3a3&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Creation3 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2074335519", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2074335519'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;017c69bb-b952-4a8e-875c-b702c753a3a3&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Creation3 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205192, Proj_Creation2 103118T220519, propreitary, 2, 10-31-18 22:05:19:109</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;8bb9b350-beca-4f5c-857b-809d90080373&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Creation2 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace147097177", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace147097177'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;8bb9b350-beca-4f5c-857b-809d90080373&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Creation2 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205194, Proj_Creation4 103118T220519, propreitary, 2, 10-31-18 22:05:19:109</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;3dfe1f27-30d4-41f0-885d-44c9842b17f5&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Creation4 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace32437274", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace32437274'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;3dfe1f27-30d4-41f0-885d-44c9842b17f5&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Creation4 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1031182205191</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;b684ea66-e131-49bc-8d18-85031ac8aaef&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Creation1 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1616324132", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1616324132'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;b684ea66-e131-49bc-8d18-85031ac8aaef&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Creation1 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1031182205193</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;dbe8cb42-6c98-4761-b4de-b5acdd64a9a2&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Creation3 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace445475761", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace445475761'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;dbe8cb42-6c98-4761-b4de-b5acdd64a9a2&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Creation3 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1031182205192</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;796251b4-8a7b-4b1d-a718-74cd3fde12d5&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Creation2 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2018751330", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2018751330'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;796251b4-8a7b-4b1d-a718-74cd3fde12d5&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Creation2 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1031182205194</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;a1b29f10-cd7d-4a0d-bbc0-3bccb3e71953&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Creation4 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace643362581", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace643362581'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;a1b29f10-cd7d-4a0d-bbc0-3bccb3e71953&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Creation4 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.RetrieveProjectSummary()'><b>RetrieveProjectSummary</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Summery<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;7979659c-f18f-4464-a625-e9bb92958466&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Creation1 103118T220519&quot;},{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Creation3 103118T220519&quot;},{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Creation2 103118T220519&quot;},{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Creation4 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectSummary(CMAC_Projects.java:108)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace582667622", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace582667622'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;laType &quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;7979659c-f18f-4464-a625-e9bb92958466&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Creation1 103118T220519&quot;},{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Creation3 103118T220519&quot;},{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Creation2 103118T220519&quot;},{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Creation4 103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.RetrieveProjectSummary(CMAC_Projects.java:108)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205192, Proj_Updated103118T220519, 10-31-18 22:05:19:737, propreitary, 2</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;5f468110-f2d9-45d3-93fe-9f672473363f&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1953285579", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1953285579'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;5f468110-f2d9-45d3-93fe-9f672473363f&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205192&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205191, Proj_Updated103118T220519, 10-31-18 22:05:19:733, propreitary, 2</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;d4997c78-ec60-40e5-8969-04ba7d028662&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1877848185", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1877848185'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;d4997c78-ec60-40e5-8969-04ba7d028662&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205191&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205193, Proj_Updated103118T220519, 10-31-18 22:05:19:733, propreitary, 2</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;51810092-2c4b-4de0-8391-dbdb74b163b1&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace209059799", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace209059799'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;51810092-2c4b-4de0-8391-dbdb74b163b1&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205193&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-<tr>
-<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1031182205194, Proj_Updated103118T220519, 10-31-18 22:05:19:737, propreitary, 2</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;94ddadb0-22aa-47cd-b34b-6a1357eb594f&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1148491599", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1148491599'><pre>java.lang.AssertionError: 
-Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot;
-     but: was &quot;{&quot;transactionId&quot;:&quot;94ddadb0-22aa-47cd-b34b-6a1357eb594f&quot;,&quot;output&quot;:{&quot;projects&quot;:[{&quot;organizationUUID&quot;:&quot;20000&quot;,&quot;applicationUUID&quot;:&quot;1031182205194&quot;,&quot;projectName&quot;:&quot;Proj_Updated103118T220519&quot;}]}}&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.junit.Assert.assertThat(Assert.java:956)
-	at org.junit.Assert.assertThat(Assert.java:923)
-	at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -616,22 +75,67 @@ Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1031182205191</td>
+<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021593, Proj_Creation3 110118T102159, propreitary, 2, 11-01-18 10:21:59:330</td>
 <td></td>
 <td>0</td>
 <td>CMAC.CMAC_Projects@5f71c76a</td></tr>
 <tr>
-<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1031182205192</td>
+<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021591, Proj_Creation1 110118T102159, propreitary, 2, 11-01-18 10:21:59:328</td>
 <td></td>
 <td>0</td>
 <td>CMAC.CMAC_Projects@5f71c76a</td></tr>
 <tr>
-<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1031182205193</td>
+<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021592, Proj_Creation2 110118T102159, propreitary, 2, 11-01-18 10:21:59:329</td>
 <td></td>
 <td>0</td>
 <td>CMAC.CMAC_Projects@5f71c76a</td></tr>
 <tr>
-<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1031182205194</td>
+<td title='CMAC.CMAC_Projects.CreateProject()'><b>CreateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380527<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021594, Proj_Creation4 110118T102159, propreitary, 2, 11-01-18 10:21:59:331</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1101181021594</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1101181021592</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1101181021591</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.DeleteProject()'><b>DeleteProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380687<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}, , 1101181021593</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1101181021591</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1101181021592</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1101181021593</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.RetrieveProjectDetails()'><b>RetrieveProjectDetails</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Details<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 1101181021594</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.RetrieveProjectSummary()'><b>RetrieveProjectSummary</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380579 - Summery<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000</td>
 <td></td>
 <td>0</td>
 <td>CMAC.CMAC_Projects@5f71c76a</td></tr>
@@ -640,6 +144,26 @@ Expected: a string containing &quot;\&quot;laType\&quot;:\&quot;propreitary&quot
 <td></td>
 <td>0</td>
 <td>SupportClasses.Set_Environment@27fe3806</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021592, Proj_Updated110118T102159, 11-01-18 10:21:59:497, propreitary, 2</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021594, Proj_Updated110118T102159, 11-01-18 10:21:59:498, propreitary, 2</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021593, Proj_Updated110118T102159, 11-01-18 10:21:59:497, propreitary, 2</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
+<tr>
+<td title='CMAC.CMAC_Projects.UpdateProject()'><b>UpdateProject</b><br>Test class: CMAC.CMAC_Projects<br>Test method: 380670<br>Parameters: https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject, https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}, , 20000, 1101181021591, Proj_Updated110118T102159, 11-01-18 10:21:59:496, propreitary, 2</td>
+<td></td>
+<td>0</td>
+<td>CMAC.CMAC_Projects@5f71c76a</td></tr>
 </table><p>
 </body>
 </html>

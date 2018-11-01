@@ -21,7 +21,7 @@ public class CMAC_Resources{
 	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
 	static ArrayList<String[]> ResourceList = new ArrayList<String[]>();//this is a list of when multiple resources are added. Will be initialized in before class.
 	static ArrayList<String> applicationUUIDToDelete = new ArrayList<String>();
-	static String organizationUUID = "30000";
+	static String organizationUUID = "30001";
 	
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
@@ -99,7 +99,7 @@ public class CMAC_Resources{
 		//add something here to test multiple resources, or no resources
 	}
 
-	@Test(dataProvider = "dp_resources", priority = 3, dependsOnMethods = "CreateResource", description = "380692 - Delete Resource")   ///, dependsOnMethods = "CreateResource"
+	@Test(dataProvider = "dp_resources", priority = 3, description = "380692 - Delete Resource")   ///, dependsOnMethods = "CreateResource"
 	public void DeleteResource(String URL, String OAuth_Token, String applicationUUID) {
 		String Response;
 		Response = CMAC_API_Endpoints.DeleteResource_API(URL, OAuth_Token, applicationUUID);

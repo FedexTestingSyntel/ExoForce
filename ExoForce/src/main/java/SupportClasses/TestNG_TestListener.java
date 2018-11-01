@@ -58,14 +58,21 @@ public class TestNG_TestListener implements ITestListener{
              }
          }catch(Exception e) {}
 
-    			
+        Helper_Functions.PrintOut("Passed Scenarios", false);
+ 		PassedTestCase = arg0.getPassedTests().getAllResults().iterator();
+        while (PassedTestCase.hasNext()) {
+             ITestResult Test = PassedTestCase.next();
+             Helper_Functions.PrintOut(Test.getAttribute("ExecutionLog").toString(), false);
+         }
+        Helper_Functions.PrintOut("\nFailed Scenarios", false);
+        Iterator<ITestResult> FailedTestCase = arg0.getFailedTests().getAllResults().iterator();
+        while (FailedTestCase.hasNext()) {
+             ITestResult Test = FailedTestCase.next();
+             Helper_Functions.PrintOut(Test.getAttribute("ExecutionLog").toString(), false);
+         }
+         
+    		
 		try {
-			Helper_Functions.PrintOut("\n\n", false);
-		
-			for (int i = 0 ; i < ThreadLogger.ThreadLog.size(); i++) {
-				Helper_Functions.PrintOut(i + 1 + ") " + ThreadLogger.ThreadLog.get(i), false);
-			}
-			
 			Helper_Functions.MoveOldLogs();
 		} catch (Exception e) {}
     }
