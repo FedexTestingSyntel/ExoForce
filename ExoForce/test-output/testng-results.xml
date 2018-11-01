@@ -1,21 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="8" passed="4">
+<testng-results skipped="0" failed="13" ignored="0" total="17" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1606" started-at="2018-10-31T14:52:01Z" finished-at="2018-10-31T14:52:02Z">
+  <suite name="CMAC_Suite" duration-ms="3609" started-at="2018-11-01T03:05:17Z" finished-at="2018-11-01T03:05:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1606" started-at="2018-10-31T14:52:01Z" finished-at="2018-10-31T14:52:02Z">
+    <test name="CMAC_Test" duration-ms="3609" started-at="2018-11-01T03:05:17Z" finished-at="2018-11-01T03:05:21Z">
       <class name="CMAC.CMAC_Projects">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:CMAC.CMAC_Projects@2698dc7]" name="beforeClass" is-config="true" duration-ms="46" started-at="2018-10-31T14:52:01Z" finished-at="2018-10-31T14:52:01Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:CMAC.CMAC_Projects@5f71c76a]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-01T03:05:17Z" finished-at="2018-11-01T03:05:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@2698dc7]" name="CreateProject" duration-ms="1367" started-at="2018-10-31T14:52:01Z" description="380527" data-provider="dp" finished-at="2018-10-31T14:52:02Z">
+        <test-method status="FAIL" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@5f71c76a]" name="CreateProject" duration-ms="284" started-at="2018-11-01T03:05:19Z" description="380527" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205191]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Creation1 103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[10-31-18 22:05:19:108]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"e6e050da-2524-4b5d-9d67-af5de1f3a1c0","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Creation1 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"e6e050da-2524-4b5d-9d67-af5de1f3a1c0","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Creation1 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateProject -->
+        <test-method status="FAIL" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@5f71c76a]" name="CreateProject" duration-ms="472" started-at="2018-11-01T03:05:19Z" description="380527" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205194]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Creation4 103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[10-31-18 22:05:19:109]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"3dfe1f27-30d4-41f0-885d-44c9842b17f5","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Creation4 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"3dfe1f27-30d4-41f0-885d-44c9842b17f5","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Creation4 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateProject -->
+        <test-method status="FAIL" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@5f71c76a]" name="CreateProject" duration-ms="328" started-at="2018-11-01T03:05:19Z" description="380527" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205193]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Creation3 103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[10-31-18 22:05:19:109]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"017c69bb-b952-4a8e-875c-b702c753a3a3","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Creation3 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"017c69bb-b952-4a8e-875c-b702c753a3a3","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Creation3 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateProject -->
+        <test-method status="FAIL" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@5f71c76a]" name="CreateProject" duration-ms="376" started-at="2018-11-01T03:05:19Z" description="380527" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205192]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Creation2 103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[10-31-18 22:05:19:109]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"8bb9b350-beca-4f5c-857b-809d90080373","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Creation2 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"8bb9b350-beca-4f5c-857b-809d90080373","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Creation2 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.CreateProject(CMAC_Projects.java:93)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateProject -->
+        <test-method status="FAIL" signature="RetrieveProjectDetails(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="RetrieveProjectDetails" duration-ms="152" started-at="2018-11-01T03:05:19Z" description="380579 - Details" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
               </value>
             </param>
             <param index="1">
@@ -25,43 +357,50 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[10003]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1031180952013]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Proj_Creation3 103118T095201]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[propreitary]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[10-31-18 09:52:01:381]]>
+                <![CDATA[1031182205191]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "laType "
+     but: was "{"transactionId":"b684ea66-e131-49bc-8d18-85031ac8aaef","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Creation1 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "laType "
+     but: was "{"transactionId":"b684ea66-e131-49bc-8d18-85031ac8aaef","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Creation1 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateProject -->
-        <test-method status="PASS" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@2698dc7]" name="CreateProject" duration-ms="1367" started-at="2018-10-31T14:52:01Z" description="380527" data-provider="dp" finished-at="2018-10-31T14:52:02Z">
+        </test-method> <!-- RetrieveProjectDetails -->
+        <test-method status="FAIL" signature="RetrieveProjectDetails(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="RetrieveProjectDetails" duration-ms="196" started-at="2018-11-01T03:05:19Z" description="380579 - Details" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
               </value>
             </param>
             <param index="1">
@@ -71,43 +410,50 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[10003]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1031180952014]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Proj_Creation4 103118T095201]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[propreitary]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[10-31-18 09:52:01:381]]>
+                <![CDATA[1031182205193]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "laType "
+     but: was "{"transactionId":"dbe8cb42-6c98-4761-b4de-b5acdd64a9a2","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Creation3 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "laType "
+     but: was "{"transactionId":"dbe8cb42-6c98-4761-b4de-b5acdd64a9a2","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Creation3 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateProject -->
-        <test-method status="PASS" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@2698dc7]" name="CreateProject" duration-ms="1400" started-at="2018-10-31T14:52:01Z" description="380527" data-provider="dp" finished-at="2018-10-31T14:52:02Z">
+        </test-method> <!-- RetrieveProjectDetails -->
+        <test-method status="FAIL" signature="RetrieveProjectDetails(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="RetrieveProjectDetails" duration-ms="292" started-at="2018-11-01T03:05:19Z" description="380579 - Details" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
               </value>
             </param>
             <param index="1">
@@ -117,43 +463,50 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[10003]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1031180952011]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Proj_Creation1 103118T095201]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[propreitary]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[10-31-18 09:52:01:381]]>
+                <![CDATA[1031182205194]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "laType "
+     but: was "{"transactionId":"a1b29f10-cd7d-4a0d-bbc0-3bccb3e71953","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Creation4 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "laType "
+     but: was "{"transactionId":"a1b29f10-cd7d-4a0d-bbc0-3bccb3e71953","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Creation4 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateProject -->
-        <test-method status="PASS" signature="CreateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:CMAC.CMAC_Projects@2698dc7]" name="CreateProject" duration-ms="1373" started-at="2018-10-31T14:52:01Z" description="380527" data-provider="dp" finished-at="2018-10-31T14:52:02Z">
+        </test-method> <!-- RetrieveProjectDetails -->
+        <test-method status="FAIL" signature="RetrieveProjectDetails(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="RetrieveProjectDetails" duration-ms="240" started-at="2018-11-01T03:05:19Z" description="380579 - Details" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects]]>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
               </value>
             </param>
             <param index="1">
@@ -163,39 +516,515 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[10003]]>
+                <![CDATA[1031182205192]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "laType "
+     but: was "{"transactionId":"796251b4-8a7b-4b1d-a718-74cd3fde12d5","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Creation2 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "laType "
+     but: was "{"transactionId":"796251b4-8a7b-4b1d-a718-74cd3fde12d5","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Creation2 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.RetrieveProjectDetails(CMAC_Projects.java:122)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RetrieveProjectDetails -->
+        <test-method status="FAIL" signature="RetrieveProjectSummary(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="RetrieveProjectSummary" duration-ms="296" started-at="2018-11-01T03:05:19Z" description="380579 - Summery" data-provider="dp" finished-at="2018-11-01T03:05:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "laType "
+     but: was "{"transactionId":"7979659c-f18f-4464-a625-e9bb92958466","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Creation1 103118T220519"},{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Creation3 103118T220519"},{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Creation2 103118T220519"},{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Creation4 103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "laType "
+     but: was "{"transactionId":"7979659c-f18f-4464-a625-e9bb92958466","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Creation1 103118T220519"},{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Creation3 103118T220519"},{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Creation2 103118T220519"},{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Creation4 103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.RetrieveProjectSummary(CMAC_Projects.java:108)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RetrieveProjectSummary -->
+        <test-method status="FAIL" signature="UpdateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="UpdateProject" duration-ms="538" started-at="2018-11-01T03:05:19Z" description="380670" data-provider="dp" finished-at="2018-11-01T03:05:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[1031180952012]]>
+                <![CDATA[20000]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Proj_Creation2 103118T095201]]>
+                <![CDATA[1031182205191]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[propreitary]]>
+                <![CDATA[Proj_Updated103118T220519]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[10-31-18 22:05:19:733]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[10-31-18 09:52:01:381]]>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"d4997c78-ec60-40e5-8969-04ba7d028662","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Updated103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"d4997c78-ec60-40e5-8969-04ba7d028662","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205191","projectName":"Proj_Updated103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateProject -->
+        <test-method status="FAIL" signature="UpdateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="UpdateProject" duration-ms="674" started-at="2018-11-01T03:05:19Z" description="380670" data-provider="dp" finished-at="2018-11-01T03:05:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205193]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Updated103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[10-31-18 22:05:19:733]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"51810092-2c4b-4de0-8391-dbdb74b163b1","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Updated103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"51810092-2c4b-4de0-8391-dbdb74b163b1","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205193","projectName":"Proj_Updated103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateProject -->
+        <test-method status="FAIL" signature="UpdateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="UpdateProject" duration-ms="486" started-at="2018-11-01T03:05:19Z" description="380670" data-provider="dp" finished-at="2018-11-01T03:05:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205192]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Updated103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[10-31-18 22:05:19:737]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"5f468110-f2d9-45d3-93fe-9f672473363f","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Updated103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"5f468110-f2d9-45d3-93fe-9f672473363f","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205192","projectName":"Proj_Updated103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateProject -->
+        <test-method status="FAIL" signature="UpdateProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:CMAC.CMAC_Projects@5f71c76a]" name="UpdateProject" duration-ms="726" started-at="2018-11-01T03:05:19Z" description="380670" data-provider="dp" finished-at="2018-11-01T03:05:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/updateProject]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{UUID}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1031182205194]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Proj_Updated103118T220519]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[10-31-18 22:05:19:737]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[propreitary]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"94ddadb0-22aa-47cd-b34b-6a1357eb594f","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Updated103118T220519"}]}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: a string containing "\"laType\":\"propreitary"
+     but: was "{"transactionId":"94ddadb0-22aa-47cd-b34b-6a1357eb594f","output":{"projects":[{"organizationUUID":"20000","applicationUUID":"1031182205194","projectName":"Proj_Updated103118T220519"}]}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at CMAC.CMAC_Projects.UpdateProject(CMAC_Projects.java:140)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateProject -->
+        <test-method status="PASS" signature="DeleteProject(java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:CMAC.CMAC_Projects@5f71c76a]" name="DeleteProject" duration-ms="614" started-at="2018-11-01T03:05:20Z" description="380687" data-provider="dp" finished-at="2018-11-01T03:05:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1031182205192]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateProject -->
+        </test-method> <!-- DeleteProject -->
+        <test-method status="PASS" signature="DeleteProject(java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:CMAC.CMAC_Projects@5f71c76a]" name="DeleteProject" duration-ms="132" started-at="2018-11-01T03:05:20Z" description="380687" data-provider="dp" finished-at="2018-11-01T03:05:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1031182205191]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteProject -->
+        <test-method status="PASS" signature="DeleteProject(java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:CMAC.CMAC_Projects@5f71c76a]" name="DeleteProject" duration-ms="755" started-at="2018-11-01T03:05:20Z" description="380687" data-provider="dp" finished-at="2018-11-01T03:05:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1031182205193]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteProject -->
+        <test-method status="PASS" signature="DeleteProject(java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:CMAC.CMAC_Projects@5f71c76a]" name="DeleteProject" duration-ms="915" started-at="2018-11-01T03:05:20Z" description="380687" data-provider="dp" finished-at="2018-11-01T03:05:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://cmac-dev.app.wtcdev2.paas.fedex.com/cmac/v3/projects/{applicationUUID}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1031182205194]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteProject -->
       </class> <!-- CMAC.CMAC_Projects -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- CMAC_Test -->
+  </suite> <!-- CMAC_Suite -->
 </testng-results>

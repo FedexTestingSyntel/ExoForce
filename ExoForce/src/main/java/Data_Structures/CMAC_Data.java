@@ -1,5 +1,7 @@
 package Data_Structures;
 
+import API_Calls.General_API_Calls;
+
 public class CMAC_Data {
 	
 	//general variables for validation
@@ -18,8 +20,17 @@ public class CMAC_Data {
 	public String Retrieve_Resource_URL = "";
 	public String Update_Resource_URL = "";
 	public String Delete_Resource_URL = "";
-
+	
+	//Stores the data for each individual level
+	private static CMAC_Data DataClass[] = new CMAC_Data[8];
+		
 	public static CMAC_Data LoadVariables(String Level){
+		int intLevel = Integer.parseInt(Level);
+		//if the level details were already loaded then return detail.
+		if (DataClass[intLevel] != null) {
+			return DataClass[intLevel];
+		}
+		
 		CMAC_Data DC = new CMAC_Data();
 		DC.Level = Level;
 		
@@ -85,7 +96,11 @@ public class CMAC_Data {
 			break;
 		}
 		
-		//DC.OAuth_Token = General_API_Calls.getAuthToken(DC.OAuth_Token_URL, DC.OAuth_Token_Client_ID , DC.OAuth_Token_Client_Secret);
+		if (DC.OAuth_Token_Client_ID != "") {
+			DC.OAuth_Token = General_API_Calls.getAuthToken(DC.OAuth_Token_URL, DC.OAuth_Token_Client_ID , DC.OAuth_Token_Client_Secret);
+		}
+		
+		DataClass[intLevel] = DC;
 		
 		return DC;
 	}

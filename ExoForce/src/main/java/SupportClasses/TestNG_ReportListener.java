@@ -202,11 +202,12 @@ public class TestNG_ReportListener implements IReporter {
 	private String convertDeltaTimeToString(long deltaTime){
 		StringBuffer retBuf = new StringBuffer();
 		
-		long milli = deltaTime;
-		long seconds = deltaTime / 1000;
-		long minutes = seconds / 60;
-		long hours = minutes / 60;
-		retBuf.append(hours + ":" + minutes + ":" + seconds + ":" + milli);
+		long milli = deltaTime/ 1000;
+		long seconds = (deltaTime / 1000) % 60 ;
+		long minutes = (deltaTime / (1000 * 60)) % 60;
+		long hours   = (deltaTime / (1000 * 60* 60)) % 24;
+		
+		retBuf.append(String.format("%02d : %02d : %02d : %03d", hours, minutes, seconds, milli));
 		
 		return retBuf.toString();
 	}
@@ -276,7 +277,7 @@ public class TestNG_ReportListener implements IReporter {
 			
 		for(ITestResult testResult : testResultSet){
 			StringBuffer sortingStrBuf = new StringBuffer();
-			String Application = "", testMethodName = "", startDateStr = "", executeTimeStr = "", paramStr = "", reporterMessage = "", exceptionMessage = "";
+			String Application = "", testMethodName = "", startDateStr = "", executeTimeStr = "", paramStr = "", reporterMessage = "";
 			
 			//Get Application name, should be the same as the tesitng class name
 			Application = testResult.getTestClass().getName();
@@ -315,7 +316,7 @@ public class TestNG_ReportListener implements IReporter {
 				PrintWriter pw = new PrintWriter(sw);
 				exception.printStackTrace(pw);
 				
-				exceptionMessage = sw.toString();
+				reporterMessage += "<br><br>" + sw.toString();
 			}
 			
 			sortingStrBuf.append("<tr bgcolor=" + color + ">");
@@ -332,8 +333,6 @@ public class TestNG_ReportListener implements IReporter {
 			sortingStrBuf.append("<td>" + paramStr + "</td>");
 			/* Add reporter message. */
 			sortingStrBuf.append("<td>" + reporterMessage + "</td>");
-			/* Add exception message. */
-			sortingStrBuf.append("<td>" + exceptionMessage + "</td>");;
 			
 			sortingStrBuf.append("</tr>");
 

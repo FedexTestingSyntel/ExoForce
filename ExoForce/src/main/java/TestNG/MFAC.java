@@ -26,94 +26,88 @@ import SupportClasses.Set_Environment;
 //@Listeners(SupportClasses.TestNG_ReportListener.class)
 
 public class MFAC{
-	static String LevelsToTest = "1"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
-	final boolean TestExpiration = true;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
-	
-	static MFAC_Data DC[] = new MFAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
+	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
+	public final boolean TestExpiration = false;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
 	static ArrayList<String[]> ExpirationData = new ArrayList<String[]>();
 	
 	@BeforeClass
-	public static void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
+	public static void beforeClass() {
 		Set_Environment.SetLevelsToTest(LevelsToTest);
-		for (int i=0; i< ThreadLogger.LevelsToTest.length(); i++) {
-			String strLevel = "" + ThreadLogger.LevelsToTest.charAt(i);
-			int intLevel = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level.
-			DC[intLevel] = MFAC_Data.LoadVariables(strLevel);
-		}
 	}
 	
 	@DataProvider (parallel = true) //make sure to add <suite name="..." data-provider-thread-count="12"> to the .xml for speed.
 	public static Iterator<Object[]> dp(Method m) {
 	    List<Object[]> data = new ArrayList<>();
 		
-		for (int i = 1; i < 8; i++) {
-			if (DC[i] != null) {
-				MFAC_Data c = DC[i];
-				switch (m.getName()) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
+	    for (int i = 0; i < ThreadLogger.LevelsToTest.length(); i++) {
+	    	String strLevel = "" + ThreadLogger.LevelsToTest.charAt(i);
+			MFAC_Data MFAC_D = MFAC_Data.LoadVariables(strLevel);
+			
+			switch (m.getName()) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 				case "AddressVelocity":
-					if (!c.Level.contentEquals("1")){
-						data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.AVelocityURL, c.AddressVelocityThreshold});
-						data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.AVelocityURL, c.AddressVelocityThreshold});
+					if (!MFAC_D.Level.contentEquals("1")){
+						data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AVelocityURL, MFAC_D.AddressVelocityThreshold});
+						data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AVelocityURL, MFAC_D.AddressVelocityThreshold});
 					}
-	    			if (!c.Level.contentEquals("6") && !c.Level.contentEquals("7")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.DVelocityURL, c.AddressVelocityThreshold});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.DVelocityURL, c.AddressVelocityThreshold});
+	    			if (!MFAC_D.Level.contentEquals("6") && !MFAC_D.Level.contentEquals("7")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DVelocityURL, MFAC_D.AddressVelocityThreshold});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DVelocityURL, MFAC_D.AddressVelocityThreshold});
 	    			}
 	    			break;
 	    		case "IssuePin":
-	    			if (!c.Level.contentEquals("1")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.AIssueURL});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.AIssueURL});
+	    			if (!MFAC_D.Level.contentEquals("1")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL});
 	    			}
-	    			if (!c.Level.contentEquals("6") && !c.Level.contentEquals("7")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.DIssueURL});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.DIssueURL});
+	    			if (!MFAC_D.Level.contentEquals("6") && !MFAC_D.Level.contentEquals("7")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DIssueURL});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DIssueURL});
 	    			}
 	    			break;
 	    		case "DetermineLockoutTime"://only need to test API call as this is a helper test to determine current lockouts set.
-	    			data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.AIssueURL});
-	    			data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.AIssueURL});
+	    			data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL});
+	    			data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL});
 	    			break;
 	    		case "IssuePinVelocity":
-	    			if (!c.Level.contentEquals("1")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.AIssueURL, c.PinVelocityThresholdPostcard});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.AIssueURL, c.PinVelocityThresholdPhone});
+	    			if (!MFAC_D.Level.contentEquals("1")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.PinVelocityThresholdPostcard});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.PinVelocityThresholdPhone});
 	    			}
-	    			if (!c.Level.contentEquals("6") && !c.Level.contentEquals("7")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.DIssueURL, c.PinVelocityThresholdPostcard});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.DIssueURL, c.PinVelocityThresholdPhone});
+	    			if (!MFAC_D.Level.contentEquals("6") && !MFAC_D.Level.contentEquals("7")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.PinVelocityThresholdPostcard});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.PinVelocityThresholdPhone});
 	    			}
 	    			break;
 	    		case "VerifyPinValid":
 	    		case "VerifyPinNoLongerValid":
 	    		case "IssuePinExpiration":
-	    			if (!c.Level.contentEquals("1")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.AIssueURL, c.AVerifyURL});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.AIssueURL, c.AVerifyURL});	
+	    			if (!MFAC_D.Level.contentEquals("1")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.AVerifyURL});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.AVerifyURL});	
 	    			}
-	    			if (!c.Level.contentEquals("6") && !c.Level.contentEquals("7")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.DIssueURL, c.DVerifyURL});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.DIssueURL, c.DVerifyURL});
+	    			if (!MFAC_D.Level.contentEquals("6") && !MFAC_D.Level.contentEquals("7")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.DVerifyURL});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.DVerifyURL});
 	    			}
 	    			break;
 	    		case "VerifyPinVelocity":
-	    			if (!c.Level.contentEquals("1")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.AIssueURL, c.AVerifyURL, c.PinVelocityThresholdPostcard});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.AIssueURL, c.AVerifyURL, c.PinVelocityThresholdPhone});
+	    			if (!MFAC_D.Level.contentEquals("1")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.AVerifyURL, MFAC_D.PinVelocityThresholdPostcard});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.AVerifyURL, MFAC_D.PinVelocityThresholdPhone});
 	    			}
-	    			if (!c.Level.contentEquals("6") && !c.Level.contentEquals("7")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OAuth_Token, c.DIssueURL, c.DVerifyURL, c.PinVelocityThresholdPostcard});
-	    				data.add(new Object[] {c.OrgPhone, c.OAuth_Token, c.DIssueURL, c.DVerifyURL, c.PinVelocityThresholdPhone});
+	    			if (!MFAC_D.Level.contentEquals("6") && !MFAC_D.Level.contentEquals("7")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.DVerifyURL, MFAC_D.PinVelocityThresholdPostcard});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.DVerifyURL, MFAC_D.PinVelocityThresholdPhone});
 	    			}
 	    			break;
 	    		case "AdditionalEnrollmentExpiration":
-	    			if (!c.Level.contentEquals("1")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OrgPhone, c.OAuth_Token, c.AIssueURL, c.AVerifyURL});
-	    				data.add(new Object[] {c.OrgPhone, c.OrgPostcard, c.OAuth_Token, c.AIssueURL, c.AVerifyURL});
+	    			if (!MFAC_D.Level.contentEquals("1")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.AVerifyURL});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL, MFAC_D.AVerifyURL});
 	    			}
-	    			if (!c.Level.contentEquals("6") && !c.Level.contentEquals("7")){
-	    				data.add(new Object[] {c.OrgPostcard, c.OrgPhone, c.OAuth_Token, c.DIssueURL, c.DVerifyURL});
-	    				data.add(new Object[] {c.OrgPhone, c.OrgPostcard, c.OAuth_Token, c.DIssueURL, c.DVerifyURL});
+	    			if (!MFAC_D.Level.contentEquals("6") && !MFAC_D.Level.contentEquals("7")){
+	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.DVerifyURL});
+	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DIssueURL, MFAC_D.DVerifyURL});
 	    			}
 	    			break;
 	    		case "IssuePinExpirationValidate":
@@ -141,8 +135,7 @@ public class MFAC{
 	    				}
 	    			}
 	    			break;	
-				}//end switch MethodName
-			}
+			}//end switch MethodName
 		}
 		return data.iterator();
 	}

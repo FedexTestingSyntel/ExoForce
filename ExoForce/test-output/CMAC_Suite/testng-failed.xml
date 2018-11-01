@@ -7,15 +7,15 @@
   <test thread-count="8" name="CMAC_Test(failed)" parallel="methods">
     <parameter name="Level" value="2"/>
     <classes>
-      <class name="TestNG.CMAC">
+      <class name="CMAC.CMAC_Projects">
         <methods>
-          <include name="CreateProject"/>
-          <include name="UpdateProject" invocation-numbers="0"/>
-          <include name="DeleteProject" invocation-numbers="0"/>
+          <include name="RetrieveProjectSummary" invocation-numbers="0"/>
+          <include name="CreateProject" invocation-numbers="0 2 1 3"/>
+          <include name="RetrieveProjectDetails" invocation-numbers="0 1 2 3"/>
+          <include name="UpdateProject" invocation-numbers="2 0 1 3"/>
           <include name="beforeClass"/>
-          <include name="RetrieveProjectDetails" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TestNG.CMAC -->
+      </class> <!-- CMAC.CMAC_Projects -->
     </classes>
   </test> <!-- CMAC_Test(failed) -->
 </suite> <!-- Failed suite [CMAC_Suite] -->

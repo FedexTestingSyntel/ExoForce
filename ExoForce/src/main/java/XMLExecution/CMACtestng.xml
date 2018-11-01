@@ -9,7 +9,8 @@
   <parameter name="Level" value="2" />
     <classes>
       <class name="SupportClasses.Set_Environment"/>
-      <class name="TestNG.CMAC"/>
+      <class name="CMAC.CMAC_Projects"/>
+      <class name="CMAC.CMAC_Resources"/>
     </classes>
   </test> <!-- CMAC_Test -->
 </suite> <!-- CMAC_Suite -->

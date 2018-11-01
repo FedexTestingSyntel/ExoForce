@@ -20,7 +20,17 @@ public class MFAC_Data {
 	public int PinVelocityThresholdPhone = 0;
 	public int AddressVelocityThreshold = 0;
 
+	//Stores the data for each individual level
+	private static MFAC_Data DataClass[] = new MFAC_Data[8];
+	
 	public static MFAC_Data LoadVariables(String Level){
+		int intLevel = Integer.parseInt(Level);
+		//if the level details were already loaded then return detail.
+		if (DataClass[intLevel] != null) {
+			return DataClass[intLevel];
+		}
+		
+		//since the level details have not been loaded load them.
 		MFAC_Data DC = new MFAC_Data();
 		DC.Level = Level;
 		
@@ -116,6 +126,7 @@ public class MFAC_Data {
 			DC.OAuth_Token = General_API_Calls.getAuthToken(DC.OAuth_Token_URL, DC.OAuth_Token_Client_ID , DC.OAuth_Token_Client_Secret);
 		}
 		
+		DataClass[intLevel] = DC;
 		
 		return DC;
 	}

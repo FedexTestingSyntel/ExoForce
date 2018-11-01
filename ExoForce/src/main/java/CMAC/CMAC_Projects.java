@@ -8,7 +8,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.StringTokenizer;
 import org.hamcrest.CoreMatchers;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -22,79 +21,78 @@ import SupportClasses.ThreadLogger;
 
 public class CMAC_Projects{
 	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
-	static CMAC_Data DC[] = new CMAC_Data[8];//Stores the data for each individual level, please see the before class function below for more details.
 	static ArrayList<String[]> ResourceList = new ArrayList<String[]>();//this is a list of when multiple resources are added. Will be initialized in before class.
-	static ArrayList<String> applicationUUIDToDelete = new ArrayList<String>();
-	static String organizationUUID = "10004";
+	static String organizationUUID = "20000";
 	
 	@BeforeClass
-	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
+	public void beforeClass() {
 		Set_Environment.SetLevelsToTest(LevelsToTest);
-		for (int i = 0; i < ThreadLogger.LevelsToTest.length(); i++) {
-			String strLevel = "" + ThreadLogger.LevelsToTest.charAt(i);
-			int intLevel = Integer.parseInt(ThreadLogger.LevelsToTest.charAt(i) + "");//the rows will correspond to the correct level.
-			DC[intLevel] = CMAC_Data.LoadVariables(strLevel);
-		}
 	}
 	
 	@DataProvider (parallel = true)
 	public Iterator<Object[]> dp(Method m) {
 	    List<Object[]> data = new ArrayList<>();
 	    
-		for (int i = 1; i < 8; i++) {
-			if (DC[i] != null) {
-				CMAC_Data c = DC[i];
-				
-				String applicationUUID, ProjectName, latype = "propreitary", laversion = "2", latimeStamp;
-				switch (m.getName()) { //Based on the method that is being called the array list will be populated.
-					case "CreateProject":
-						for(int j = 1; j < 5; j++) {
-							ProjectName = "Proj_Creation" + j + " " + Helper_Functions.CurrentDateTime();
-							latimeStamp = Helper_Functions.CurrentDateTime(true);
-							applicationUUID = Helper_Functions.CurrentDateTime().replace("T", "") + j;
-							data.add(new Object[] {c.Create_Project_URL, c.OAuth_Token, organizationUUID, applicationUUID, ProjectName, latype, laversion, latimeStamp});
-						}
-						break;
-					case "RetrieveProjectDetails":
-						//need to parse the applicationUUID and run multiple. Will try the application ids that were recently created.
-						for (String AppUUID: applicationUUIDToDelete) {
-							data.add( new Object[] {c.Retrieve_Project_URL, c.OAuth_Token, AppUUID});
-						}
-						break;
-					case "RetrieveProjectSummary":
-						data.add( new Object[] {c.Retrieve_Project_URL, c.OAuth_Token, organizationUUID});
-						break;
-					case "DeleteProject":
-						for(int j=0;j<applicationUUIDToDelete.size();j++) {
-							data.add( new Object[] {c.Delete_Project_URL, c.OAuth_Token, applicationUUIDToDelete.get(j)});
-						}
-						break;
-					case "UpdateProject":
-						for(int j=0;j<applicationUUIDToDelete.size();j++) {
-							ProjectName = "Proj_DEL_Updated" + Helper_Functions.CurrentDateTime();
-							latimeStamp = Helper_Functions.CurrentDateTime(true);
-							data.add( new Object[] {c.Update_Project_URL, c.Retrieve_Project_URL, c.OAuth_Token, organizationUUID, applicationUUIDToDelete.get(j), ProjectName, latimeStamp, latype, laversion});
-						}
-						break;
-				}//end switch MethodName
-			}	
+	    for (int i = 0; i < ThreadLogger.LevelsToTest.length(); i++) {
+	    	String strLevel = "" + ThreadLogger.LevelsToTest.charAt(i);
+	    	CMAC_Data CMAC_D = CMAC_Data.LoadVariables(strLevel);
+	    	
+			ArrayList<String> applicationUUIDs = GetAll_ApplicationUUID(CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID);
+			String applicationUUID, ProjectName, laType = "propreitary", laVersion = "2", laTimeStamp;
+			switch (m.getName()) { //Based on the method that is being called the array list will be populated.
+			case "CreateProject":
+				for(int j = 1; j < 5; j++) {
+					ProjectName = "Proj_Creation" + j + " " + Helper_Functions.CurrentDateTime();
+					laTimeStamp = Helper_Functions.CurrentDateTime(true);
+					applicationUUID = Helper_Functions.CurrentDateTime().replace("T", "") + j;
+					data.add(new Object[] {CMAC_D.Create_Project_URL, CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID, applicationUUID, ProjectName, laType, laVersion, laTimeStamp});
+				}
+				break;
+			case "RetrieveProjectDetails":
+				//need to parse the applicationUUID and run multiple. Will try the application ids that were recently created.
+				for (String AppUUID: applicationUUIDs) {
+					data.add( new Object[] {CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, AppUUID});
+				}
+				break;
+			case "RetrieveProjectSummary":
+				data.add( new Object[] {CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID});
+				break;
+			case "DeleteProject":
+				for(int j = 0; j < applicationUUIDs.size(); j++) {
+					data.add( new Object[] {CMAC_D.Delete_Project_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j)});
+				}
+				break;
+			case "UpdateProject":
+				for(int j=0;j<applicationUUIDs.size();j++) {
+					ProjectName = "Proj_Updated" + Helper_Functions.CurrentDateTime();
+					laTimeStamp = Helper_Functions.CurrentDateTime(true);
+					applicationUUID = applicationUUIDs.get(j);
+					data.add( new Object[] {CMAC_D.Update_Project_URL, CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID, applicationUUID, ProjectName, laTimeStamp, laType, laVersion});
+				}
+				break;
+			}//end switch MethodName
 		}
-			
 		return data.iterator();
 	}
 	
 	@Test(dataProvider = "dp", priority = 1, description = "380527")
-	public void CreateProject(String URL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String latype, String laversion, String latimeStamp) {
+	public void CreateProject(String Create_URL, String Retrieve_URL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String laType, String laVersion, String laTimeStamp) {
 		String Response = "";
 		
-		Response = CMAC_API_Endpoints.CreateProject_API(URL, OAuth_Token, organizationUUID, applicationUUID, projectName, latype, laversion, latimeStamp);
+		Response = CMAC_API_Endpoints.CreateProject_API(Create_URL, OAuth_Token, organizationUUID, applicationUUID, projectName, laType, laVersion, laTimeStamp);
 		String[] Response_Variables = {"transactionId", "output", "status"};
 		for(int i = 0; i < Response_Variables.length; i++) {
 			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 		}
 
-		//need to add a check here to see if there are any errors.
-		applicationUUIDToDelete.add(applicationUUID);//update this to store the applicationUUID of the created project. Will be deleted later as part of the delete tests.
+		//now check that the project has been create with same data that was sent
+		Response = CMAC_API_Endpoints.RetrieveProject_API(Retrieve_URL, OAuth_Token, applicationUUID);
+			
+		assertThat(Response, containsString("\"applicationUUID\":\"" + applicationUUID));
+		assertThat(Response, containsString("\"projectName\":\"" + projectName));
+		assertThat(Response, containsString("\"laType\":\"" + laType));
+		assertThat(Response, containsString("\"laVersion\":\"" + laVersion));
+		assertThat(Response, containsString("\"laTimeStamp\":\"" + laTimeStamp));
 	}
 	
 	@Test(dataProvider = "dp", priority = 2, description = "380579 - Summery")
@@ -105,7 +103,7 @@ public class CMAC_Projects{
 		
 		//if the organization contains projects check the variables returned.
 		if (!Response.contains("\"output\":{}")) {
-			String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "latype", "laversion", "latimeStamp"};
+			String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "laType ", "laVersion ", "laTimeStamp"};
 			for(int i = 0; i < Response_Variables.length; i++) {
 				assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 			}
@@ -114,22 +112,21 @@ public class CMAC_Projects{
 		//add something here to test multiple projects
 	}
 	
-	@Test(dataProvider = "dp", priority = 2, dependsOnMethods = "CreateProject", description = "380579 - Details")   
+	@Test(dataProvider = "dp", priority = 2, description = "380579 - Details")   
 	public void RetrieveProjectDetails(String URL, String OAuth_Token, String applicationUUID) {
 		String Response = "";
-		
 		Response = CMAC_API_Endpoints.RetrieveProject_API(URL, OAuth_Token, applicationUUID);
 
-		String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "orgUUID", "projectName", "latype", "laversion", "latimeStamp"};
+		String[] Response_Variables = {"transactionId", "output", "projects", "applicationUUID", "organizationUUID", "projectName", "laType ", "laVersion ", "laTimeStamp"};
 		for(int i = 0; i < Response_Variables.length; i++) {
 			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 		}
 	}
 
 	@Test(dataProvider = "dp", priority = 2, description = "380670")
-	public void UpdateProject(String URL, String RetrieveURL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String latimeStamp, String latype, String laversion) {
+	public void UpdateProject(String URL, String RetrieveURL, String OAuth_Token, String organizationUUID, String applicationUUID, String projectName, String laTimeStamp, String laType, String laVersion) {
 		String Response;
-		Response = CMAC_API_Endpoints.UpdateProject_API(URL, OAuth_Token, organizationUUID, applicationUUID, latimeStamp, latype, laversion, projectName);
+		Response = CMAC_API_Endpoints.UpdateProject_API(URL, OAuth_Token, organizationUUID, applicationUUID, laTimeStamp, laType, laVersion, projectName);
 
 		String[] Response_Variables = {"transactionId", "output", "status", "SUCCESS"};
 		for(int i = 0; i < Response_Variables.length; i++) {
@@ -140,12 +137,13 @@ public class CMAC_Projects{
 		
 		assertThat(Response, containsString("\"applicationUUID\":\"" + applicationUUID));
 		assertThat(Response, containsString("\"projectName\":\"" + projectName));
-		assertThat(Response, containsString("\"latype\":\"" + latype));
-		assertThat(Response, containsString("\"laversion\":\"" + laversion));
-		assertThat(Response, containsString("\"latimeStamp\":\"" + latimeStamp));
+		assertThat(Response, containsString("\"laType\":\"" + laType));
+		assertThat(Response, containsString("\"laVersion\":\"" + laVersion));
+		assertThat(Response, containsString("\"laTimeStamp\":\"" + laTimeStamp));
 	}
 	
-	@Test(dataProvider = "dp", priority = 3, dependsOnMethods = "CreateProject", description = "380687")
+	//the delete call depends on there being prjects to delete, due to priority will run after the create projects tests.
+	@Test(dataProvider = "dp", priority = 3,  description = "380687")
 	public void DeleteProject(String URL, String OAuth_Token, String applicationUUID) {
 		String Response;
 		Response = CMAC_API_Endpoints.DeleteProject_API(URL, OAuth_Token, applicationUUID);
@@ -158,53 +156,34 @@ public class CMAC_Projects{
 		//now check that the project has been removed
 		Response = CMAC_API_Endpoints.DeleteProject_API(URL, OAuth_Token, applicationUUID);
 		
-		Response_Variables = new String[] {"transactionId", "errors", "code", "PROJNOTEXIST", "message", "Unable to delete. Project with applicationUUID doesn't exist"};
+		Response_Variables = new String[] {"transactionId", "errors", "code", "PROJECT_NOT_EXIST", "message", "Unable to delete. Project with applicationUUID doesn't exist."};
+		//Note: "PROJECT_NOT_EXIST", "message", "Unable to delete. Project with applicationUUID doesn't exist." are not confirmed by business team, may change.
 		for(int i = 0; i < Response_Variables.length; i++) {
 			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 		}
 			
 	}
 
-	///////Helper Functions///////////////Condensed into single class
-	public static String[] ParseStringToArray(String s, String Token) {
-		int commas = s.replaceAll("[^,]","").length();
-		String Temp[] = new String[commas + 1];
-		StringTokenizer st1 = new StringTokenizer(s, Token);
-	        for (int i = 0; st1.hasMoreTokens(); i++) {
-	        	Temp[i] = st1.nextToken().replaceAll(" ", "");
-	        }
-	    return Temp;
-	}
+	///////Helper Functions///////////////
 	
 	//WARNING, will return empty if there are no application uuids part of the organization.
-	public ArrayList<String> GetAll_ApplicationUUID(String RetrieveURL, String OAuth_Token, String organizationUUID) {
+	public static ArrayList<String> GetAll_ApplicationUUID(String RetrieveURL, String OAuth_Token, String organizationUUID) {
 		ArrayList<String> applicationUUIDs = new ArrayList<String>();
 		
 		String ResponseUUIDs = CMAC_API_Endpoints.RetrieveProject_API(RetrieveURL, OAuth_Token, organizationUUID);
 		while (ResponseUUIDs.contains("applicationUUID")) {
-			String applicationUUID = ResponseUUIDs.substring(ResponseUUIDs.indexOf("applicationUUID\":\"") + "applicationUUID\":\"".length(), ResponseUUIDs.indexOf("\",\"projectName\""));
-			ResponseUUIDs = ResponseUUIDs.replace("applicationUUID\":\"" + applicationUUID  + "\",\"projectName", "");
-			applicationUUIDs.add(applicationUUID);
+			String start_string = "applicationUUID\":\"";
+			int start_pos = ResponseUUIDs.indexOf(start_string) + start_string.length();
+			for (int i = start_pos ; i < ResponseUUIDs.length(); i++) {
+				String test = ResponseUUIDs.substring(i, i + 3);
+				if(test.contentEquals("\",\"")){
+					String applicationUUID = ResponseUUIDs.substring(start_pos, i);
+					ResponseUUIDs = ResponseUUIDs.replace("applicationUUID\":\"" + applicationUUID, "");
+					applicationUUIDs.add(applicationUUID);
+					break;
+				}
+			}
 		}
-
 		return applicationUUIDs;
 	}
-	
-	//@Test
-	public void DeleteAllApps() {	//this is used to delete all projects under an organization.
-		CMAC_Data c = DC[2];//make sure to set the level
-		String RetrieveURL = c.Retrieve_Project_URL,  DeleteURL = c.Delete_Project_URL,  OAuth_Token = c.OAuth_Token,  organizationUUID = "10000"; //change the organizaiton as needed
-
-		ArrayList<String> applicationUUIDs = GetAll_ApplicationUUID(c.Retrieve_Project_URL, c.OAuth_Token, organizationUUID) ;
-		for (String applicationUUID: applicationUUIDs) {
-			CMAC_API_Endpoints.DeleteProject_API(DeleteURL, OAuth_Token, applicationUUID);
-		}
-		
-		
-		Helper_Functions.PrintOut("\nAll projects deleted from " + organizationUUID, true);
-		CMAC_API_Endpoints.RetrieveProject_API(RetrieveURL, OAuth_Token, organizationUUID);
-	}
-	
-	
-	
 }

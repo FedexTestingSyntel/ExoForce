@@ -198,7 +198,7 @@ public class CMAC_API_Endpoints{
 	}
 
 	//not yet updated
-	public static String UpdateResource_API(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs, String isCertified){
+	public static String UpdateResource_API(String URL, String OAuth_Token, String applicationUUID, String[] endpointUUIDs, String isCertified){
 		String Request = "";
 		
 		try{
@@ -212,6 +212,32 @@ public class CMAC_API_Endpoints{
 					.put("endpointUUIDs", endpointUUIDs)
 					.put("isCertified", isCertified);
 			
+			 //////////////////////not finised
+			for (int i = -1; i < endpointUUIDs.length; i++) {
+				JSONObject Resources = new JSONObject();
+				if (i == -1) {
+					Resources.put("resourceDescription", "$$");//need to fix this for when only single resource
+				}else {
+					Resources.put("resourceDescription", endpointUUIDs[i]);
+				}
+				MainBody.accumulate("resourcesInput", Resources);
+			}
+			
+			
+			/*
+			 for (int i = -1; i < resourceDescriptions.length; i++) {							
+				JSONObject Resources = new JSONObject();
+				if (i == -1) {
+					Resources.put("resourceDescription", "$$");//need to fix this for when only single resource
+				}else {
+					Resources.put("resourceDescription", resourceDescriptions[i]);
+				}
+				MainBody.accumulate("resourcesInput", Resources);
+			}
+						
+			
+			Request = MainBody.toString().replace("{\"resourceDescription\":\"$$\"},", "");
+			 */
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);
 			httpput.setEntity(params);

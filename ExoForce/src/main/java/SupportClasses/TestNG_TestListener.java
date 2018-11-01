@@ -14,9 +14,6 @@ public class TestNG_TestListener implements ITestListener{
 	
 	@Override
     public void onStart(ITestContext arg0) {
-		try {
-			Runtime.getRuntime().exec("taskkill /F /IM ChromeDriver.exe");//close out the old processes if still present.
-		} catch (Exception e) {}
     }
 	
 	@Override
@@ -52,19 +49,25 @@ public class TestNG_TestListener implements ITestListener{
                  PassedTestCase.remove();
              }
          }
-    	
-    	Helper_Functions.PrintOut("\n\n", false);
-		
-		for (int i = 0 ; i < ThreadLogger.ThreadLog.size(); i++) {
-			Helper_Functions.PrintOut(i + 1 + ") " + ThreadLogger.ThreadLog.get(i), false);
-		}
-		
+         
+         //remove all skipped tests from the results.
+         try {
+             Iterator<ITestResult> SkippedTestCase = arg0.getSkippedTests().getAllResults().iterator();
+             while (SkippedTestCase.hasNext()) {
+            	 SkippedTestCase.remove();
+             }
+         }catch(Exception e) {}
+
+    			
 		try {
-			Runtime.getRuntime().exec("taskkill /F /IM ChromeDriver.exe");//close out the old processes if still present.
-			Helper_Functions.PrintOut("ChromeDriver.exe Cleanup Executed", true);
+			Helper_Functions.PrintOut("\n\n", false);
+		
+			for (int i = 0 ; i < ThreadLogger.ThreadLog.size(); i++) {
+				Helper_Functions.PrintOut(i + 1 + ") " + ThreadLogger.ThreadLog.get(i), false);
+			}
+			
 			Helper_Functions.MoveOldLogs();
 		} catch (Exception e) {}
-
     }
 
     @Override
