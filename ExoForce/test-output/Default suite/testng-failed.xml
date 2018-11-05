@@ -5,8 +5,8 @@
     <classes>
       <class name="CMAC.CMAC_Resources">
         <methods>
-          <include name="DeleteResource"/>
-          <include name="CreateResource" invocation-numbers="1 0 3 2"/>
+          <include name="RetrieveResource" invocation-numbers="4 0 3 2 1"/>
+          <include name="UpdateResource" invocation-numbers="0 1 2 3 4"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- CMAC.CMAC_Resources -->

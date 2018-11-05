@@ -22,7 +22,7 @@ import SupportClasses.ThreadLogger;
 public class CMAC_Projects{
 	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
 	static ArrayList<String[]> ResourceList = new ArrayList<String[]>();//this is a list of when multiple resources are added. Will be initialized in before class.
-	static String organizationUUID = "20000";
+	static String organizationUUID = "6000";
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -185,5 +185,35 @@ public class CMAC_Projects{
 			}
 		}
 		return applicationUUIDs;
+	}
+	
+	public static void CreateProjectsExternal(String Level, int NumberOfProjects, String organizationUUID) {
+		CMAC_Data CMAC_D = CMAC_Data.LoadVariables(Level);
+		String Response = "";
+		for(int j = 0; j < NumberOfProjects; j++) {
+			String projectName = "Proj_Creation" + j + " " + Helper_Functions.CurrentDateTime();
+			String laTimeStamp = Helper_Functions.CurrentDateTime(true);
+			String laType= "propreitary", laVersion= "2";
+			String applicationUUID = Helper_Functions.CurrentDateTime().replace("T", "") + j;
+			String Create_URL = CMAC_D.Create_Project_URL;
+			String Retrieve_URL = CMAC_D.Retrieve_Project_URL;
+			String OAuth_Token = CMAC_D.OAuth_Token;
+			
+			Response = CMAC_API_Endpoints.CreateProject_API(Create_URL, OAuth_Token, organizationUUID, applicationUUID, projectName, laType, laVersion, laTimeStamp);
+			String[] Response_Variables = {"transactionId", "output", "status"};
+			for(int i = 0; i < Response_Variables.length; i++) {
+				assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
+			}
+
+			//now check that the project has been create with same data that was sent
+			Response = CMAC_API_Endpoints.RetrieveProject_API(Retrieve_URL, OAuth_Token, applicationUUID);
+				
+			assertThat(Response, containsString("\"applicationUUID\":\"" + applicationUUID));
+			assertThat(Response, containsString("\"projectName\":\"" + projectName));
+			assertThat(Response, containsString("\"laType\":\"" + laType));
+			assertThat(Response, containsString("\"laVersion\":\"" + laVersion));
+			assertThat(Response, containsString("\"laTimeStamp\":\"" + laTimeStamp));
+		}
+			
 	}
 }

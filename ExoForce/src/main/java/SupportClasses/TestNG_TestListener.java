@@ -37,19 +37,6 @@ public class TestNG_TestListener implements ITestListener{
 
     @Override
     public void onFinish(ITestContext arg0) {
-    	//This will remove the "NameOfSetEnvTest" method from the test results.
-    	//This is the method that sets the environment variable from XML and does not need to be reported.
-    	 Iterator<ITestResult> PassedTestCase = arg0.getPassedTests().getAllResults().iterator();
-    	 String NameOfSetEnvTest = "SetEvironmentLevel";
-         while (PassedTestCase.hasNext()) {
-             ITestResult EnvironmentTestCheck = PassedTestCase.next();
-             ITestNGMethod method = EnvironmentTestCheck.getMethod();
-             if (method.getMethodName().contentEquals(NameOfSetEnvTest)) {
-                 System.out.println("Removing:" + EnvironmentTestCheck.getTestClass().toString());
-                 PassedTestCase.remove();
-             }
-         }
-         
          //remove all skipped tests from the results.
          try {
              Iterator<ITestResult> SkippedTestCase = arg0.getSkippedTests().getAllResults().iterator();
@@ -58,17 +45,27 @@ public class TestNG_TestListener implements ITestListener{
              }
          }catch(Exception e) {}
 
-        Helper_Functions.PrintOut("Passed Scenarios", false);
- 		PassedTestCase = arg0.getPassedTests().getAllResults().iterator();
+        
+        Iterator<ITestResult> PassedTestCase = arg0.getPassedTests().getAllResults().iterator();
+        int passedcount = 1;
         while (PassedTestCase.hasNext()) {
-             ITestResult Test = PassedTestCase.next();
-             Helper_Functions.PrintOut(Test.getAttribute("ExecutionLog").toString(), false);
+        	if (passedcount == 1) {
+        		Helper_Functions.PrintOut("Passed Scenarios", false);
+        	}
+            ITestResult Test = PassedTestCase.next();
+            Helper_Functions.PrintOut(passedcount + ") " + Test.getAttribute("ExecutionLog").toString(), false);
+            passedcount++;
          }
-        Helper_Functions.PrintOut("\nFailed Scenarios", false);
+        
         Iterator<ITestResult> FailedTestCase = arg0.getFailedTests().getAllResults().iterator();
+        int failedcount = 1;
         while (FailedTestCase.hasNext()) {
+        	if (failedcount == 1) {
+        		 Helper_Functions.PrintOut("\nFailed Scenarios", false);
+        	}
              ITestResult Test = FailedTestCase.next();
-             Helper_Functions.PrintOut(Test.getAttribute("ExecutionLog").toString(), false);
+             Helper_Functions.PrintOut(failedcount + ") " + Test.getAttribute("ExecutionLog").toString(), false);
+             failedcount++;
          }
          
     		

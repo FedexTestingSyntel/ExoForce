@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="8" name="CMAC_Suite" parallel="methods">
+<suite thread-count="8" name="CMAC_Suite">
   <listeners>
     <listener class-name="SupportClasses.TestNG_ReportListener"/>
   </listeners>

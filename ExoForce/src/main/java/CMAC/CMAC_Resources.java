@@ -20,8 +20,7 @@ import SupportClasses.ThreadLogger;
 public class CMAC_Resources{
 	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
 	static ArrayList<String[]> ResourceList = new ArrayList<String[]>();//this is a list of when multiple resources are added. Will be initialized in before class.
-	static ArrayList<String> applicationUUIDToDelete = new ArrayList<String>();
-	static String organizationUUID = "30001";
+	static String organizationUUID = "6000";
 	
 	@BeforeClass
 	public void beforeClass() {		//implemented as a before class so the OAUTH tokens are only generated once.
@@ -38,18 +37,24 @@ public class CMAC_Resources{
 	    	CMAC_Data CMAC_D = CMAC_Data.LoadVariables(strLevel);
 			
 	    	ArrayList<String> applicationUUIDs = CMAC_Projects.GetAll_ApplicationUUID(CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID);
+			//if there are no projects for the organization create some.
+	    	if (applicationUUIDs.size() == 0) {
+	    		CMAC_Projects.CreateProjectsExternal(strLevel, 5, organizationUUID);
+			}
 			
 			switch (m.getName()) { //Based on the method that is being called the array list will be populated.
 				case "CreateResource":
-				case "UpdateResource":
 					for(int j = 0; j < applicationUUIDs.size(); j++) {
 						String Resources[] = CreateResourceString(j + 1, "Cre");
-						if (j % 2 == 0) {
-							isCertified = "true";
-						}else {
-							isCertified = "false";
-						}
+						isCertified = GetCertified(j);
 						data.add(new Object[] {CMAC_D.Create_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j), Resources, isCertified});
+					}
+					break;
+				case "UpdateResource":
+					for(int j = applicationUUIDs.size() - 1; j >= 0 ; j--) {//note, reversed the order of the call to be oposite from the create call.
+						String Resources[] = CreateResourceString(j + 1, "Update");
+						isCertified = GetCertified(j);
+						data.add(new Object[] {CMAC_D.Update_Resource_URL, CMAC_D.Retrieve_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j), Resources, isCertified});
 					}
 					break;
 				case "RetrieveResource":
@@ -59,7 +64,15 @@ public class CMAC_Resources{
 					break;
 				case "DeleteResource":
 					for(int j = 0; j < applicationUUIDs.size(); j++) {
-						data.add(new Object[] {CMAC_D.Delete_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j)});
+						//check if the given project has resources already loaded.
+						if (CMAC_API_Endpoints.RetrieveResource_API(CMAC_D.Retrieve_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j)).contains("endpointUUID")) {
+							data.add(new Object[] {CMAC_D.Delete_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j)});
+						}else {
+							String Resources[] = CreateResourceString(j + 1, "ToDel");
+							isCertified = GetCertified(j);
+							CreateResource(CMAC_D.Create_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j), Resources, isCertified);
+							data.add(new Object[] {CMAC_D.Delete_Resource_URL, CMAC_D.OAuth_Token, applicationUUIDs.get(j)});
+						}
 					}
 					break;
 			}//end switch MethodName
@@ -67,7 +80,7 @@ public class CMAC_Resources{
 		return data.iterator();
 	}
 	
-	@Test(dataProvider = "dp_resources", priority = 2, description = "380557 - Create Resource")
+	@Test(dataProvider = "dp_resources", priority = 1, description = "380557 - Create Resource")
 	public void CreateResource(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified) {
 		String Response = "";
 		
@@ -79,7 +92,7 @@ public class CMAC_Resources{
 		}
 
 		//need to add a check here to see if there are any errors.
-		//applicationUUIDToDelete.add(applicationUUID);//update this to store the applicationUUID of the created project. Will be deleted later as part of the delete tests.
+		
 	}
 	
 	@Test(dataProvider = "dp_resources", priority = 2, description = "380583 - Retrieve Resources")
@@ -112,18 +125,18 @@ public class CMAC_Resources{
 		//now check that the project has been removed
 		Response = CMAC_API_Endpoints.DeleteResource_API(URL, OAuth_Token, applicationUUID);
 		
-		Response_Variables = new String[] {"transactionId", "errors", "code", "", "message", ""};
+		//verify the resources are deleted		Please note that the below error message is not confirmed may be updated later.
+		Response_Variables = new String[] {"transactionId", "errors", "code", "RESOURCES_DONT_EXIST", "message", "\"Unable to delete. Resources with applicationUUID don't exist."};
 		for(int i = 0; i < Response_Variables.length; i++) {
 			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
 		}
 			
 	}
 
-	//need to create UpdateResource   current ICD is not correct, must update the below 
 	@Test(dataProvider = "dp_resources", priority = 2, description = "380672 - Update Resource")
-	public void UpdateResource(String RetrieveURL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified) {
+	public void UpdateResource(String UpdateURL, String RetrieveURL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified) {
 		String Response;
-		Response = CMAC_API_Endpoints.UpdateResource_API(RetrieveURL, OAuth_Token, applicationUUID, endpointUUIDs, isCertified);
+		Response = CMAC_API_Endpoints.UpdateResource_API(UpdateURL, OAuth_Token, applicationUUID, endpointUUIDs, isCertified);
 
 		String[] Response_Variables = {"transactionId", "output", "status", "SUCCESS"};
 		for(int i = 0; i < Response_Variables.length; i++) {
@@ -132,13 +145,16 @@ public class CMAC_Resources{
 		//now check that the project has been updated
 		Response = CMAC_API_Endpoints.RetrieveResource_API(RetrieveURL, OAuth_Token, applicationUUID);
 		
-		/*
-		assertThat(Response, containsString("\"applicationUUID\":\"" + applicationUUID));
-		assertThat(Response, containsString("\"projectName\":\"" + projectName));
-		assertThat(Response, containsString("\"latype\":\"" + latype));
-		assertThat(Response, containsString("\"laversion\":\"" + laversion));
-		assertThat(Response, containsString("\"latimeStamp\":\"" + latimeStamp));
-		*/
+		//check the generic values of the response to see if updated
+		Response_Variables = new String[] {"transactionId", "output", "resources", "endpointUUID", "applicationUUID", "isCertified", isCertified};
+		for(int i = 0; i < Response_Variables.length; i++) {
+			assertThat(Response, CoreMatchers.containsString(Response_Variables[i]));
+		}
+		
+		//check that the specific resource names have been updated
+		for(int i = 0; i < endpointUUIDs.length; i++) {
+			assertThat(Response, CoreMatchers.containsString(endpointUUIDs[i]));
+		}
 	}
 	
 	
@@ -155,5 +171,13 @@ public class CMAC_Resources{
 			ResourceList[i] = Resources[i % Resources.length] + i + AppendToResource;
 		}
 		return ResourceList;
+	}
+	
+	public String GetCertified(int i) {
+		if (i % 2 == 0) {
+			return "true";
+		}else {
+			return "false";
+		}
 	}
 }

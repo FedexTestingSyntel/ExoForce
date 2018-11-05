@@ -122,7 +122,6 @@ public class CMAC_API_Endpoints{
 
 	}
 
-	//not yet validated
 	public static String CreateResource_API(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified){
 		String Request = "";
 		
@@ -197,8 +196,7 @@ public class CMAC_API_Endpoints{
 		//{"transactionId":"a1d11c06-6f3e-4394-9873-f86f6bec46a3","output":{"resources":[{"endpointUUID":"Ship0Cre","applicationUUID":"1030181522224","isCertified":"true"}]}}
 	}
 
-	//not yet updated
-	public static String UpdateResource_API(String URL, String OAuth_Token, String applicationUUID, String[] endpointUUIDs, String isCertified){
+	public static String UpdateResource_API(String URL, String OAuth_Token, String applicationUUID, String endpointUUIDs[], String isCertified){
 		String Request = "";
 		
 		try{
@@ -212,32 +210,6 @@ public class CMAC_API_Endpoints{
 					.put("endpointUUIDs", endpointUUIDs)
 					.put("isCertified", isCertified);
 			
-			 //////////////////////not finised
-			for (int i = -1; i < endpointUUIDs.length; i++) {
-				JSONObject Resources = new JSONObject();
-				if (i == -1) {
-					Resources.put("resourceDescription", "$$");//need to fix this for when only single resource
-				}else {
-					Resources.put("resourceDescription", endpointUUIDs[i]);
-				}
-				MainBody.accumulate("resourcesInput", Resources);
-			}
-			
-			
-			/*
-			 for (int i = -1; i < resourceDescriptions.length; i++) {							
-				JSONObject Resources = new JSONObject();
-				if (i == -1) {
-					Resources.put("resourceDescription", "$$");//need to fix this for when only single resource
-				}else {
-					Resources.put("resourceDescription", resourceDescriptions[i]);
-				}
-				MainBody.accumulate("resourcesInput", Resources);
-			}
-						
-			
-			Request = MainBody.toString().replace("{\"resourceDescription\":\"$$\"},", "");
-			 */
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);
 			httpput.setEntity(params);
