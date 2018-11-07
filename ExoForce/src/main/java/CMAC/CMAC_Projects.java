@@ -44,7 +44,7 @@ public class CMAC_Projects{
 				for(int j = 1; j < 5; j++) {
 					ProjectName = "Proj_Creation" + j + " " + Helper_Functions.CurrentDateTime();
 					laTimeStamp = Helper_Functions.CurrentDateTime(true);
-					applicationUUID = Helper_Functions.CurrentDateTime().replace("T", "") + j;
+					applicationUUID = Helper_Functions.getRandomString(20);
 					data.add(new Object[] {CMAC_D.Create_Project_URL, CMAC_D.Retrieve_Project_URL, CMAC_D.OAuth_Token, organizationUUID, applicationUUID, ProjectName, laType, laVersion, laTimeStamp});
 				}
 				break;

@@ -43,6 +43,12 @@ public class USRC_FDM {
 				//data.add(new Object[] {USRC_D.Level, USRC_D.REGCCreateNewUserURL, USRC_D.LoginUserURL, USRC_D.EnrollmentURL, USRC_D.OAuth_Token, USRC_Data.ContactDetailsList.get(0), MFAC_D.OrgPhone});
 				data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard});
 				break;
+			case "CreateUsers":
+				for (int j = 0 ; j < 5; j++) {
+					data.add(new Object[] {USRC_D, j});
+				}
+				
+					break;
 			}//end switch MethodName
 		}
 		return data.iterator();
@@ -103,70 +109,26 @@ public class USRC_FDM {
 		}
 	}
 	
-	/*
-	@Test
-	public void EndtoEndEnrollmentAddAddresses() {
-		int contact = 1;
-		String Contact[] = null, response = null, Org = "POSTAL", Cookie = null, tempUser = null, fdx_login_fcl_uuid[] = {"",""};
-		//Org = "SMS";//will overwrite
-		try {
+	@Test (dataProvider = "dp")
+	public void CreateUsers(USRC_Data USRC_Details, int ContactPosition) {
+		String UUID = null, fdx_login_fcl_uuid[] = {"",""};
 			//1 - Login, get cookies and uuid
+			String UserID = "L" + USRC_Details.Level + "NewUser" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
+			String Password = "Test1234";
 			
-			for(int i = 0; i < 3; i++) { //incase the address is maxed out will try the next addresses in the contact list.
-				
-				try {
-					Contact = USRC.ContactList.get(contact);
-					String[] UserContact = USRC.ContactList.get(1);
-					Contact[0] = UserContact[0];
-					Contact[1] = UserContact[1];
-					Contact[2] = UserContact[2];
-					Contact[3] = UserContact[3];
-					Contact[4] = UserContact[4];
-					//tempUser = USRC.CreateNewUser(Contact, Level, USRC.Password);
-					tempUser = "L3FDM100218T150103";    //in case need to register a specific user
-					fdx_login_fcl_uuid = USRCLogin(tempUser, USRC.Password, Level);
-					Cookie = fdx_login_fcl_uuid[0];
-					USRC.Cookie = Cookie;
-					USRC.UUID = fdx_login_fcl_uuid[1];
-					PrintOut("UUID is " + fdx_login_fcl_uuid[1]);
-					i = 4;
-				}catch (Exception e) {
-					PrintOut("Error whith given user, creating new user.");
-					contact = contact++ % USRC.ContactList.size();
-				};
-				
-				
-			//2 - do the enrollment call. Note that the enrollment call will store the ShareID
-				PrintOut("Enrollment call");
-				response = USRC.Enrollment(Contact); ///"enrollmentOptionsList":["POSTAL","EXAM","SMS"]
-				Assert.assertTrue(response.contains(Org));	
-			}
+			//create the new user
+			String ContactDetails[] = USRC_Data.ContactDetailsList.get(ContactPosition % USRC_Data.ContactDetailsList.size());
+			//ContactDetails[4] = "bad@user.asd";
+			String Response = USRC_API_Endpoints.NewFCLUser(USRC_Details.REGCCreateNewUserURL, ContactDetails, UserID, Password);
+			
+			//check to make sure that the userid was created.
+			assertThat(Response, containsString("successful\":true"));
+			
+			//get the cookies and the uuid of the new user
+			fdx_login_fcl_uuid = USRC_API_Endpoints.Login(USRC_Details.LoginUserURL, UserID, Password);
+			UUID = fdx_login_fcl_uuid[1];
+			
+			Helper_Functions.PrintOut(UserID + "/" + Password + "--" + UUID, false);
 
-			//3 - request a pin
-			PrintOut("Request pin through USRC");
-			String UserName = USRC.UUID + "-" + Contact[11];
-			response = USRC.CreatePin(Contact[11], Org);
-			Assert.assertTrue(response.contains("true") && response.contains("successful"));
-		
-			//4 - request a pin through MFAC as cannot see the pin generated from the above
-			PrintOut("Requesting pin through MFAC");
-			if (Org.contentEquals("SMS")) {
-				response = IssuePinExternal(UserName, "FDM-PHONE-PIN", Level);
-			}else if (Org.contentEquals("POSTAL")) {
-				response = IssuePinExternal(UserName, "FDM-POSTCARD-PIN", Level);
-			}
-		
-			//5 - enroll the above pin through USRC
-			PrintOut("Verify pin through USRC");
-			response = USRC.VerifyPin(Contact[11], response, Org);
-			Assert.assertTrue(response.contains("responseMessage") && response.contains("Success"));
-			PrintOut("Check recipient profile for new FDM user through USRC");
-			response = USRC.RecipientProfile(Cookie, Integer.parseInt(Level));
-			
-			PrintOut(tempUser + "/" + USRC.Password + "--" + fdx_login_fcl_uuid[1] + "--" + Org);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
-	*/
 }

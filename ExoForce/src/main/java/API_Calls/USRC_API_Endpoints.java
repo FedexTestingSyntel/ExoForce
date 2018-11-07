@@ -1,5 +1,6 @@
 package API_Calls;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.Header;
@@ -76,7 +77,7 @@ public class USRC_API_Endpoints {
 	
 	//c[] = 0 - First name, 1 - middle name, 2 - last name, 3 - phone number, 4 - email address, 5 - address line 1, 6 - address line 2, 7 - city, 8 - state code, 9 - zip code, 10 - country
 	//User = the UserID that is being created
-	public static String NewFCLUser(String CreateUserURL, String C[], String User, String Password) throws Exception{			
+	public static String NewFCLUser(String CreateUserURL, String C[], String User, String Password){			
 
 		HttpPost httppost = new HttpPost(CreateUserURL);
 				
@@ -107,14 +108,18 @@ public class USRC_API_Endpoints {
 		httppost.addHeader("X-locale", "en_US");
 		httppost.addHeader("X-version", "1.0");
 				
-		StringEntity params = new StringEntity(json.toString());
-		httppost.setEntity(params);
-		//Note that an email will be triggered after registration
-		String Response = General_API_Calls.HTTPCall(httppost, json);		
-		
-		if (!(Response.contains("successful") && Response.contains("true"))) {
-			throw new Exception(Response);
+		StringEntity params;
+		String Response;
+		try {
+			params = new StringEntity(json.toString());
+			httppost.setEntity(params);
+			//Note that an email will be triggered after registration
+			Response = General_API_Calls.HTTPCall(httppost, json);	
+		} catch (Exception e) {
+			e.printStackTrace();
+			Response = e.getLocalizedMessage();
 		}
+			
 		return Response;
 	}
 	

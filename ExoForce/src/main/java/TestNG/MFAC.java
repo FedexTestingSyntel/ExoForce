@@ -26,8 +26,8 @@ import SupportClasses.Set_Environment;
 //@Listeners(SupportClasses.TestNG_ReportListener.class)
 
 public class MFAC{
-	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
-	public final boolean TestExpiration = false;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
+	static String LevelsToTest = "6"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
+	public final boolean TestExpiration = true;//flag to determine if the expiration scenarios should be tested. When set to false those tests will not be executed.
 	static ArrayList<String[]> ExpirationData = new ArrayList<String[]>();
 	
 	@BeforeClass
@@ -279,7 +279,7 @@ public class MFAC{
 				ExpirationData.add(Expiration);
 				Helper_Functions.PrintOut("Will be validated after expiration in later test. --IssuePinExpirationValidate--", false);
 			}else {
-				String LongExpirationMessage = "Not Validing the Expiraiton at this time, need to verify seperatly once the expiration has passed. Here is the CST time it will expire. " + ExpirationTime;
+				String LongExpirationMessage = "Not Validating the Expiration at this time, need to verify seperatly once the expiration has passed. Here is the CST time it will expire. " + ExpirationTime;
 				Helper_Functions.PrintOut(LongExpirationMessage, true);
 			}
 		}catch (Exception e) {
