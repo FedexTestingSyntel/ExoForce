@@ -157,6 +157,7 @@ public class CMAC_API_Endpoints{
 		String Request = "";
 		try{
 			URL = URL.replace("{applicationUUID}", applicationUUID);
+			
 			HttpDelete  httpdel = new HttpDelete (URL);
 			
 			httpdel.addHeader("Content-Type", "application/json");
@@ -210,6 +211,7 @@ public class CMAC_API_Endpoints{
 					.put("endpointUUIDs", endpointUUIDs)
 					.put("isCertified", isCertified);
 			
+			
 			Request = MainBody.toString();
 			StringEntity params = new StringEntity(Request);
 			httpput.setEntity(params);
@@ -226,4 +228,112 @@ public class CMAC_API_Endpoints{
 		//Sample response:
 
 	}
+	
+	public static String CreateCompany_API(String URL, String OAuth_Token, String company_cd, String organizationUUID, String isCompatibleProvider){
+		String Request = "";
+		
+		try{
+			HttpPost httppost = new HttpPost(URL);
+			
+			httppost.addHeader("Content-Type", "application/json");
+			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
+			
+			
+			JSONObject MainBody = new JSONObject()
+					.put("company_cd", company_cd)
+					.put("organizationUUID", organizationUUID) 
+					.put("isCompatibleProvider", isCompatibleProvider);    //not sure on this as the ICD lists as string but example shows boolean.
+		
+			Request = MainBody.toString();
+			StringEntity params = new StringEntity(Request);
+			httppost.setEntity(params);
+			
+			String Response = General_API_Calls.HTTPCall(httppost, Request);
+			return Response;
+		}catch (Exception e){
+			e.printStackTrace();
+			return e.toString();
+		}
+		//Sample request:
+		
+		//Sample response:
+
+	}
+	
+	public static String RetrieveCompany_API(String URL, String OAuth_Token, String UUID){
+		String Request = "";
+		
+		try{
+			
+			URL = URL.replace("{UUID}", UUID);
+			HttpGet httpget = new HttpGet(URL);
+			
+			httpget.addHeader("Content-Type", "application/json");
+			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
+
+			String Response = General_API_Calls.HTTPCall(httpget, Request);
+			return Response;
+		}catch (Exception e){
+			e.printStackTrace();
+			return e.toString();
+		}
+		//Sample request:
+		
+		//Sample response:
+
+	}
+	
+	public static String DeleteCompany_API(String URL, String OAuth_Token, String UUID){
+		String Request = "";
+		try{
+			URL = URL.replace("{UUID}", UUID);
+			HttpDelete  httpdel = new HttpDelete (URL);
+			
+			httpdel.addHeader("Content-Type", "application/json");
+			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
+			
+			String Response = General_API_Calls.HTTPCall(httpdel, Request);
+
+			return Response;
+		}catch (Exception e){
+			e.printStackTrace();
+			return e.toString();
+		}
+		//Sample request:
+		
+		//Sample response:
+
+	}
+	
+	public static String UpdateCompany_API(String URL, String OAuth_Token, String[] company){
+		String Request = "";
+		
+		try{
+			HttpPut httpput = new HttpPut (URL);
+			
+			httpput.addHeader("Content-Type", "application/json");
+			//httppost.addHeader("Authorization", "Bearer " + OAuth_Token);
+			
+			JSONObject MainBody = new JSONObject()
+					.put("company_cd", company)
+					.put("organizationUUID", company)
+					.put("isCompatibleProvider", company);
+			
+			Request = MainBody.toString();
+			StringEntity params = new StringEntity(Request);
+			httpput.setEntity(params);
+			
+			String Response = General_API_Calls.HTTPCall(httpput, Request);
+
+			return Response;
+		}catch (Exception e){
+			e.printStackTrace();
+			return e.toString();
+		}
+		//Sample request:
+		
+		//Sample response:
+
+	}
+
 }

@@ -178,7 +178,6 @@ public class USRC_API_Endpoints {
 		return Response;
 	}
 
-
 	public static String CreatePin(String CreatePinURL, String OAuth_Token, String Cookie, String ShareID, String PinType){
 		try{
 			HttpClient httpclient = HttpClients.createDefault();

@@ -43,12 +43,6 @@ public class USRC_FDM {
 				//data.add(new Object[] {USRC_D.Level, USRC_D.REGCCreateNewUserURL, USRC_D.LoginUserURL, USRC_D.EnrollmentURL, USRC_D.OAuth_Token, USRC_Data.ContactDetailsList.get(0), MFAC_D.OrgPhone});
 				data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard});
 				break;
-			case "CreateUsers":
-				for (int j = 0 ; j < 5; j++) {
-					data.add(new Object[] {USRC_D, j});
-				}
-				
-					break;
 			}//end switch MethodName
 		}
 		return data.iterator();
@@ -107,28 +101,5 @@ public class USRC_FDM {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	@Test (dataProvider = "dp")
-	public void CreateUsers(USRC_Data USRC_Details, int ContactPosition) {
-		String UUID = null, fdx_login_fcl_uuid[] = {"",""};
-			//1 - Login, get cookies and uuid
-			String UserID = "L" + USRC_Details.Level + "NewUser" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
-			String Password = "Test1234";
-			
-			//create the new user
-			String ContactDetails[] = USRC_Data.ContactDetailsList.get(ContactPosition % USRC_Data.ContactDetailsList.size());
-			//ContactDetails[4] = "bad@user.asd";
-			String Response = USRC_API_Endpoints.NewFCLUser(USRC_Details.REGCCreateNewUserURL, ContactDetails, UserID, Password);
-			
-			//check to make sure that the userid was created.
-			assertThat(Response, containsString("successful\":true"));
-			
-			//get the cookies and the uuid of the new user
-			fdx_login_fcl_uuid = USRC_API_Endpoints.Login(USRC_Details.LoginUserURL, UserID, Password);
-			UUID = fdx_login_fcl_uuid[1];
-			
-			Helper_Functions.PrintOut(UserID + "/" + Password + "--" + UUID, false);
-
 	}
 }

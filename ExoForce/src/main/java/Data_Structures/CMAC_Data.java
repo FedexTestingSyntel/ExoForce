@@ -20,6 +20,11 @@ public class CMAC_Data {
 	public String Retrieve_Resource_URL = "";
 	public String Update_Resource_URL = "";
 	public String Delete_Resource_URL = "";
+	//Company CRUD
+	public String Create_Company_URL = "";
+	public String Retrieve_Company_URL = "";
+	public String Update_Company_URL = "";
+	public String Delete_Company_URL = "";
 	
 	//Stores the data for each individual level
 	private static CMAC_Data DataClass[] = new CMAC_Data[8];
@@ -63,6 +68,11 @@ public class CMAC_Data {
 		DC.Retrieve_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources/{UUID}";
 		DC.Update_Resource_URL = LevelIdentifier[0] + "/cmac/v3/updateResource";
 		DC.Delete_Resource_URL = LevelIdentifier[0] + "/cmac/v3/resources/{applicationUUID}";
+		//Company
+		DC.Create_Company_URL = LevelIdentifier[0] + "/cmac/v3/company";
+		DC.Retrieve_Company_URL = LevelIdentifier[0] + "/cmac/v3/company/{UUID}";
+		DC.Update_Company_URL = LevelIdentifier[0] + "/cmac/v3/updateCompany";
+		DC.Delete_Company_URL = LevelIdentifier[0] + "/cmac/v3/company/{UUID}";
 		
 		//Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 		switch (Level) {

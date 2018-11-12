@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CMAC.CMAC_Resources">
+      <class name="CMAC.CMAC_Company">
         <methods>
-          <include name="RetrieveResource" invocation-numbers="1 4 3 0 2"/>
-          <include name="UpdateResource" invocation-numbers="0 1 2 3 4"/>
           <include name="beforeClass"/>
+          <include name="CreateCompany"/>
+          <include name="UpdateCompany" invocation-numbers="1 0"/>
         </methods>
-      </class> <!-- CMAC.CMAC_Resources -->
+      </class> <!-- CMAC.CMAC_Company -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
