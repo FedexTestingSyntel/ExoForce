@@ -1,43 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="20" passed="19">
+<testng-results skipped="0" failed="0" ignored="0" total="47" passed="47">
   <reporter-output>
   </reporter-output>
-  <suite name="MFAC_Suit" duration-ms="682928" started-at="2018-11-11T06:27:29Z" finished-at="2018-11-11T06:38:52Z">
+  <suite name="MFAC_Suit" duration-ms="1892729" started-at="2018-11-14T17:21:07Z" finished-at="2018-11-14T17:52:40Z">
     <groups>
     </groups>
-    <test name="MFAC_Test" duration-ms="682928" started-at="2018-11-11T06:27:29Z" finished-at="2018-11-11T06:38:52Z">
-      <class name="TestNG.MFAC">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestNG.MFAC@1d7acb34]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-11T06:27:29Z" finished-at="2018-11-11T06:27:29Z">
+    <test name="MFAC_Test" duration-ms="1892729" started-at="2018-11-14T17:21:07Z" finished-at="2018-11-14T17:52:40Z">
+      <class name="MFAC.MFAC">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:MFAC.MFAC@48a242ce]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-14T17:21:13Z" finished-at="2018-11-14T17:21:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="IssuePinExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:TestNG.MFAC@1d7acb34]" name="IssuePinExpiration" duration-ms="1906" started-at="2018-11-11T06:27:31Z" data-provider="dp" finished-at="2018-11-11T06:27:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- IssuePinExpiration -->
-        <test-method status="PASS" signature="AdditionalEnrollmentExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:TestNG.MFAC@1d7acb34]" name="AdditionalEnrollmentExpiration" duration-ms="3004" started-at="2018-11-11T06:27:31Z" data-provider="dp" finished-at="2018-11-11T06:27:34Z">
+        <test-method status="PASS" signature="AddressVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="AddressVelocity" duration-ms="24188" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:38Z">
           <params>
             <param index="0">
               <value>
@@ -46,100 +20,12 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AdditionalEnrollmentExpiration -->
-        <test-method status="PASS" signature="IssuePinExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:TestNG.MFAC@1d7acb34]" name="IssuePinExpiration" duration-ms="2172" started-at="2018-11-11T06:27:31Z" data-provider="dp" finished-at="2018-11-11T06:27:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-PHONE-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- IssuePinExpiration -->
-        <test-method status="PASS" signature="AdditionalEnrollmentExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:TestNG.MFAC@1d7acb34]" name="AdditionalEnrollmentExpiration" duration-ms="2716" started-at="2018-11-11T06:27:31Z" data-provider="dp" finished-at="2018-11-11T06:27:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[FDM-PHONE-PIN]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AdditionalEnrollmentExpiration -->
-        <test-method status="PASS" signature="AddressVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="AddressVelocity" duration-ms="15411" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/addresses/velocitycheck]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/addresses/velocitycheck]]>
               </value>
             </param>
             <param index="3">
@@ -151,21 +37,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddressVelocity -->
-        <test-method status="PASS" signature="AddressVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="AddressVelocity" duration-ms="16477" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:50Z">
+        <test-method status="PASS" signature="AddressVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="AddressVelocity" duration-ms="23768" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[FDM-PHONE-PIN]]>
+                <![CDATA[FDM-POSTCARD-PIN]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/addresses/velocitycheck]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/addresses/velocitycheck]]>
               </value>
             </param>
             <param index="3">
@@ -177,33 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddressVelocity -->
-        <test-method status="PASS" signature="VerifyPinValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="VerifyPinValid" duration-ms="4896" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-PHONE-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyPinValid -->
-        <test-method status="PASS" signature="VerifyPinValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="VerifyPinValid" duration-ms="4432" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:38Z">
+        <test-method status="PASS" signature="VerifyPinNoLongerValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinNoLongerValid" duration-ms="24426" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:38Z">
           <params>
             <param index="0">
               <value>
@@ -212,24 +72,24 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyPinValid -->
-        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="VerifyPinVelocity" duration-ms="12649" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:46Z">
+        </test-method> <!-- VerifyPinNoLongerValid -->
+        <test-method status="PASS" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePinVelocity" duration-ms="18417" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:32Z">
           <params>
             <param index="0">
               <value>
@@ -238,116 +98,12 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyPinVelocity -->
-        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="VerifyPinVelocity" duration-ms="14203" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-PHONE-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyPinVelocity -->
-        <test-method status="PASS" signature="IssuePin(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="IssuePin" duration-ms="3047" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-PHONE-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- IssuePin -->
-        <test-method status="PASS" signature="IssuePin(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="IssuePin" duration-ms="2746" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- IssuePin -->
-        <test-method status="PASS" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="IssuePinVelocity" duration-ms="11724" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-PHONE-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
               </value>
             </param>
             <param index="3">
@@ -359,7 +115,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IssuePinVelocity -->
-        <test-method status="PASS" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="IssuePinVelocity" duration-ms="11254" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:45Z">
+        <test-method status="PASS" signature="VerifyPinNoLongerValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinNoLongerValid" duration-ms="19189" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinNoLongerValid -->
+        <test-method status="PASS" signature="IssuePin(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePin" duration-ms="4809" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:18Z">
           <params>
             <param index="0">
               <value>
@@ -368,12 +150,220 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePin -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="20640" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="IssuePin(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePin" duration-ms="2847" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePin -->
+        <test-method status="PASS" signature="IssuePin(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePin" duration-ms="2560" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePin -->
+        <test-method status="PASS" signature="AddressVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="AddressVelocity" duration-ms="25655" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/addressVelocityCheck]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddressVelocity -->
+        <test-method status="PASS" signature="AddressVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="AddressVelocity" duration-ms="24644" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/addressVelocityCheck]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddressVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="3745" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="IssuePin(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePin" duration-ms="6369" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePin -->
+        <test-method status="PASS" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePinVelocity" duration-ms="17285" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
               </value>
             </param>
             <param index="3">
@@ -385,33 +375,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IssuePinVelocity -->
-        <test-method status="PASS" signature="VerifyPinNoLongerValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="VerifyPinNoLongerValid" duration-ms="11057" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyPinNoLongerValid -->
-        <test-method status="PASS" signature="VerifyPinNoLongerValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:TestNG.MFAC@1d7acb34]" name="VerifyPinNoLongerValid" duration-ms="10909" started-at="2018-11-11T06:27:34Z" data-provider="dp" finished-at="2018-11-11T06:27:45Z">
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="21130" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:35Z">
           <params>
             <param index="0">
               <value>
@@ -420,84 +384,814 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="25336" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinNoLongerValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinNoLongerValid" duration-ms="16101" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyPinNoLongerValid -->
-        <test-method status="PASS" signature="AdditionalEnrollmentExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:TestNG.MFAC@1d7acb34]" name="AdditionalEnrollmentExpirationValidate" duration-ms="661384" started-at="2018-11-11T06:27:50Z" data-provider="dp" depends-on-methods="TestNG.MFAC.AdditionalEnrollmentExpiration" finished-at="2018-11-11T06:38:52Z">
+        <test-method status="PASS" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePinVelocity" duration-ms="14524" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[AdditionalEnrollmentExpiration: {"transactionId":"fd403007-9602-44ac-bb35-1e2898ae180f","output":{"pinOTP":"441093","pinExpirationDate":"12/02/2018 06:27 AM GMT"}}]]>
+                <![CDATA[FDM-PHONE-PIN]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[11/11/2018 06:37 AM GMT]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[ajwkrdqlyy-kmnrhhcjqjihcnlbtjiegbbf]]>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[FDM-POSTCARD-PIN]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[441093]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Success]]>
+                <![CDATA[3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AdditionalEnrollmentExpirationValidate -->
-        <test-method status="PASS" signature="IssuePinExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:TestNG.MFAC@1d7acb34]" name="IssuePinExpirationValidate" duration-ms="660772" started-at="2018-11-11T06:27:50Z" data-provider="dp" depends-on-methods="TestNG.MFAC.IssuePinExpiration" finished-at="2018-11-11T06:38:51Z">
+        </test-method> <!-- IssuePinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="13940" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[IssuePinExpiration:  {"transactionId":"7e69c198-0178-4168-b90a-7ca92a24ec20","output":{"pinOTP":"621015","pinExpirationDate":"11/11/2018 06:37 AM GMT"}}]]>
+                <![CDATA[FDM-POSTCARD-PIN]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[11/11/2018 06:37 AM GMT]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[jchcxmtwce-wirpzieertswrqtuagjdupta]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="21018" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinValid" duration-ms="8878" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinValid -->
+        <test-method status="PASS" signature="VerifyPinValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinValid" duration-ms="10816" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinValid -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="22845" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="22950" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinValid" duration-ms="7782" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinValid -->
+        <test-method status="PASS" signature="VerifyPinNoLongerValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinNoLongerValid" duration-ms="14034" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinNoLongerValid -->
+        <test-method status="PASS" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="IssuePinVelocity" duration-ms="21500" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="9490" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="22090" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinValid(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinValid" duration-ms="16212" started-at="2018-11-14T17:21:13Z" data-provider="dp" finished-at="2018-11-14T17:21:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinValid -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="21358" started-at="2018-11-14T17:21:17Z" data-provider="dp" finished-at="2018-11-14T17:21:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+        <test-method status="PASS" signature="VerifyPinVelocity(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int)[pri:2, instance:MFAC.MFAC@48a242ce]" name="VerifyPinVelocity" duration-ms="13213" started-at="2018-11-14T17:21:23Z" data-provider="dp" finished-at="2018-11-14T17:21:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPinVelocity -->
+      </class> <!-- MFAC.MFAC -->
+      <class name="MFAC.MFAC_Expiration">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-14T17:21:07Z" finished-at="2018-11-14T17:21:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="IssuePinExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpiration" duration-ms="2884" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpiration -->
+        <test-method status="PASS" signature="IssuePinExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpiration" duration-ms="1561" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpiration -->
+        <test-method status="PASS" signature="IssuePinExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpiration" duration-ms="2087" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpiration -->
+        <test-method status="PASS" signature="IssuePinExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpiration" duration-ms="1276" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpiration -->
+        <test-method status="PASS" signature="AdditionalEnrollmentExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="AdditionalEnrollmentExpiration" duration-ms="3192" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdditionalEnrollmentExpiration -->
+        <test-method status="PASS" signature="AdditionalEnrollmentExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="AdditionalEnrollmentExpiration" duration-ms="3438" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdditionalEnrollmentExpiration -->
+        <test-method status="PASS" signature="AdditionalEnrollmentExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="AdditionalEnrollmentExpiration" duration-ms="4237" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdditionalEnrollmentExpiration -->
+        <test-method status="PASS" signature="AdditionalEnrollmentExpiration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="AdditionalEnrollmentExpiration" duration-ms="3656" started-at="2018-11-14T17:21:09Z" data-provider="dp" finished-at="2018-11-14T17:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdditionalEnrollmentExpiration -->
+        <test-method status="PASS" signature="IssuePinExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpirationValidate" duration-ms="660662" started-at="2018-11-14T17:21:39Z" data-provider="dp" depends-on-methods="MFAC.MFAC_Expiration.IssuePinExpiration" finished-at="2018-11-14T17:32:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IssuePinExpiration:  {"transactionId":"8d0e6c9a-85c7-4bad-b410-302e65c9e868","output":{"pinOTP":"892789","pinExpirationDate":"11/14/2018 05:31 PM GMT"}}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11/14/2018 05:31 PM GMT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zxywpcsofc-lkslqvnjeenxesqrlfntcgvc]]>
               </value>
             </param>
             <param index="3">
@@ -507,17 +1201,17 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[621015]]>
+                <![CDATA[892789]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[https://api.fedex.com/security/v1/pin/verify]]>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[l7xx1b191a635e37469cbaf159069c943955]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="7">
@@ -529,13 +1223,243 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IssuePinExpirationValidate -->
-      </class> <!-- TestNG.MFAC -->
-      <class name="SupportClasses.Set_Environment">
-        <test-method status="PASS" signature="SetEvironmentLevel(java.lang.String)[pri:0, instance:SupportClasses.Set_Environment@5f71c76a]" name="SetEvironmentLevel" duration-ms="11" started-at="2018-11-11T06:27:29Z" finished-at="2018-11-11T06:27:29Z">
+        <test-method status="PASS" signature="AdditionalEnrollmentExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="AdditionalEnrollmentExpirationValidate" duration-ms="661076" started-at="2018-11-14T17:21:39Z" data-provider="dp" depends-on-methods="MFAC.MFAC_Expiration.AdditionalEnrollmentExpiration" finished-at="2018-11-14T17:32:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[7]]>
+                <![CDATA[AdditionalEnrollmentExpiration: {"transactionId":"fbcd8fdd-979f-4190-b346-0b8c1506cfe2","output":{"pinOTP":"548623","pinExpirationDate":"11/14/2018 05:51 PM GMT"}}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11/14/2018 05:31 PM GMT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wfflyjsshq-hjaxuxjklbnuldeycjaczvmb]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[548623]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Success]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdditionalEnrollmentExpirationValidate -->
+        <test-method status="PASS" signature="IssuePinExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpirationValidate" duration-ms="660484" started-at="2018-11-14T17:21:39Z" data-provider="dp" depends-on-methods="MFAC.MFAC_Expiration.IssuePinExpiration" finished-at="2018-11-14T17:32:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IssuePinExpiration:  {"transactionId":"23709080-0d44-445e-8796-c339fa7278cb","output":{"pinOTP":"091201","pinExpirationDate":"11/14/2018 05:31 PM GMT"}}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11/14/2018 05:31 PM GMT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[dgnzrjavct-rkvwephuooiugmugxgltwepw]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[091201]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PIN.FAILURE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpirationValidate -->
+        <test-method status="PASS" signature="AdditionalEnrollmentExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="AdditionalEnrollmentExpirationValidate" duration-ms="660772" started-at="2018-11-14T17:21:39Z" data-provider="dp" depends-on-methods="MFAC.MFAC_Expiration.AdditionalEnrollmentExpiration" finished-at="2018-11-14T17:32:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AdditionalEnrollmentExpiration: {"transactionId":"bdaae06f-f1a0-4604-af7b-ee02d9822b45","output":{"pinOTP":"003643","pinExpirationDate":"11/14/2018 05:51 PM GMT"}}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11/14/2018 05:31 PM GMT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[rvluehgndm-paphiagczaqdakxyhcoowgmj]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[003643]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Success]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdditionalEnrollmentExpirationValidate -->
+        <test-method status="PASS" signature="IssuePinExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpirationValidate" duration-ms="1860822" started-at="2018-11-14T17:21:39Z" data-provider="dp" depends-on-methods="MFAC.MFAC_Expiration.IssuePinExpiration" finished-at="2018-11-14T17:52:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IssuePinExpiration:  {"transactionId":"d5fff971-aafa-4d38-994b-5351dd727a4f","output":{"pinOTP":"074615","pinExpirationDate":"11/14/2018 05:51 PM GMT"}}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11/14/2018 05:51 PM GMT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[hcikvcbaps-iochrmvonnybrbukiltjlnaz]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[074615]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin/verify]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PIN.FAILURE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpirationValidate -->
+        <test-method status="PASS" signature="IssuePinExpirationValidate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:MFAC.MFAC_Expiration@1e4a7dd4]" name="IssuePinExpirationValidate" duration-ms="1860463" started-at="2018-11-14T17:21:39Z" data-provider="dp" depends-on-methods="MFAC.MFAC_Expiration.IssuePinExpiration" finished-at="2018-11-14T17:52:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IssuePinExpiration:  {"transactionId":"f69cd7b1-d9d8-441d-8b21-d63173630cd3","output":{"pinOTP":"433484","pinExpirationDate":"11/14/2018 05:51 PM GMT"}}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11/14/2018 05:51 PM GMT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[zmsvcioeqs-nifrczubftgiuaedbzslssws]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[433484]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/verifyPIN]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[PIN.FAILURE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinExpirationValidate -->
+      </class> <!-- MFAC.MFAC_Expiration -->
+      <class name="SupportClasses.Set_Environment">
+        <test-method status="PASS" signature="SetEvironmentLevel(java.lang.String)[pri:0, instance:SupportClasses.Set_Environment@1d7acb34]" name="SetEvironmentLevel" duration-ms="15" started-at="2018-11-14T17:21:07Z" finished-at="2018-11-14T17:21:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
               </value>
             </param>
           </params>

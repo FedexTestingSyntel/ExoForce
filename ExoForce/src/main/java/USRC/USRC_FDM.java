@@ -7,9 +7,9 @@ import java.util.List;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import Data_Structures.USRC_Data;
+import MFAC.MFAC_Helper_Functions;
 import SupportClasses.Set_Environment;
 import SupportClasses.ThreadLogger;
-import TestNG.MFAC;
 import TestingFunctions.Helper_Functions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -85,7 +85,7 @@ public class USRC_FDM {
 			String UserName = UUID + "-" + ShareID;
 			Response = MFAC_API_Endpoints.IssuePinAPI(UserName, MFAC_Org, MFAC_Details.AIssueURL, MFAC_Details.OAuth_Token);
 			//get the pin from the MFAC call
-			String Pin = MFAC.ParsePIN(Response);
+			String Pin = MFAC_Helper_Functions.ParsePIN(Response);
 			
 			//5 - enroll the above pin through USRC
 			Helper_Functions.PrintOut("Verify pin through USRC", true);

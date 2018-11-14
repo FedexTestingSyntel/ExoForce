@@ -101,15 +101,6 @@ public class CMAC_Company{
 		}
 		CompanyList.add(new String[] {company_cd, organizationUUID, isCompatibleProvider});
 		
-
-		//now check that the project has been create with same data that was sent
-	/*	Response = CMAC_API_Endpoints.RetrieveCompany_API(Retrieve_URL, OAuth_Token, applicationUUID);
-			
-		assertThat(Response, containsString("\"applicationUUID\":\"" + applicationUUID));
-		assertThat(Response, containsString("\"projectName\":\"" + projectName));
-		assertThat(Response, containsString("\"laType\":\"" + laType));
-		assertThat(Response, containsString("\"laVersion\":\"" + laVersion));
-		assertThat(Response, containsString("\"laTimeStamp\":\"" + laTimeStamp));*/
 	}
 	
 	@Test(dataProvider = "dp_company", priority = 2, dependsOnMethods = "CreateCompany", description = "380581 - byCompanycd")
@@ -137,7 +128,7 @@ public class CMAC_Company{
 		}
 	}
 	
-	@Test(dataProvider = "dp_company", priority = 2, dependsOnMethods = "CreateCompany", description = "380675")
+	@Test(dataProvider = "dp_company", priority = 2, dependsOnMethods = "CreateCompany", description = "380675", enabled  = false)
 	public void UpdateCompany(String URL, String RetrieveURL, String OAuth_Token, String[] company) {
 		String Response;
 		Response = CMAC_API_Endpoints.UpdateCompany_API(URL, OAuth_Token, company);
