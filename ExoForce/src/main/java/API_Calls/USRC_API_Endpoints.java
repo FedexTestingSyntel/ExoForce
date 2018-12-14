@@ -1,6 +1,5 @@
 package API_Calls;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.Header;
@@ -67,6 +66,9 @@ public class USRC_API_Endpoints {
   				}else if (header.getName().contentEquals("Set-Cookie") && header.getValue().contains("fcl_uuid")) {
   					fcl_uuid = header.toString().replace("Set-Cookie: fcl_uuid=", "").replace("; domain=.fedex.com; path=/", "");
   				}
+  			}
+  			if (fdx_login == null) {
+  				Helper_Functions.PrintOut("Not able to retrieve cookie, \n\n" + response, false);
   			}
   			return new String[] {fdx_login, fcl_uuid};
   		}catch (Exception e){
