@@ -51,7 +51,7 @@ public class USRC_General {
 	public void CreateUsers(USRC_Data USRC_Details, int ContactPosition) {
 		String UUID = null, fdx_login_fcl_uuid[] = {"",""};
 			//1 - Login, get cookies and uuid
-			String UserID = "L" + USRC_Details.Level + "BadEmail" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
+			String UserID = "L" + USRC_Details.Level + "UpdatePassword" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
 			String Password = "Test1234";
 			
 			//create the new user

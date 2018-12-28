@@ -41,12 +41,18 @@ public class USRC_FDM {
 			switch (m.getName()) { //Based on the method that is being called the array list will be populated.
 			case "EndtoEndEnrollment":
 				//data.add(new Object[] {USRC_D.Level, USRC_D.REGCCreateNewUserURL, USRC_D.LoginUserURL, USRC_D.EnrollmentURL, USRC_D.OAuth_Token, USRC_Data.ContactDetailsList.get(0), MFAC_D.OrgPhone});
-				String UserID = "L" + strLevel + "FDM" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
-				String Password = "Test1234";
-				data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard, UserID, Password});
+				
+				for (int j = 0; j < 8; j++) {
+					String UserID = "L" + strLevel + "FDM" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
+					String Password = "Test1234";
+					data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard, UserID, Password, j});
+				}
 				break;
 			case "EndtoEndEnrollment_UserID":
-				data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard, "L3FDM111715491", "Test1234"});
+				
+					data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard, "L3FDM111715491", "Test1234"});
+				
+				
 				break;
 			}//end switch MethodName
 		}
@@ -54,11 +60,11 @@ public class USRC_FDM {
 	}
 	
 	@Test (dataProvider = "dp", priority = 1, description = "380527")
-	public void EndtoEndEnrollment(USRC_Data USRC_Details, String USRC_Org, MFAC_Data MFAC_Details, String MFAC_Org, String UserID, String Password) {
+	public void EndtoEndEnrollment(USRC_Data USRC_Details, String USRC_Org, MFAC_Data MFAC_Details, String MFAC_Org, String UserID, String Password, int Contact) {
 		String Cookie = null, UUID = null, fdx_login_fcl_uuid[] = {"",""};
 		try {
 			String Response = "";
-			String ContactDetails[] = USRC_Data.ContactDetailsList.get(0);
+			String ContactDetails[] = USRC_Data.ContactDetailsList.get(Contact);
 			
 			//create the new user
 			Response = USRC_API_Endpoints.NewFCLUser(USRC_Details.REGCCreateNewUserURL, ContactDetails, UserID, Password);
