@@ -37,13 +37,16 @@ public class TestNG_TestListener implements ITestListener{
 
     @Override
     public void onFinish(ITestContext arg0) {
-         //remove all skipped tests from the results.
-         try {
-             Iterator<ITestResult> SkippedTestCase = arg0.getSkippedTests().getAllResults().iterator();
-             while (SkippedTestCase.hasNext()) {
-            	 SkippedTestCase.remove();
-             }
-         }catch(Exception e) {}
+        //remove all skipped tests from the results.
+    	Iterator<ITestResult> skippedTestCases = arg0.getSkippedTests().getAllResults().iterator();
+        while (skippedTestCases.hasNext()) {
+            ITestResult skippedTestCase = skippedTestCases.next();
+            ITestNGMethod method = skippedTestCase.getMethod();
+            if (arg0.getSkippedTests().getResults(method).size() > 0) {
+               // System.out.println("Removing:" + skippedTestCase.getTestClass().toString());
+                skippedTestCases.remove();
+            }
+        }
 
         
         Iterator<ITestResult> PassedTestCase = arg0.getPassedTests().getAllResults().iterator();
