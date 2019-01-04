@@ -1,5 +1,6 @@
 package SupportClasses;
 
+import org.testng.SkipException;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -21,6 +22,7 @@ public class Set_Environment {
 			if (Levels != null) {
 				ThreadLogger.LevelsToTest = Levels;
 			}
+			throw new SkipException("Forcing skip, will be deleted from report later");
 		}
 	
 }

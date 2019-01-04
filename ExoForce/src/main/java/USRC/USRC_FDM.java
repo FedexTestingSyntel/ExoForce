@@ -42,7 +42,7 @@ public class USRC_FDM {
 			case "EndtoEndEnrollment":
 				//data.add(new Object[] {USRC_D.Level, USRC_D.REGCCreateNewUserURL, USRC_D.LoginUserURL, USRC_D.EnrollmentURL, USRC_D.OAuth_Token, USRC_Data.ContactDetailsList.get(0), MFAC_D.OrgPhone});
 				
-				for (int j = 0; j < 8; j++) {
+				for (int j = 0; j < 1; j++) {
 					String UserID = "L" + strLevel + "FDM" + Helper_Functions.CurrentDateTime() + Helper_Functions.getRandomString(2);
 					String Password = "Test1234";
 					data.add(new Object[] {USRC_D, USRC_D.FDMPostcard_PinType, MFAC_D, MFAC_D.OrgPostcard, UserID, Password, j});

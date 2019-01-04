@@ -37,7 +37,7 @@ public class USRC_General {
 	    	
 			switch (m.getName()) { //Based on the method that is being called the array list will be populated.
 			case "CreateUsers":
-				for (int j = 0 ; j < 5; j++) {
+				for (int j = 0 ; j < 1; j++) {
 					data.add(new Object[] {USRC_D, j});
 				}
 				
@@ -56,7 +56,7 @@ public class USRC_General {
 			
 			//create the new user
 			String ContactDetails[] = USRC_Data.ContactDetailsList.get(ContactPosition % USRC_Data.ContactDetailsList.size());
-			ContactDetails[4] = "bad@user.asd";
+			ContactDetails[4] = "SEAN.KAUFFMAN.OSV@FEDEX.COM";
 			String Response = USRC_API_Endpoints.NewFCLUser(USRC_Details.REGCCreateNewUserURL, ContactDetails, UserID, Password);
 			
 			//check to make sure that the userid was created.
