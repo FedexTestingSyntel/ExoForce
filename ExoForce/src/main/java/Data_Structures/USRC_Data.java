@@ -17,6 +17,7 @@ public class USRC_Data {
 	public String CancelEnrollmentURL = "";
 	public String LoginUserURL = "";
 	public String REGCCreateNewUserURL = "";
+	public String ViewUserProfileWIDMURL = "";
 	
 	public String FDMSMS_PinType = "SMS";
 	public String FDMPostcard_PinType = "POSTAL";
@@ -69,8 +70,10 @@ public class USRC_Data {
   		}
   		
   		//currently uses a generic URL.
-  		DC.LoginUserURL = LevelUrlReturn(Level) + "/userCal/user";	
-  		DC.REGCCreateNewUserURL = LevelUrlReturn(Level) + "/regcal/registration/newfcluser";
+  		String GenericLevel = LevelUrlReturn(Level);
+  		DC.LoginUserURL = GenericLevel + "/userCal/user";	
+  		DC.REGCCreateNewUserURL = GenericLevel + "/regcal/registration/newfcluser";
+  		DC.ViewUserProfileWIDMURL = GenericLevel + "/userCal/rest/v2/ViewUserProfileWIDM";
 
 		switch (Level) { //Based on the method that is being called the array list will be populated. This will make the TestNG Pass/Fail results more relevant.
 		case "1":

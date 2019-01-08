@@ -20,7 +20,7 @@ import API_Calls.*;
 
 public class USRC_General {
 
-	static String LevelsToTest = "2"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
+	static String LevelsToTest = "3"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
 
 	@BeforeClass
 	public void beforeClass() {
@@ -40,8 +40,9 @@ public class USRC_General {
 				for (int j = 0 ; j < 1; j++) {
 					data.add(new Object[] {USRC_D, j});
 				}
-				
-					break;
+				break;
+			case "CheckLogin":
+				data.add(new Object[] {USRC_D, "L3USCreate122618T104229twvh", "Test1234"});
 			}//end switch MethodName
 		}
 		return data.iterator();
@@ -69,4 +70,20 @@ public class USRC_General {
 			Helper_Functions.PrintOut(UserID + "/" + Password + "--" + UUID, false);
 
 	}
+
+	@Test (dataProvider = "dp")
+	public void CheckLogin(USRC_Data USRC_Details, String UserID, String Password) {
+		String UUID = null, Cookies = null, fdx_login_fcl_uuid[] = {"",""};
+		//get the cookies and the uuid of the user
+		fdx_login_fcl_uuid = USRC_API_Endpoints.Login(USRC_Details.LoginUserURL, UserID, Password);
+		Cookies = fdx_login_fcl_uuid[0];
+		UUID = fdx_login_fcl_uuid[1];
+		
+		Helper_Functions.PrintOut(UserID + "/" + Password + "--" + UUID, false);
+		
+		String ContactDetails = USRC_API_Endpoints.ViewUserProfileWIDM(USRC_Details.ViewUserProfileWIDMURL, Cookies);
+		Helper_Functions.PrintOut("Contact Details: " + ContactDetails, false);
+	}
+	
+
 }

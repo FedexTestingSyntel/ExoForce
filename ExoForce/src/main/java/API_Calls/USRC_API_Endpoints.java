@@ -284,6 +284,42 @@ public class USRC_API_Endpoints {
 		}*/
 	}
 	
+	//Will take in the URL and the cookies and then return the users contact information. 
+	public static String ViewUserProfileWIDM(String ViewUserProfileWIDMURL, String Cookie){
+		HttpGet httpGet = new HttpGet(ViewUserProfileWIDMURL);
+		httpGet.addHeader("Cookie", Cookie);
+		
+		String Response;
+		try {
+			Response = General_API_Calls.HTTPCall(httpGet, "");
+			
+			String Parse[][] = {{"SECRET_QUESTION_DESC", "secretQuestion\":{\"code\":\"", "\",\""}, 
+					{"FIRST_NM", "\"firstName\":\"", "\",\""}, 
+					{"LAST_NM", "\"lastName\":\"", "\"},\""}, 
+					{"STREET_DESC", "\"streetLines\":[\"", "\",\""}, 
+					{"CITY_NM", "\"city\":\"", "\",\""}, 
+					{"STATE_CD", "\"stateOrProvinceCode\":\"", "\",\""}, 
+					{"POSTAL_CD", "\"postalCode\":\"", "\",\""}, 
+					{"COUNTRY_CD", "\",\"countryCode\":\"", "\",\""}};
+			
+			String ParsedValues[] = new String[Parse.length];
+			for(int i = 0; i < Parse.length; i++){
+				ParsedValues[i] = ParseRequest(Response, Parse[i][1], Parse[i][2]);
+			}
+			return Response;
+			//Example: {"output":{"userProfile":{"profileLocked":false,"loginInformation":{"userId":"L3USCreate122618T104229twvh","secretQuestion":{"code":"SP2Q1","text":"What is your mother's first name?         "}},"userProfileAddress":{"contact":{"personName":{"firstName":"FthreeCreatewjjvyzm","middleName":"M","lastName":"Lqjdymaa"},"companyName":"","phoneNumber":"9011111111","faxNumber":"","emailAddress":"sean.kauffman.osv@fedex.com"},"contactAncillaryDetail":{"phoneNumberDetails":[{"type":"HOME","number":{"countryCode":"","localNumber":"9011111111"},"permissions":{}},{"type":"MOBILE","number":{"countryCode":"","localNumber":""},"permissions":{}},{"type":"FAX","number":{"countryCode":"","localNumber":""},"permissions":{}}]},"address":{"streetLines":["10 FED EX PKWY",""],"city":"Collierville","stateOrProvinceCode":"TN","postalCode":"38017","countryCode":"US","residential":false}}}},"successful":true}
+		} catch (Exception e) {
+			return e.getMessage();
+		}	
+	}
+	
+	public static String ParseRequest(String s, String Start, String End) {
+		if(s.contains(Start) && s.contains(End)) {
+			String buffer = s.substring(s.indexOf(Start) + Start.length(), s.length());
+			return buffer.substring(0, buffer.indexOf(End));
+		}
+		return null;
+	}
 	
 	public static String RecipientProfile(String RecipientProfileURL, String Cookie){
 		//String url = "https://www" + LevelUrlReturn(Level) + "/userCal/user";    //delete this later, just a refernce for now on the url i used before
