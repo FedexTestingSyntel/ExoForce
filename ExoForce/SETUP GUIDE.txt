@@ -26,3 +26,8 @@ After the above
 4. Run tests. 
 
 Note : can start with the XML files stored in XMLExectuion package
+
+
+Running the XML files. 
+1. Once you have the desired XML selected in Eclipse make sure to update the   <parameter name="Level" value="6" /> section. The value added here will determine what level the test cases will be executed on. 
+2. After clicking run wait for the scenarios to complete and check the console for the location and the file name of the generated report.

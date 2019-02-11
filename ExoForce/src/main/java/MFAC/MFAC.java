@@ -22,7 +22,8 @@ import SupportClasses.Set_Environment;
 //@Listeners(SupportClasses.TestNG_ReportListener.class)
 
 public class MFAC{
-	static String LevelsToTest = "3"; //Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
+	//Can but updated to test multiple levels at once if needed. Setting to "23" will test both level 2 and level 3.
+	static String LevelsToTest = "3"; 
 	
 	@BeforeClass
 	public static void beforeClass() {
@@ -57,10 +58,6 @@ public class MFAC{
 	    				data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.DIssueURL});
 	    				data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.DIssueURL});
 	    			}
-	    			break;
-	    		case "DetermineLockoutTime"://only need to test API call as this is a helper test to determine current lockouts set.
-	    			data.add(new Object[] {MFAC_D.OrgPostcard, MFAC_D.OAuth_Token, MFAC_D.AIssueURL});
-	    			data.add(new Object[] {MFAC_D.OrgPhone, MFAC_D.OAuth_Token, MFAC_D.AIssueURL});
 	    			break;
 	    		case "IssuePinVelocity":
 	    			if (!MFAC_D.Level.contentEquals("1")){

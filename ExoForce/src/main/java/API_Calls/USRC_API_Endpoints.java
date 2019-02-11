@@ -293,19 +293,6 @@ public class USRC_API_Endpoints {
 		try {
 			Response = General_API_Calls.HTTPCall(httpGet, "");
 			
-			String Parse[][] = {{"SECRET_QUESTION_DESC", "secretQuestion\":{\"code\":\"", "\",\""}, 
-					{"FIRST_NM", "\"firstName\":\"", "\",\""}, 
-					{"LAST_NM", "\"lastName\":\"", "\"},\""}, 
-					{"STREET_DESC", "\"streetLines\":[\"", "\",\""}, 
-					{"CITY_NM", "\"city\":\"", "\",\""}, 
-					{"STATE_CD", "\"stateOrProvinceCode\":\"", "\",\""}, 
-					{"POSTAL_CD", "\"postalCode\":\"", "\",\""}, 
-					{"COUNTRY_CD", "\",\"countryCode\":\"", "\",\""}};
-			
-			String ParsedValues[] = new String[Parse.length];
-			for(int i = 0; i < Parse.length; i++){
-				ParsedValues[i] = ParseRequest(Response, Parse[i][1], Parse[i][2]);
-			}
 			return Response;
 			//Example: {"output":{"userProfile":{"profileLocked":false,"loginInformation":{"userId":"L3USCreate122618T104229twvh","secretQuestion":{"code":"SP2Q1","text":"What is your mother's first name?         "}},"userProfileAddress":{"contact":{"personName":{"firstName":"FthreeCreatewjjvyzm","middleName":"M","lastName":"Lqjdymaa"},"companyName":"","phoneNumber":"9011111111","faxNumber":"","emailAddress":"sean.kauffman.osv@fedex.com"},"contactAncillaryDetail":{"phoneNumberDetails":[{"type":"HOME","number":{"countryCode":"","localNumber":"9011111111"},"permissions":{}},{"type":"MOBILE","number":{"countryCode":"","localNumber":""},"permissions":{}},{"type":"FAX","number":{"countryCode":"","localNumber":""},"permissions":{}}]},"address":{"streetLines":["10 FED EX PKWY",""],"city":"Collierville","stateOrProvinceCode":"TN","postalCode":"38017","countryCode":"US","residential":false}}}},"successful":true}
 		} catch (Exception e) {
@@ -313,12 +300,37 @@ public class USRC_API_Endpoints {
 		}	
 	}
 	
+	public static String[] Parse_ViewUserProfileWIDM(String Response) {
+		String Parse[][] = {{"UUID_NBR", "", ""},
+							{"SSO_LOGIN_DESC", "", ""},
+							{"USER_PASSWORD_DESC", "", ""},
+							{"SECRET_QUESTION_DESC", "secretQuestion\":{\"code\":\"", "\",\""}, 
+							{"SECRET_ANSWER_DESC", "", ""},
+							{"FIRST_NM", "\"firstName\":\"", "\",\""}, 
+							{"LAST_NM", "\"lastName\":\"", "\"},\""}, 
+							{"STREET_DESC", "\"streetLines\":[\"", "\",\""}, 
+							{"CITY_NM", "\"city\":\"", "\",\""}, 
+							{"STATE_CD", "\"stateOrProvinceCode\":\"", "\",\""}, 
+							{"POSTAL_CD", "\"postalCode\":\"", "\",\""}, 
+							{"COUNTRY_CD", "\",\"countryCode\":\"", "\",\""}};
+		
+		String ParsedValues[] = new String[Parse.length];
+		for(int i = 0; i < Parse.length; i++){
+			ParsedValues[i] = ParseRequest(Response, Parse[i][1], Parse[i][2]);
+			if (Parse[i][0].contentEquals("SECRET_QUESTION_DESC") && ParsedValues[i].contentEquals("SP2Q1")) {
+				//this is a guess based on other automated tests. By defualt the other scripts put mom as the secret answer.
+				ParsedValues[i] = "mom";
+			}
+		}
+		return ParsedValues;
+	}
+	
 	public static String ParseRequest(String s, String Start, String End) {
 		if(s.contains(Start) && s.contains(End)) {
 			String buffer = s.substring(s.indexOf(Start) + Start.length(), s.length());
 			return buffer.substring(0, buffer.indexOf(End));
 		}
-		return null;
+		return "";
 	}
 	
 	public static String RecipientProfile(String RecipientProfileURL, String Cookie){

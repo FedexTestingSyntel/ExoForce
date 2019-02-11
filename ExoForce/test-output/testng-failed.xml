@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="8" guice-stage="DEVELOPMENT" name="Failed suite [MFAC_Suit]" parallel="methods">
-  <listeners>
-    <listener class-name="SupportClasses.TestNG_ReportListener"/>
-  </listeners>
-  <test thread-count="8" name="MFAC_Test(failed)" parallel="methods">
-    <parameter name="Level" value="3"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="MFAC.MFAC">
         <methods>
-          <include name="VerifyPinValid" invocation-numbers="1 3"/>
-          <include name="VerifyPinVelocity" invocation-numbers="0 3 1 2 4 5"/>
-          <include name="IssuePin" invocation-numbers="1 3"/>
-          <include name="AddressVelocity" invocation-numbers="2 0 3 1"/>
-          <include name="IssuePinVelocity" invocation-numbers="3 1"/>
+          <include name="IssuePinVelocity" invocation-numbers="2 0 1 3"/>
           <include name="beforeClass"/>
-          <include name="VerifyPinNoLongerValid" invocation-numbers="1 3"/>
         </methods>
       </class> <!-- MFAC.MFAC -->
     </classes>
-  </test> <!-- MFAC_Test(failed) -->
-</suite> <!-- Failed suite [MFAC_Suit] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,38 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="4" ignored="5" total="9" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1758161" started-at="2019-01-07T22:43:50Z" finished-at="2019-01-07T23:13:09Z">
+  <suite name="Default suite" duration-ms="6957" started-at="2019-02-06T19:33:40Z" finished-at="2019-02-06T19:33:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1758161" started-at="2019-01-07T22:43:50Z" finished-at="2019-01-07T23:13:09Z">
-      <class name="USRC.USRC_General">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:USRC.USRC_General@548e6d58]" name="beforeClass" is-config="true" duration-ms="17" started-at="2019-01-07T22:43:50Z" finished-at="2019-01-07T22:43:50Z">
+    <test name="Default test" duration-ms="6957" started-at="2019-02-06T19:33:40Z" finished-at="2019-02-06T19:33:47Z">
+      <class name="MFAC.MFAC">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:MFAC.MFAC@2698dc7]" name="beforeClass" is-config="true" duration-ms="16" started-at="2019-02-06T19:33:40Z" finished-at="2019-02-06T19:33:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="CheckLogin(Data_Structures.USRC_Data, java.lang.String, java.lang.String)[pri:0, instance:USRC.USRC_General@548e6d58]" name="CheckLogin" duration-ms="1756872" started-at="2019-01-07T22:43:52Z" data-provider="dp" finished-at="2019-01-07T23:13:09Z">
+        <test-method status="FAIL" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@2698dc7]" name="IssuePinVelocity" duration-ms="2850" started-at="2019-02-06T19:33:41Z" data-provider="dp" finished-at="2019-02-06T19:33:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Data_Structures.USRC_Data@72e60634]]>
+                <![CDATA[FDM-POSTCARD-PIN]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[L3USCreate122618T104229twvh]]>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Test1234]]>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: (a string containing "pinOTP" and a string containing "pinExpirationDate")
+     but: a string containing "pinOTP" was "{"transactionId":"9eb1f41c-f8d6-4982-b6d7-4e4f114218fc","errors":[{"code":"5700","message":"Unfortunately, you have exceeded your attempts for verification. Please try again later."}]}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: (a string containing "pinOTP" and a string containing "pinExpirationDate")
+     but: a string containing "pinOTP" was "{"transactionId":"9eb1f41c-f8d6-4982-b6d7-4e4f114218fc","errors":[{"code":"5700","message":"Unfortunately, you have exceeded your attempts for verification. Please try again later."}]}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at MFAC.MFAC.IssuePinVelocity(MFAC.java:163)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckLogin -->
-      </class> <!-- USRC.USRC_General -->
+        </test-method> <!-- IssuePinVelocity -->
+        <test-method status="FAIL" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@2698dc7]" name="IssuePinVelocity" duration-ms="5569" started-at="2019-02-06T19:33:41Z" data-provider="dp" finished-at="2019-02-06T19:33:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://apidrt.idev.fedex.com:8443/security/v1/pin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: (a string containing "5700" and a string containing "Unfortunately, you have exceeded your attempts for verification. Please try again later.")
+     but: a string containing "5700" was "{"transactionId":"0ea540f0-30d8-4bcf-be7c-f86f56f7bbd7","output":{"pinOTP":"030520","pinExpirationDate":"02/06/2019 07:43 PM GMT"}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: (a string containing "5700" and a string containing "Unfortunately, you have exceeded your attempts for verification. Please try again later.")
+     but: a string containing "5700" was "{"transactionId":"0ea540f0-30d8-4bcf-be7c-f86f56f7bbd7","output":{"pinOTP":"030520","pinExpirationDate":"02/06/2019 07:43 PM GMT"}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at MFAC.MFAC.IssuePinVelocity(MFAC.java:169)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinVelocity -->
+        <test-method status="FAIL" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@2698dc7]" name="IssuePinVelocity" duration-ms="2234" started-at="2019-02-06T19:33:41Z" data-provider="dp" finished-at="2019-02-06T19:33:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-POSTCARD-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: (a string containing "pinOTP" and a string containing "pinExpirationDate")
+     but: a string containing "pinOTP" was "{"transactionId":"2135f7a1-7ed3-4833-94dd-75537fd24922","errors":[{"code":"5700","message":"Unfortunately, you have exceeded your attempts for verification. Please try again later."}]}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: (a string containing "pinOTP" and a string containing "pinExpirationDate")
+     but: a string containing "pinOTP" was "{"transactionId":"2135f7a1-7ed3-4833-94dd-75537fd24922","errors":[{"code":"5700","message":"Unfortunately, you have exceeded your attempts for verification. Please try again later."}]}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at MFAC.MFAC.IssuePinVelocity(MFAC.java:163)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinVelocity -->
+        <test-method status="FAIL" signature="IssuePinVelocity(java.lang.String, java.lang.String, java.lang.String, int)[pri:2, instance:MFAC.MFAC@2698dc7]" name="IssuePinVelocity" duration-ms="5700" started-at="2019-02-06T19:33:41Z" data-provider="dp" finished-at="2019-02-06T19:33:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FDM-PHONE-PIN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[l7xx1892f99a6f88470ba29abc141cd7bd8d]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://mfacdrt-cos-vip.test.cloud.fedex.com:9090/mfac/v3/issuePIN]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: (a string containing "5700" and a string containing "Unfortunately, you have exceeded your attempts for verification. Please try again later.")
+     but: a string containing "5700" was "{"transactionId":"d1f85275-ac02-4e3c-b488-54453c8ba98c","output":{"pinOTP":"632843","pinExpirationDate":"02/06/2019 07:43 PM GMT"}}"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: (a string containing "5700" and a string containing "Unfortunately, you have exceeded your attempts for verification. Please try again later.")
+     but: a string containing "5700" was "{"transactionId":"d1f85275-ac02-4e3c-b488-54453c8ba98c","output":{"pinOTP":"632843","pinExpirationDate":"02/06/2019 07:43 PM GMT"}}"
+at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+at org.junit.Assert.assertThat(Assert.java:956)
+at org.junit.Assert.assertThat(Assert.java:923)
+at MFAC.MFAC.IssuePinVelocity(MFAC.java:169)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IssuePinVelocity -->
+      </class> <!-- MFAC.MFAC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
